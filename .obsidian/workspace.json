@@ -8,55 +8,31 @@
         "type": "tabs",
         "children": [
           {
-            "id": "99cf2d2bb434eea3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "5. Semester/Datenkommunikation/1. Dienste und Protokolle.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "2dbebb47d65a911a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "5. Semester/Datenkommunikation/2. Physical Layer.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "3f84944d05380a03",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "5. Semester/Datenkommunikation/2. Physical Layer.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "ec0781b219999c9f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "5. Semester/Machine Learning/Untitled.md",
+                "file": "5. Semester/Datenkommunikation/3. Data Link Layer.md",
                 "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "4a7332b80fbfa392",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "5. Semester/Datenkommunikation/3. Data Link Layer.md",
+                "mode": "preview",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -122,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "5. Semester/Machine Learning/Untitled.md",
+                "file": "5. Semester/Datenkommunikation/3. Data Link Layer.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "5. Semester/Machine Learning/Untitled.md",
+                "file": "5. Semester/Datenkommunikation/3. Data Link Layer.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "5. Semester/Machine Learning/Untitled.md"
+                "file": "5. Semester/Datenkommunikation/3. Data Link Layer.md"
               }
             }
           },
@@ -201,17 +177,17 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "c5eaa8def02e900b",
+  "active": "4a7332b80fbfa392",
   "lastOpenFiles": [
-    "5. Semester/IT-Sicherheit/Untitled.md",
+    "5. Semester/Datenkommunikation/3. Data Link Layer.md",
     "5. Semester/Machine Learning/Untitled.md",
+    "5. Semester/IT-Sicherheit/Untitled.md",
     "5. Semester/Introduction to Artificial Intelligence/Untitled.md",
     "5. Semester/Erfüllbarkeitsüberprüfung/Untitled.md",
     "5. Semester/Einführung in Webtechnologien/Untitled.md",
     "5. Semester/Berechenbarkeit und Komplexität/Untitled.md",
     "5. Semester/Berechenbarkeit und Komplexität/1.md",
     "5. Semester/Datenkommunikation/2. Physical Layer.md",
-    "5. Semester/Datenkommunikation/3. Data Link Layer.md",
     "5. Semester/Datenkommunikation/1. Dienste und Protokolle.md",
     "5. Semester/IT-Sicherheit",
     "5. Semester/Introduction to Artificial Intelligence",
