@@ -18,6 +18,8 @@ Nun werden nacheinander folgende Rahmen gesendet:
 | switch 4 |     |     |     |
 Zunächst ist unsere Tabelle, wir werden sie schrittweise ausfüllen.
 
+(Mit sende an alle Ports ist hier der Port ausgeschlossen, von dem die Nachricht kam)
+
 1. B sendet an A
 	- Switch 1: 
 		1. speichere B:1.2
@@ -33,4 +35,17 @@ Zunächst ist unsere Tabelle, wir werden sie schrittweise ausfüllen.
 	- E bekommt von B
 	- Hub 2: sendet an alle Ports
 	- F bekommt von B
-	- 
+	- Hub 1: sendet an alle Ports
+	- C bekommt von B
+	- Switch 2:
+		1. speichere B:3.1
+		2. suche Eintrag A
+		3. Suche erfolglos
+		4. sende an alle Ports
+	- D bekommt von B
+	- Switch 4:
+		1. speichere B:6.1
+		2. suche Eintrag A
+		3. Suche erfolglos
+		4. sende an alle Ports
+	- G bekommt von B
