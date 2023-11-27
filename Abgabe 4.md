@@ -125,4 +125,4 @@ Unsere Weiterleitungstabelle sieht am Ende nur so aus:
  ### Aufgabe 4.5 Spanning Tree Protocol:
 ![[Pasted image 20231127234343.png]]
 
-Jede KAs
+Jede Kasten repräsentiert einen Switch, jeder Link ist an einen Port mit der angegebenen ID angeschlossen
