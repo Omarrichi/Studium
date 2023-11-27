@@ -118,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Untitled.md"
-              }
+              "state": {}
             }
           },
           {
@@ -151,9 +149,9 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "c5eaa8def02e900b",
+  "active": "01f7d18b62e33076",
   "lastOpenFiles": [
-    "Studium",
-    "Untitled.md"
+    "Untitled.md",
+    "Studium"
   ]
 }
