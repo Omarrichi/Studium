@@ -116,6 +116,12 @@ Unsere Weiterleitungstabelle sieht am Ende nur so aus:
 
 | switch 1 | (B,1.2) | (D,1.3) | (C,1.3)  |
 |:--------:|:-------:|:-------:|:--------:|
-| switch 2 | (B,3.1) | (D,3.2) | (C, 3.1) | 
+| switch 2 | (B,3.1) | (D,3.2) | (C, 3.1) |
 | switch 3 | (B,4.1) |         |          |
 | switch 4 | (B,6.1) |         |          |
+
+
+--- 
+ ### Aufgabe 4.5 Spanning Tree Protocol:
+![[Pasted image 20231127234343.png]]
+
