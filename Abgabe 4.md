@@ -70,4 +70,30 @@ Weiterleitungstabelle nach 1:
 		4. sende nur über Port 3.1
 	- Hub 1: sende an alle Ports
 	- C bekommt von D
-	- S
+	- Switch 1:
+		1. speichere D:1.3
+		2. suche Eintrag B
+		3. Eintrag gefunden B:1.2
+		4. sende nur über Port 1.2
+	- B bekommt von D
+
+Durchlaufende Switches: 2,1
+Durchlaufende Hobs: 1
+Durchlaufende Rechner: C,B 
+
+
+Weiterleitungstabelle nach 2:
+
+| switch 1 | (B,1,2) | (D, 1.3) |     |
+|:--------:|:-------:|:--------:|:---:|
+| switch 2 | (B,3.1) | (D,3.2)  |     |
+| switch 3 | (B,4.1) |          |     |
+| switch 4 | (B,6.1) |          |     |
+
+3. C sendet an D
+	- Hub 1: sende an alle Ports
+	- Switch 2:
+		1. speichere C:3.1
+		2. suche Eintrag D
+		3. Eintrag gefunden D:3.2
+		4. sende nur über 
