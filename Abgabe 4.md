@@ -11,9 +11,12 @@ Nun werden nacheinander folgende Rahmen gesendet:
 
 ---
 
-| switch 1 | switch 2 | switch 3 | switch 4 |
-| -------- | -------- | -------- | -------- |
-|          |          |          |          |
+| switch 1 |     |     |     |
+|:--------:| :---: | :---: | :---: |
+| switch 2 |     |     |     |
+| switch 3 |     |     |     |
+| switch 4 |     |     |     |
 Zunächst ist unsere Tabelle, wir werden sie schrittweise ausfüllen.
 
 1. B sendet an A
+	1. Switch 1: speichert B : 1.2
