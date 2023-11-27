@@ -5,7 +5,11 @@
     "fontSize": 16,
     "emojiStyle": "none",
     "iconColor": null,
-    "recentlyUsedIcons": [],
+    "recentlyUsedIcons": [
+      "UsSkull2Line",
+      "DoBookletFill",
+      "DoBookFill"
+    ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
     "extraMargin": {
@@ -19,5 +23,11 @@
     "iconInFrontmatterEnabled": false,
     "iconsBackgroundCheckEnabled": false,
     "iconsInNotesEnabled": true
-  }
+  },
+  "5. Semester/Datenkommunikation/Kapital 1.md": "DoBookFill",
+  "5. Semester/Datenkommunikation": {
+    "iconName": "DoBookletFill",
+    "inheritanceIcon": "DoBookFill"
+  },
+  "5. Semester": "UsSkull2Line"
 }
