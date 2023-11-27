@@ -128,6 +128,7 @@ Unsere Weiterleitungstabelle sieht am Ende nur so aus:
 Jede Kasten repräsentiert einen Switch, jeder Link ist an einen Port mit der angegebenen ID angeschlossen
 
 a) 
-
+Beim Auswahl von root Bridge wird die ID zwischen den Switches verglichen nur wenn beide IDs gleich sind, werden dann die MAC Adressen verglichen. Hier können wir dafür sorgen dass unsere "Root" Switch als Root Bridge gestimmt wird, indem wir ihm die niedrigste ID geben. Wir können diese ID in vielfache von 4096 ändern, also können wir auch dafür sorgen, dass sie niedriger als die restlichen Switches ist.
+Es ist sinnvoll diesen Switch zu nehmen
 b) 
 ![[Pasted image 20231128004603.png]]
