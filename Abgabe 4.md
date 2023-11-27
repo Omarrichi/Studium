@@ -96,4 +96,26 @@ Weiterleitungstabelle nach 2:
 		1. speichere C:3.1
 		2. suche Eintrag D
 		3. Eintrag gefunden D:3.2
-		4. sende nur über 
+		4. sende nur über Port 3.2
+	- D bekommt von C
+	- Switch 1:
+		1. speichere: C:1.3
+		2. suche Eintrag D
+		3. Eintrag gefunden D:1.3
+		4. sende nur über Port 1.3
+	- Hub 1: sende an alle Ports
+	- C bekommt von C
+	- Switch 2:
+		1. C ist schon gespeichert (über dem gleichem Port auch)
+		2. suche Eintrag D 
+		3. Eintrag gefunden D:3.2
+		4. sende nur über Port 3.2
+	- D bekommt von C
+
+Unsere Weiterleitungstabelle sieht am Ende nur so aus:
+
+| switch 1 | (B,1.2) | (D,1.3) | (C,1.3)  |
+|:--------:|:-------:|:-------:|:--------:|
+| switch 2 | (B,3.1) | (D,3.2) | (C, 3.1) | 
+| switch 3 | (B,4.1) |         |          |
+| switch 4 | (B,6.1) |         |          |
