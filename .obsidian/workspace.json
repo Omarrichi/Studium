@@ -8,20 +8,24 @@
         "type": "tabs",
         "children": [
           {
-            "id": "01f7d18b62e33076",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
             "id": "99cf2d2bb434eea3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "5. Semester/Datenkommunikation/Kapital 1.md",
+                "file": "5. Semester/Datenkommunikation/Dienste und Protokolle.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "2dbebb47d65a911a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "5. Semester/Datenkommunikation/Kapital 2.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,6 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "5. Semester/Datenkommunikation/Kapital 2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,6 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "5. Semester/Datenkommunikation/Kapital 2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -132,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Machine Learning/Machine Learning.md"
+                "file": "5. Semester/Datenkommunikation/Kapital 2.md"
               }
             }
           },
@@ -171,12 +177,17 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "c5eaa8def02e900b",
+  "active": "2dbebb47d65a911a",
   "lastOpenFiles": [
-    "Berechenbarkeit und",
-    "Machine Learning",
-    "5. Semester/Datenkommunikation/Kapital 1.md",
+    "5. Semester/Datenkommunikation/Dienste und Protokolle.md",
+    "5. Semester/Datenkommunikation/Kapital 2.md",
+    "5. Semester/IT-Sicherheit",
+    "5. Semester/Introduction to Artificial Intelligence",
+    "5. Semester/Erfüllbarkeitsüberprüfung",
+    "5. Semester/Einführung in Webtechnologien",
     "Machine Learning/Machine Learning.md",
+    "5. Semester/Berechenbarkeit und Komplexität",
+    "5. Semester/Machine Learning",
     "5. Semester/Untitled.md",
     "5. Semester/Datenkommunikation",
     "5. Semester",

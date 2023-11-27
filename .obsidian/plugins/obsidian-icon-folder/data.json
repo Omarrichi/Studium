@@ -24,10 +24,34 @@
     "iconsBackgroundCheckEnabled": false,
     "iconsInNotesEnabled": true
   },
-  "5. Semester/Datenkommunikation/Kapital 1.md": "DoBookFill",
   "5. Semester/Datenkommunikation": {
     "iconName": "DoBookletFill",
     "inheritanceIcon": "DoBookFill"
   },
-  "5. Semester": "UsSkull2Line"
+  "5. Semester": "UsSkull2Line",
+  "5. Semester/Berechenbarkeit und Komplexität": {
+    "iconName": "DoBookletFill",
+    "inheritanceIcon": "DoBookFill"
+  },
+  "5. Semester/Machine Learning": {
+    "iconName": "DoBookletFill",
+    "inheritanceIcon": "DoBookFill"
+  },
+  "5. Semester/Einführung in Webtechnologien": {
+    "iconName": "DoBookletFill",
+    "inheritanceIcon": "DoBookFill"
+  },
+  "5. Semester/Erfüllbarkeitsüberprüfung": {
+    "iconName": "DoBookletFill",
+    "inheritanceIcon": "DoBookFill"
+  },
+  "5. Semester/Introduction to Artificial Intelligence": {
+    "iconName": "DoBookletFill",
+    "inheritanceIcon": "DoBookFill"
+  },
+  "5. Semester/IT-Sicherheit": {
+    "iconName": "DoBookletFill",
+    "inheritanceIcon": "DoBookFill"
+  },
+  "5. Semester/Datenkommunikation/Dienste und Protokolle.md": "DoBookFill"
 }
