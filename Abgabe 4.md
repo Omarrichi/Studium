@@ -49,3 +49,15 @@ Zunächst ist unsere Tabelle, wir werden sie schrittweise ausfüllen.
 		3. Suche erfolglos
 		4. sende an alle Ports
 	- G bekommt von B
+
+Durchlaufende Switches: 1,2,3,4
+Durchlaufende Hobs: 1,2
+Durchlaufende Rechner: A,C,D,E,F,G
+
+Weiterleitungstabelle nach 1:
+
+| switch 1 | (B,1,2)    |     |     | 
+|:--------:|:---:|:---:|:---:|
+| switch 2 |  (B,3.1)   |     |     |
+| switch 3 | (B,4.1)    |     |     |
+| switch 4 |  (B,6.1)   |     |     |
