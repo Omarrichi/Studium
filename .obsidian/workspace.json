@@ -6,6 +6,7 @@
       {
         "id": "368c3b384867fa35",
         "type": "tabs",
+        "dimension": 47.38805970149254,
         "children": [
           {
             "id": "ec0781b219999c9f",
@@ -15,10 +16,17 @@
               "state": {
                 "file": "5. Semester/Datenkommunikation/3. Data Link Layer.md",
                 "mode": "source",
-                "source": false
+                "source": true
               }
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "6fc43c56cb7d567a",
+        "type": "tabs",
+        "dimension": 52.61194029850746,
+        "children": [
           {
             "id": "4a7332b80fbfa392",
             "type": "leaf",
@@ -27,12 +35,11 @@
               "state": {
                 "file": "5. Semester/Datenkommunikation/3. Data Link Layer.md",
                 "mode": "preview",
-                "source": false
+                "source": true
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -82,7 +89,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "005a87686d04f700",
@@ -163,7 +171,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -177,7 +186,7 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "4a7332b80fbfa392",
+  "active": "ec0781b219999c9f",
   "lastOpenFiles": [
     "5. Semester/Datenkommunikation/3. Data Link Layer.md",
     "5. Semester/Machine Learning/Untitled.md",
