@@ -19,9 +19,18 @@ Nun werden nacheinander folgende Rahmen gesendet:
 Zunächst ist unsere Tabelle, wir werden sie schrittweise ausfüllen.
 
 1. B sendet an A
-	1. Switch 1: 
+	- Switch 1: 
 		1. speichere B:1.2
 		2. suche Eintrag A
 		3. Suche erfolglos (Tabelle ist leer)
-		4. sende an alle Ports (1.1 , )
-	2. Switch 3:
+		4. sende an alle Ports
+	- A bekommt von B
+	- Switch 3:
+		1. speichere: B:4.1
+		2. suche Eintrag A
+		3. Suche erfolglos
+		4. sende an alle Ports
+	- E bekommt von B
+	- Hub 2: sendet an alle Ports
+	- F bekommt von B
+	- 
