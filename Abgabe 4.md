@@ -33,9 +33,9 @@ Zunächst ist unsere Tabelle, wir werden sie schrittweise ausfüllen.
 		3. Suche erfolglos
 		4. sende an alle Ports
 	- E bekommt von B
-	- Hub 2: sendet an alle Ports
+	- Hub 2: sende an alle Ports
 	- F bekommt von B
-	- Hub 1: sendet an alle Ports
+	- Hub 1: sende an alle Ports
 	- C bekommt von B
 	- Switch 2:
 		1. speichere B:3.1
@@ -56,8 +56,18 @@ Durchlaufende Rechner: A,C,D,E,F,G
 
 Weiterleitungstabelle nach 1:
 
-| switch 1 | (B,1,2)    |     |     | 
-|:--------:|:---:|:---:|:---:|
-| switch 2 |  (B,3.1)   |     |     |
-| switch 3 | (B,4.1)    |     |     |
-| switch 4 |  (B,6.1)   |     |     |
+| switch 1 | (B,1,2) |     |     |
+|:--------:|:-------:|:---:|:---:|
+| switch 2 | (B,3.1) |     |     |
+| switch 3 | (B,4.1) |     |     |
+| switch 4 | (B,6.1) |     |     |
+
+2. D sendet an B
+	- Switch 2:
+		1. speichere D:3.2
+		2. suche Eintrag B
+		3. Eintrag gefunden B: 3.1
+		4. sende nur über Port 3.1
+	- Hub 1: sende an alle Ports
+	- C bekommt von D
+	- S
