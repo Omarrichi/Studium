@@ -126,3 +126,8 @@ Unsere Weiterleitungstabelle sieht am Ende nur so aus:
 ![[Pasted image 20231127234343.png]]
 
 Jede Kasten repräsentiert einen Switch, jeder Link ist an einen Port mit der angegebenen ID angeschlossen
+
+a) 
+
+b) 
+![[Pasted image 20231128004603.png]]
