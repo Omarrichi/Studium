@@ -133,4 +133,6 @@ Beim Auswahl von root Bridge wird die ID zwischen den Switches verglichen nur we
 Es ist sinnvoll diesen Switch zu nehmen, da die Kosten zu diesen Switch deutlich weniger sind als die Kosten bis anderen Switches, es trägt auch hier bei, dass viele Switch mit dem "Root" Switch in direkter Verbindung stehen, da erstens, viele Switches sind vom ihm erreichbar, und zweitens sind die Kosten weniger, da man nicht über mehrere Switches laufen muss bis man das Ziel erreicht, wodurch die Kosten höher werden können
 b) 
 
-![[Pasted image 20231128004603.png]]
+![[Pasted image 20231128005842.png]]
+
+---
