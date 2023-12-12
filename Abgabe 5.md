@@ -56,7 +56,7 @@ Jetzt können wir die Adressenbereiche für die Subnetze bestimmen, wir fangen a
 
 wir können nicht zwischen diesen Zahlen Adressenbereiche zuweisen, da wir Bitweise die Adressen teilen.
 
-1. Rechner:
+1. Subnetz:
 
 - Subnetzmaske: $32 - 6 = 26$
 	- 32 Gesamte Anzahl an Bits und 6 Bits sind für Hostbereich
@@ -64,15 +64,10 @@ wir können nicht zwischen diesen Zahlen Adressenbereiche zuweisen, da wir Bitwe
 - erste Adresse: $134.130.116.0$
 - letzte Adresse: $134.130.116.63$
 
-2. Rechner: 
+2. Subnetz: 
 
 - Subnetzmaske: $32 - 9 = 23$
 - Subnetzadresse: $134.130.116.64/23$
 - erste Adresse: $134.130.116.64$
 - letzte Adresse: $134.130.119.255$
 
-
-12345678123456781324567812345678
-10000110100000100111011001000000
-00000000000000000000000000000000
- 11111111
