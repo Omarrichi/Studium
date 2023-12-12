@@ -69,8 +69,4 @@ wir können nicht zwischen diesen Zahlen Adressenbereiche zuweisen, da wir Bitwe
 - Subnetzmaske: $32 - 9 = 23$
 - Subnetzadresse: $134.130.167.0/23$
 - erste Adresse: $134.130.117.0$
-- letzte Adresse: $134.130.$
-
-
-12345678123456781234567812345678
-100001101000001001110101
+- letzte Adresse: $134.130.119.0$
