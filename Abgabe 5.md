@@ -78,5 +78,9 @@ wir können nicht zwischen diesen Zahlen Adressenbereiche zuweisen, da wir Bitwe
 - erste Adresse: $134.130.117.175$
 - letzte Adresse: $134.130.118.174$
 
+4. Subnetz: 
 
-
+- Subnetzmaske: $32 - 8 = 24$
+- Subnetzadresse: $134.130.117.175/24$
+- erste Adresse: $134.130.117.175$
+- letzte Adresse: $134.130.118.174$
