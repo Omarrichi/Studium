@@ -1,5 +1,7 @@
 #### Aufgabe 5.3 IP: Netze und Adressierung:
 
+
+a)
 Gegebene: $192.168.14.144/28$
 
 Wir wandeln die Zahl zunächst in Binär:
@@ -30,4 +32,8 @@ $168:10101000$
 $14:00001110$
 $161:10100001$
 
-Wegen dem Überlauf bei der Berechnung, wurde hier der Netz-Bereich geändert. Also liegt diese Adresse nicht im Netz. (Die letzten 4 Bits von den 28 )
+Wegen dem Überlauf bei der Berechnung, wurde hier der Netz-Bereich geändert. Also liegt diese Adresse nicht im Netz. (Die letzten 4 Bits von den 28 wurde geändert)
+
+b)
+
+Gegeben: $134.130.116.0/22$
