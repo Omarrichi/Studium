@@ -60,9 +60,17 @@ wir können nicht zwischen diesen Zahlen Adressenbereiche zuweisen, da wir Bitwe
 
 - Subnetzmaske: $32 - 6 = 26$
 	- 32 Gesamte Anzahl an Bits und 6 Bits sind für Hostbereich
-- Netzadresse: $134.130.116.0/26$
+- Subnetzadresse: $134.130.116.0/26$
 - erste Adresse: $134.130.116.0$
-- letzte Adresse: 
+- letzte Adresse: $134.130.116.63$
+
+2. Rechner: 
+
+- Subnetzmaske: $32 - 9 = 23$
+- Subnetzadresse: $134.130.167.0/23$
+- erste Adresse: $134.130.117.0$
+- letzte Adresse: $134.130.$
+
 
 12345678123456781234567812345678
-100001101000001001110100
+100001101000001001110101
