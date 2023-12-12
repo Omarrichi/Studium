@@ -48,4 +48,14 @@ somit wäre 1. Rechner bei 33.
 
 Jetzt können wir die Adressenbereiche für die Subnetze bestimmen, wir fangen an in zweier Potenz zu rechnen, wie viele Bits wir zur Verfügung stellen müssen.
 
-1. Rechner: 33 $\Rightarrow$ 
+1. Rechner: $33 \Rightarrow 2^6 = 64$
+	- mit $2^5$ haben wir zu wenig Adressen
+2. Rechner $299 \Rightarrow 2^9 = 512$
+3. Rechner $190 \Rightarrow 2^8 = 256$
+4. Rechner $110 \Rightarrow 2^7 = 128$
+
+wir können nicht zwischen diesen Zahlen Adressenbereiche zuweisen, da wir Bitweise die Adressen teilen.
+
+1. Rechner:
+
+- Netzwerkbereich: $32 - 6$
