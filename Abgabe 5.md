@@ -84,3 +84,16 @@ wir können nicht zwischen diesen Zahlen Adressenbereiche zuweisen, da wir Bitwe
 - Subnetzadresse: $134.130.118.174/25$
 - erste Adresse: $134.130.118.174$
 - letzte Adresse: $134.130.118.302$
+
+Unser Netzwerk hat Verfügt über 1024 IP-Adressen
+$2^{32-22}=2^{10} = 1024$
+
+Unser Subnetze haben davon folgendes genommen:
+
+$64+512+256+128 = 960$
+
+Also gilt: $1024-960 = 64$
+
+Es stehen also 64 IP-Adressen, die für das fünfte Subnetz benutzt werden könnten.
+
+c)
