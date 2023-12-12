@@ -46,7 +46,7 @@ Wir müssen nun 4 Subnetze Erstellen, die entsprechend der Rechner groß seien s
 Für das erste Subnetz müssen wir jedoch zwei Adressen hinzufügen, das Netzwerk-Adresse und Broadcast-Adresse.
 somit wäre 1. Rechner bei 33.
 
-Jetzt können wir die Adressenbereiche für die Subnetze bestimmen, wir fangen an in zweier Potenz zu rechnen, wie viele Bits wir zur Verfügung stellen müssen.
+Jetzt können wir die Adressenbereiche für die Subnetze bestimmen, wir fangen an in zweier Potenz zu rechnen, wie viele Bits wir zur Verfügung stellen müssen für die Rechner.
 
 1. Rechner: $33 \Rightarrow 2^6 = 64$
 	- mit $2^5$ haben wir zu wenig Adressen
@@ -58,4 +58,8 @@ wir können nicht zwischen diesen Zahlen Adressenbereiche zuweisen, da wir Bitwe
 
 1. Rechner:
 
-- Netzwerkbereich: $32 - 6$
+- Subnetzmaske: $32 - 6 = 24$
+	- 32 Gesamte Anzahl an Bits und 6 Bits sind für Hostbereich
+- Netzadresse: $134.130.116.0/24$
+- erste Adresse: $134.130.116.0$
+- letzte Adresse: $$
