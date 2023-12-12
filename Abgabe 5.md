@@ -97,3 +97,6 @@ Also gilt: $1024-960 = 64$
 Es stehen also 64 IP-Adressen, die für das fünfte Subnetz benutzt werden könnten.
 
 c)
+Diese IP-Adressbereich 172.20.0.0/22 kann man nicht kaufen, da sie bereits für den privaten Gebrauch reserviert sind und nicht im Besitz von Einzelpersonen oder Organisationen übertragen werden können.
+
+(Das Angebot ist also ein Scam, übrigens mangeldne)
