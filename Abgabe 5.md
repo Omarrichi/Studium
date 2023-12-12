@@ -67,22 +67,6 @@ wir können nicht zwischen diesen Zahlen Adressenbereiche zuweisen, da wir Bitwe
 2. Rechner: 
 
 - Subnetzmaske: $32 - 9 = 23$
-- Subnetzadresse: $134.130.117.0/23$
-- erste Adresse: $134.130.117.0$
+- Subnetzadresse: $134.130.116.64/23$
+- erste Adresse: $134.130.116.$
 - letzte Adresse: $134.130.119.255$
-
-3. Rechner: 
-
-- Subnetzmaske: $32 - 8 = 24$
-- Subnetzadresse: $134.130.120.0/24$
-- erste Adresse: $134.130.120.0$
-- letzte Adresse: $134.130.121.255$
-
-4. Rechner: 
-
-- Subnetzmaske: $32 - 7 = 25$
-- Subnetzadresse: $134.130.122.0/25$
-- erste Adresse: $134.130.120.0$
-- letzte Adresse: $134.130.121.255$
-
-12345678123456781234567813245678
