@@ -37,3 +37,15 @@ Wegen dem Überlauf bei der Berechnung, wurde hier der Netz-Bereich geändert. A
 b)
 
 Gegeben: $134.130.116.0/22$
+1. Rechner: 31
+2. Rechner: 299
+3. Rechner: 190
+4. Rechner: 110
+
+Wir müssen nun 4 Subnetze Erstellen, die entsprechend der Rechner groß seien sollen.
+Für das erste Subnetz müssen wir jedoch zwei Adressen hinzufügen, das Netzwerk-Adresse und Broadcast-Adresse.
+somit wäre 1. Rechner bei 33.
+
+Jetzt können wir die Adressenbereiche für die Subnetze bestimmen, wir fangen an in zweier Potenz zu rechnen, wie viele Bits wir zur Verfügung stellen müssen.
+
+1. Rechner: 33 $\Rightarrow$ 
