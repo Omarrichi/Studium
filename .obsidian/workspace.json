@@ -9,28 +9,6 @@
         "dimension": 47.38805970149254,
         "children": [
           {
-            "id": "611e7f284914abe0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Abgabe 5.md",
-                "mode": "source",
-                "source": true
-              }
-            }
-          },
-          {
-            "id": "a102016e36dd8f59",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.5.3"
-              }
-            }
-          },
-          {
             "id": "4ad435196b4cfc55",
             "type": "leaf",
             "state": {
@@ -42,8 +20,7 @@
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       },
       {
         "id": "6fc43c56cb7d567a",
