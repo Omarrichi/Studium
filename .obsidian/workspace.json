@@ -19,8 +19,31 @@
                 "source": true
               }
             }
+          },
+          {
+            "id": "a102016e36dd8f59",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.5.3"
+              }
+            }
+          },
+          {
+            "id": "4ad435196b4cfc55",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Untitled.md",
+                "mode": "source",
+                "source": true
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       },
       {
         "id": "6fc43c56cb7d567a",
@@ -105,7 +128,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Abgabe 5.md",
+                "file": "Untitled.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +145,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Abgabe 5.md",
+                "file": "Untitled.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -145,7 +168,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Abgabe 5.md"
+                "file": "Untitled.md"
               }
             }
           },
@@ -185,8 +208,9 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "611e7f284914abe0",
+  "active": "4ad435196b4cfc55",
   "lastOpenFiles": [
+    "Untitled.md",
     "Abgabe 5.md",
     "Abgabe 4.md",
     "Pasted image 20231127225616.png",
