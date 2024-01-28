@@ -2,3 +2,11 @@
 - [ ] schriftlicher Lebenslauf
 - [ ] 1 Passbild
 - [ ] Pass
+- [ ] Geburtsurkunde
+- [ ] Abitur
+- [ ] Subsidäre Schutz Bescheid
+- [ ] Rentenversicherung
+- [ ] Postbanknacheweis
+- [ ] Arbeitsbeschtätigung
+- [ ] Bafög 
+- [ ] 255 Euro
