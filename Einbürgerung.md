@@ -1,11 +1,11 @@
-- [ ] Pass und Ausweis
-- [ ] schriftlicher Lebenslauf
-- [ ] 1 Passbild
-- [ ] Pass
-- [ ] Geburtsurkunde
-- [ ] Abitur
-- [ ] Subsidäre Schutz Bescheid
-- [ ] Rentenversicherung
+- [ x ] Pass und Ausweis
+- [ N] schriftlicher Lebenslauf
+- [ x ] 1 Passbild
+- [ x ] Pass
+- [ x ] Geburtsurkunde
+- [x ] Abitur
+- [x ] Subsidäre Schutz Bescheid
+- [x ] Rentenversicherung
 - [ ] Postbanknacheweis
 - [ ] Arbeitsbeschtätigung
 - [ ] Bafög 
