@@ -1,4 +1,4 @@
-- [ ] Pass und Ausweiß
+- [ ] Pass und Ausweis
 - [ ] schriftlicher Lebenslauf
 - [ ] 1 Passbild
 - [ ] Pass
