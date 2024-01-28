@@ -9,4 +9,4 @@
 - [ ] Postbanknacheweis
 - [ ] Arbeitsbeschtätigung
 - [ ] Bafög 
-- [ ] 255 Euro
+- [ ] 255 Euro 
