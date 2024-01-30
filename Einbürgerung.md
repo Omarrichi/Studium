@@ -6,7 +6,7 @@
 - [x ] Abitur
 - [x ] Subsidäre Schutz Bescheid
 - [x ] Rentenversicherung
-- [ ] Postbanknacheweis
-- [ ] Arbeitsbeschtätigung
+- [x ] Postbanknacheweis
+- [x ] Arbeitsbeschtätigung
 - [ ] Bafög 
 - [ ] 255 Euro 
