@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Einbürgerung.md",
-                "mode": "source",
+                "file": "5. Semester/Datenkommunikation/3. Data Link Layer.md",
+                "mode": "preview",
                 "source": true
               }
             }
@@ -69,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "005a87686d04f700",
@@ -86,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Einbürgerung.md",
+                "file": "5. Semester/Datenkommunikation/3. Data Link Layer.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Einbürgerung.md",
+                "file": "5. Semester/Datenkommunikation/3. Data Link Layer.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Einbürgerung.md"
+                "file": "5. Semester/Datenkommunikation/3. Data Link Layer.md"
               }
             }
           },
@@ -168,12 +167,12 @@
   },
   "active": "4ad435196b4cfc55",
   "lastOpenFiles": [
+    "Pasted image 20231128005842.png",
+    "Pasted image 20231127234343.png",
+    "Pasted image 20231127225616.png",
     "Einbürgerung.md",
     "Abgabe 5.md",
     "Abgabe 4.md",
-    "Pasted image 20231127225616.png",
-    "Pasted image 20231127234343.png",
-    "Pasted image 20231128005842.png",
     "Pasted image 20231128004603.png",
     "5. Semester/Datenkommunikation/3. Data Link Layer.md",
     "5. Semester/Machine Learning/Untitled.md",
