@@ -4,35 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "368c3b384867fa35",
+        "id": "0f2e3ef0c1961ffa",
         "type": "tabs",
         "children": [
           {
-            "id": "4ad435196b4cfc55",
+            "id": "25bc9f48f8d848c8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "5. Semester/Datenkommunikation/3. Data Link Layer.md",
-                "mode": "source",
-                "source": true
-              }
-            }
-          },
-          {
-            "id": "f1d4b33f3535815a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "5. Semester/Datenkommunikation/3. Data Link Layer.md",
+                "file": "5. Semester/Datenkommunikation/4. Network Layer.md",
                 "mode": "source",
                 "source": true
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "5. Semester/Datenkommunikation/3. Data Link Layer.md",
+                "file": "5. Semester/Datenkommunikation/4. Network Layer.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "5. Semester/Datenkommunikation/3. Data Link Layer.md",
+                "file": "5. Semester/Datenkommunikation/4. Network Layer.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "5. Semester/Datenkommunikation/3. Data Link Layer.md"
+                "file": "5. Semester/Datenkommunikation/4. Network Layer.md"
               }
             }
           },
@@ -178,8 +165,11 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "f1d4b33f3535815a",
+  "active": "25bc9f48f8d848c8",
   "lastOpenFiles": [
+    "5. Semester/Datenkommunikation/3. Data Link Layer.md",
+    "5. Semester/Datenkommunikation/4. Network Layer.md",
+    "5. Semester/Datenkommunikation/1. Dienste und Protokolle.md",
     "Pasted image 20240227044408.png",
     "Pasted image 20240227044236.png",
     "Pasted image 20240227044216.png",
@@ -190,7 +180,6 @@
     "Abgabe 5.md",
     "Abgabe 4.md",
     "Pasted image 20231128004603.png",
-    "5. Semester/Datenkommunikation/3. Data Link Layer.md",
     "5. Semester/Machine Learning/Untitled.md",
     "5. Semester/IT-Sicherheit/Untitled.md",
     "5. Semester/Introduction to Artificial Intelligence/Untitled.md",
@@ -199,7 +188,6 @@
     "5. Semester/Berechenbarkeit und Komplexität/Untitled.md",
     "5. Semester/Berechenbarkeit und Komplexität/1.md",
     "5. Semester/Datenkommunikation/2. Physical Layer.md",
-    "5. Semester/Datenkommunikation/1. Dienste und Protokolle.md",
     "5. Semester/IT-Sicherheit",
     "5. Semester/Introduction to Artificial Intelligence",
     "5. Semester/Erfüllbarkeitsüberprüfung",
