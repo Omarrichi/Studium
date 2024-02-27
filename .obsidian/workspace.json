@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "5. Semester/Datenkommunikation/4. Network Layer.md",
+                "file": "5. Semester/Datenkommunikation/3. Data Link Layer.md",
                 "mode": "source",
                 "source": true
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "5. Semester/Datenkommunikation/4. Network Layer.md",
+                "file": "5. Semester/Datenkommunikation/3. Data Link Layer.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "5. Semester/Datenkommunikation/4. Network Layer.md",
+                "file": "5. Semester/Datenkommunikation/3. Data Link Layer.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "5. Semester/Datenkommunikation/4. Network Layer.md"
+                "file": "5. Semester/Datenkommunikation/3. Data Link Layer.md"
               }
             }
           },
@@ -167,9 +167,10 @@
   },
   "active": "25bc9f48f8d848c8",
   "lastOpenFiles": [
-    "5. Semester/Datenkommunikation/3. Data Link Layer.md",
-    "5. Semester/Datenkommunikation/4. Network Layer.md",
     "5. Semester/Datenkommunikation/1. Dienste und Protokolle.md",
+    "5. Semester/Datenkommunikation/3. Data Link Layer.md",
+    "5. Semester/Datenkommunikation/2. Physical Layer.md",
+    "5. Semester/Datenkommunikation/4. Network Layer.md",
     "Pasted image 20240227044408.png",
     "Pasted image 20240227044236.png",
     "Pasted image 20240227044216.png",
@@ -187,7 +188,6 @@
     "5. Semester/Einführung in Webtechnologien/Untitled.md",
     "5. Semester/Berechenbarkeit und Komplexität/Untitled.md",
     "5. Semester/Berechenbarkeit und Komplexität/1.md",
-    "5. Semester/Datenkommunikation/2. Physical Layer.md",
     "5. Semester/IT-Sicherheit",
     "5. Semester/Introduction to Artificial Intelligence",
     "5. Semester/Erfüllbarkeitsüberprüfung",
