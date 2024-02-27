@@ -23,9 +23,11 @@
             "id": "f1d4b33f3535815a",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.5.8"
+                "file": "5. Semester/Datenkommunikation/3. Data Link Layer.md",
+                "mode": "source",
+                "source": true
               }
             }
           }
