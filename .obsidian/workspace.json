@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "5. Semester/Datenkommunikation/3. Data Link Layer.md",
+                "file": "5. Semester/Einführung in Webtechnologien/Organisation und Geschichte.md",
                 "mode": "source",
                 "source": true
               }
             }
+          },
+          {
+            "id": "00f6ed3726901f4f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "5. Semester/Einführung in Webtechnologien/Grundlagen zu HTTP, HTML und CSS.md",
+                "mode": "preview",
+                "source": true
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -69,7 +82,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "005a87686d04f700",
@@ -85,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "5. Semester/Datenkommunikation/3. Data Link Layer.md",
+                "file": "5. Semester/Einführung in Webtechnologien/Grundlagen zu HTTP, HTML und CSS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +116,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "5. Semester/Datenkommunikation/3. Data Link Layer.md",
+                "file": "5. Semester/Einführung in Webtechnologien/Grundlagen zu HTTP, HTML und CSS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "5. Semester/Datenkommunikation/3. Data Link Layer.md"
+                "file": "5. Semester/Einführung in Webtechnologien/Grundlagen zu HTTP, HTML und CSS.md"
               }
             }
           },
@@ -165,10 +179,12 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "25bc9f48f8d848c8",
+  "active": "00f6ed3726901f4f",
   "lastOpenFiles": [
-    "5. Semester/Datenkommunikation/4. Network Layer.md",
+    "5. Semester/Einführung in Webtechnologien/Organisation und Geschichte.md",
+    "5. Semester/Einführung in Webtechnologien/Grundlagen zu HTTP, HTML und CSS.md",
     "5. Semester/Datenkommunikation/3. Data Link Layer.md",
+    "5. Semester/Datenkommunikation/4. Network Layer.md",
     "5. Semester/Datenkommunikation/1. Dienste und Protokolle.md",
     "5. Semester/Datenkommunikation/2. Physical Layer.md",
     "Pasted image 20240227044408.png",
@@ -185,7 +201,6 @@
     "5. Semester/IT-Sicherheit/Untitled.md",
     "5. Semester/Introduction to Artificial Intelligence/Untitled.md",
     "5. Semester/Erfüllbarkeitsüberprüfung/Untitled.md",
-    "5. Semester/Einführung in Webtechnologien/Untitled.md",
     "5. Semester/Berechenbarkeit und Komplexität/Untitled.md",
     "5. Semester/Berechenbarkeit und Komplexität/1.md",
     "5. Semester/IT-Sicherheit",
