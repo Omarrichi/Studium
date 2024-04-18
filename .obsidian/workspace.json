@@ -4,45 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "0f2e3ef0c1961ffa",
+        "id": "0f17f16f9ce993d2",
         "type": "tabs",
         "children": [
           {
-            "id": "25bc9f48f8d848c8",
+            "id": "3925084716893ce0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "5. Semester/Einführung in Webtechnologien/Organisation und Geschichte.md",
+                "file": "Reluplex.md",
                 "mode": "source",
                 "source": true
               }
             }
-          },
-          {
-            "id": "00f6ed3726901f4f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "5. Semester/Einführung in Webtechnologien/Grundlagen zu HTTP, HTML und CSS.md",
-                "mode": "preview",
-                "source": true
-              }
-            }
-          },
-          {
-            "id": "f7d80c48671d1f5c",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.5.11"
-              }
-            }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -92,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "005a87686d04f700",
@@ -109,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "5. Semester/Einführung in Webtechnologien/Grundlagen zu HTTP, HTML und CSS.md",
+                "file": "Reluplex.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "5. Semester/Einführung in Webtechnologien/Grundlagen zu HTTP, HTML und CSS.md",
+                "file": "Reluplex.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -149,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "5. Semester/Einführung in Webtechnologien/Grundlagen zu HTTP, HTML und CSS.md"
+                "file": "Reluplex.md"
               }
             }
           },
@@ -189,8 +165,9 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "f7d80c48671d1f5c",
+  "active": "3925084716893ce0",
   "lastOpenFiles": [
+    "Reluplex.md",
     "5. Semester/Einführung in Webtechnologien/Organisation und Geschichte.md",
     "5. Semester/Einführung in Webtechnologien/Grundlagen zu HTTP, HTML und CSS.md",
     "5. Semester/Datenkommunikation/3. Data Link Layer.md",
