@@ -22,4 +22,16 @@
 	- Case Splitting
 	- Worst-Case Efficiency (too low = not practical)
 		- Show in example
-- Reducing load with Reluplex:
+- Simplex Method:
+	- extending Simplex with ReLUs
+- Reluplex Method (ReLU + Simplex Method)
+	- explain Reluplex Method
+	- Practical example of Reluplex Method
+- Problems
+	- infinite Loops
+		- Solution: Case Splitting (minimized)
+- Improvements: 
+	- Bound tightening 
+	- using SMT
+	- Floating Point arithmetic 
+		- Solution for rounding errors
