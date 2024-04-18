@@ -7,10 +7,19 @@
 	- Functionality of Deep Neural Networks (DNNs) 
 		- Efficiency problems
 		- Reluplex reducing efficiency load (example)
-- Introduction to DNNs:
+- DNNs:
 	- brief explanation of DNNs
 		- using example
 	- what is verifying a Software
 		- generalization
 		- explain in example
-- 
+- Main Problem: activation Functions:
+	- Rectified Linear Units
+		- explain
+		- Function for the Algorithm
+		- NP-Complete
+- Linear Programms
+	- Case Splitting
+	- Worst-Case Efficiency (too low = not practical)
+		- Show in example
+- Reducing load with Reluplex:
