@@ -3,4 +3,14 @@
 	- overview on software written by ML
 	- Introduce Problem: Verifying ML-Software
 - Introduce an example of ML written software (Drone collision detection / Autonomos vehicles)
+- Briefly explain how these Software work:
+	- Functionality of Deep Neural Networks (DNNs) 
+		- Efficiency problems
+		- Reluplex reducing efficiency load (example)
+- Introduction to DNNs:
+	- brief explanation of DNNs
+		- using example
+	- what is verifying a Software
+		- generalization
+		- explain in example
 - 
