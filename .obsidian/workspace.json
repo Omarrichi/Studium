@@ -30,9 +30,19 @@
                 "source": true
               }
             }
+          },
+          {
+            "id": "f7d80c48671d1f5c",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.5.11"
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -179,7 +189,7 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "00f6ed3726901f4f",
+  "active": "f7d80c48671d1f5c",
   "lastOpenFiles": [
     "5. Semester/Einführung in Webtechnologien/Organisation und Geschichte.md",
     "5. Semester/Einführung in Webtechnologien/Grundlagen zu HTTP, HTML und CSS.md",
