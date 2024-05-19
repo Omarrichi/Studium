@@ -58,4 +58,10 @@ write a simple C program following these specifications:
 
 ### Task 2.2 Thread global variable increment
 
-Modify the program from Task 2.1 
+Modify the program from Task 2.1 to use threads instead of fork(). Use the pthread API (```pthread_create```, ```pthread_exit```,```pthread_join```).
+
+*Question*: how many threads are created in total? Why is it different from the ```fork``` version
+
+### Task 2.3 Exec Syscall
+
+Write a C program that performs a ```fork()```. The child process should execute the ```ls /``` command using ```execl()```, while 
