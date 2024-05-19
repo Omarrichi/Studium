@@ -30,5 +30,5 @@ In a non-preemptive batch system, there are four jobs waiting to be executed wit
 
 ### Question 3:
 
-Suppose w
+Suppose we are operating a preemptive system using the algorithm identified in the previous question. At time t=10, two new processes arrive, E(2) and F(7). what is the current state of the processes? Which scheduling algorithm
 
