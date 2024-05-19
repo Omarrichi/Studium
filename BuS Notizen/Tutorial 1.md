@@ -6,7 +6,7 @@ Die Notizen ähnlich zum Tutorium sein, mit Grundlagen gefolgt von den Aufgaben.
 
 Ich werde versuchen, für jedes Tutorium-Blatt zwei Versionen zu machen, auf Deutsch und auf Englisch. 
 
-Ich habe mich auch entscheiden einen Discord Server zu erstellen für einfache Kommunikation. Das Beitreten ist natürlich freiwillig, es ist nur ein Angebot, denn dort erreicht ihr mich etwas schneller als per Mail
+Ich habe mich auch entscheiden einen Discord Server zu erstellen für einfache Kommunikation. Das Beitreten ist natürlich freiwillig, es ist nur ein Angebot, denn dort erreicht ihr mich etwas schneller als per Mail.
 https://discord.gg/97jDeFcXxZ
 ```
 
@@ -22,4 +22,4 @@ int main() {
 }
 ```
 
-How many processes are created during the exectution of this program?
+How many processes are created during the execution of this program?
