@@ -208,8 +208,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -223,7 +222,7 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "6bc9a7585440900a",
+  "active": "7dc384f2c2bac0b4",
   "lastOpenFiles": [
     "BuS Notizen/Tutorial 2.md",
     "BuS Notizen/Tutorial 1.md",

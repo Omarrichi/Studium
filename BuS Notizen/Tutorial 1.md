@@ -49,5 +49,9 @@ write a simple C program following these specifications:
 - Inside a loop, each iteration will:
 	- increment the global variable
 	- Call ```fork()```
-	- The child should print "Child" followed by its $\pi d$
+	- The child should print "Child" followed by its $pid$ and the value of the global variable 
+	- The parent should print “Parent” followed by its $pid$ and the value of the global variable
+	- When the global variable reaches 5, exit the loop and exit the program
+- Ensure that each parent and child processes continue to execute the loop until the variable reaches 5
 
+*Question*: Observe the output, how many processes are created by the end of execution? What happens if the loop doesn't stop so early?
