@@ -10,3 +10,16 @@ Ich habe mich auch entscheiden einen Discord Server zu erstellen für einfache K
 https://discord.gg/97jDeFcXxZ
 ```
 
+### Question 1: 
+
+Consider the following piece of C code:
+
+```c
+int main() {
+	fork();
+	fork();
+	exit();
+}
+```
+
+How many processes are created during the exectution of this program?
