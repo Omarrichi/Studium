@@ -55,3 +55,7 @@ write a simple C program following these specifications:
 - Ensure that each parent and child processes continue to execute the loop until the variable reaches 5
 
 *Question*: Observe the output, how many processes are created by the end of execution? What happens if the loop doesn't stop so early?
+
+### Task 2.2 Thread global variable increment
+
+Modify the program from Task 2.1 
