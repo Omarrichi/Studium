@@ -30,9 +30,24 @@ In a non-preemptive batch system, there are four jobs waiting to be executed wit
 
 ### Question 3:
 
-Suppose we are operating a preemptive system using the algorithm identified in the previous question. At time t=10, two new processes arrive, E(2) and F(7). what is the current state of the processes? Which scheduling algorithm should be employed now to minimize the average response time? What will be the sequence of execution  starting from t=10 to achive this goal?
+Suppose we are operating a preemptive system using the algorithm identified in the previous question. At time t=10, two new processes arrive, E(2) and F(7). what is the current state of the processes? Which scheduling algorithm should be employed now to minimize the average response time? What will be the sequence of execution  starting from t=10 to achieve this goal?
 
 
 ### Question 4:
 
-Why in addition to the states $ready$ and $running$, is ther
+Why in addition to the states $ready$ and $running$, is there another state called $blocked$? What is achieved by this state?
+
+Using the top program in the Linux shell, you can view the processes currently managed by the kernel. It provides a real-time view, including current information about process state, CPU usage, and memory usage. On a typical Linux system, you’ll notice that a large number of processes are in the sleeping state (corresponds to blocked based on our definition). This does not represent the ready state - which is combined with the running state in top. What do you suspect: why are so many processes in the blocked state?
+
+## Tasks
+
+### Task 2.1 Process and Process Creation
+
+write a simple C program following these specifications:
+
+- Create and initialize a global variable to 0
+- Inside a loop, each iteration will:
+	- increment the global variable
+	- Call ```fork()```
+	- The child should print "Child" followed by its $\pi d$
+
