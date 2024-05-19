@@ -2,5 +2,9 @@
 
 ```ad-note
 title: Allgemeines
-Die Notizen werden das gleiche Schema 
+Die Notizen ähnlich zum Tutorium sein, mit Grundlagen gefolgt von den Aufgaben.
+
+Ich werde versuchen, für jedes Tutorium-Blatt zwei Versionen zu machen, auf Deutsch und auf Englisch. 
+
+Bei Fragen oder ähnliches könnt ihr mich gerne 
 ```
