@@ -23,3 +23,12 @@ int main() {
 ```
 
 How many processes are created during the execution of this program?
+
+### Question 2:
+
+In a non-preemptive batch system, there are four jobs waiting to be executed with expected run times: A(9), B(6), C(3), D(5). Which scheduling algorithm should be used to minimize the average response time (latency)? What would be the optimal order for running these jobs?
+
+### Question 3:
+
+Suppose w
+
