@@ -83,3 +83,4 @@ int ret = execl("/bin/ls","ls", "/", NULL);
 Write a second C program that has the same behavior, except that it will create a new thread instead of a fork. The new thread will be calling the ```ls /``` command with ```execl()```. The main thread should be waiting for the child completion and print an exit message.
 
 *Questions*: What differences do you observe between using ```fork()``` and creating a new thread (```pthread_create()```) in this context?
+
