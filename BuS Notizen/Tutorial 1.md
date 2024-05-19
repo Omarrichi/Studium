@@ -30,5 +30,9 @@ In a non-preemptive batch system, there are four jobs waiting to be executed wit
 
 ### Question 3:
 
-Suppose we are operating a preemptive system using the algorithm identified in the previous question. At time t=10, two new processes arrive, E(2) and F(7). what is the current state of the processes? Which scheduling algorithm
+Suppose we are operating a preemptive system using the algorithm identified in the previous question. At time t=10, two new processes arrive, E(2) and F(7). what is the current state of the processes? Which scheduling algorithm should be employed now to minimize the average response time? What will be the sequence of execution  starting from t=10 to achive this goal?
 
+
+### Question 4:
+
+Why in addition to the states $ready$ and $running$, is ther
