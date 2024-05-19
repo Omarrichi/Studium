@@ -64,4 +64,18 @@ Modify the program from Task 2.1 to use threads instead of fork(). Use the pthre
 
 ### Task 2.3 Exec Syscall
 
-Write a C program that performs a ```fork()```. The child process should execute the ```ls /``` command using ```execl()```, while 
+Write a C program that performs a ```fork()```. The child process should execute the ```ls /``` command using ```execl()```, while the parent waits for the child to finish and then prints a completion message.
+
+Here is the example how to use the ```execl``` syscall:
+
+```c
+int execl(const char *pathname, const char *arg, ...
+/*, (char *) NULL */);
+```
+
+```c
+// note that:
+// - the argument after the executable should contain the 
+// - the last argument should be NULL
+int ret = execl("")
+```
