@@ -6,7 +6,6 @@
       {
         "id": "0f17f16f9ce993d2",
         "type": "tabs",
-        "dimension": 52.792617775619235,
         "children": [
           {
             "id": "3925084716893ce0",
@@ -26,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Untitled.md",
+                "file": "BuS Notes/Tutorial 00.md",
                 "mode": "preview",
                 "source": true
               }
@@ -38,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "BuS Notizen/Tutorial 0.md",
+                "file": "BuS Notizen/Tutorial 00.md",
                 "mode": "source",
                 "source": true
               }
@@ -50,33 +49,38 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "BuS Notizen/Tutorial 01.md",
+                "file": "BuS Notes/Tutorial 00.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "dc4680fa37fcc43b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "BuS Notes/Tutorial 01.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "b0e22ab8bfdf82eb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "BuS Notes/Tutorial 01.md",
                 "mode": "source",
                 "source": true
               }
             }
           }
         ],
-        "currentTab": 3
-      },
-      {
-        "id": "480fc1ac377436c8",
-        "type": "tabs",
-        "dimension": 47.207382224380765,
-        "children": [
-          {
-            "id": "6bc9a7585440900a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "BuS Notizen/Tutorial 01.md",
-                "mode": "preview",
-                "source": true
-              }
-            }
-          }
-        ]
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -126,7 +130,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "005a87686d04f700",
@@ -142,7 +147,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "BuS Notizen/Tutorial 01.md",
+                "file": "BuS Notes/Tutorial 01.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -159,7 +164,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "BuS Notizen/Tutorial 01.md",
+                "file": "BuS Notes/Tutorial 01.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -182,7 +187,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "BuS Notizen/Tutorial 01.md"
+                "file": "BuS Notes/Tutorial 01.md"
               }
             }
           },
@@ -222,14 +227,16 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "c5eaa8def02e900b",
+  "active": "b0e22ab8bfdf82eb",
   "lastOpenFiles": [
+    "BuS Notizen/Tutorial 01.md",
+    "BuS Notes/Tutorial 01.md",
+    "BuS Notes/Tutorial 02.md",
+    "BuS Notes/Tutorial 00.md",
+    "BuS Notizen/Tutorial 00.md",
     "BuS Notes",
     "BuS Notizen/Tutorial 02.md",
-    "BuS Notizen/Tutorial 01.md",
-    "Untitled.md",
     "5. Semester/Datenkommunikation/3. Data Link Layer.md",
-    "BuS Notizen/Tutorial 0.md",
     "BuS Notizen",
     "Pasted image 20240227044408.png",
     "Pasted image 20240227044236.png",
@@ -262,7 +269,6 @@
     "5. Semester/Machine Learning",
     "5. Semester/Untitled.md",
     "5. Semester/Datenkommunikation",
-    "5. Semester",
-    "Studium"
+    "5. Semester"
   ]
 }
