@@ -148,27 +148,38 @@ Modify the program from Task 2.1 to use threads instead of fork(). Use the pthre
 
 *Lösung:*
 ```c
-#include <stdio.h>  
-#include <stdlib.h>  
+#include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
-int global_variable = 0;  
-int main() {  
-pid_t pid;  
-while (global_variable++ < 5) {  
-pid = fork();  
-if (pid == -1) {  
-perror("fork");  
-exit(EXIT_FAILURE);  
-} else if (pid == 0)  
-printf("Child: Global variable = %d, PID = %d\n", global_variable,  
-getpid());  
-else  
-printf("Parent: Global variable = %d, PID = %d\n", global_variable,  
-getpid());  
-}  
-return 0;  
+
+int global_variable = 0;
+
+int main() {
+pid_t pid;
+
+	while (global_variable++ < 5) {
+	
+	pid = fork();
+	if (pid == -1) {
+		perror("fork");
+		exit(EXIT_FAILURE);
+	} else if (pid == 0)
+		printf("Child: Global variable = %d, PID = %d\n", global_variable, getpid());
+	else  
+		printf("Parent: Global variable = %d, PID = %d\n", global_variable, getpid());  
+	}  
+	return 0;  
 }
 ```
+
+1. Loop: 1 Prozess wird erzeugt: Gesamt = 2
+2. Loop: 2 Prozess wird erzeugt: Gesamt = 4
+3. Loop: 4 Prozess wird erzeugt: Gesamt = 8
+4. Loop: 8 Prozess wird erzeugt: Gesamt = 16
+5. Loop: 16 Prozess wird erzeugt: Gesamt = 32
+
+- Insgesamt gibt's 32 Prozesse, 31 davon sind neu erzeugt
+- Falls die Schleife weitergeht, dann erreicht man die maximale Anzahl an Prozesse in dem System, d
 
 ### Task 2.3 Exec Syscall
 
