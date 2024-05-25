@@ -2,7 +2,7 @@
 
 ```ad-note
 title: Allgemeines
-Die Notizen ähnlich zum Tutorium sein, mit Grundlagen gefolgt von den Aufgaben.
+Die Notizen werden ähnlich zum Tutorium sein, mit Grundlagen gefolgt von den Aufgaben.
 
 Ich werde versuchen, für jedes Tutorium-Blatt zwei Versionen zu machen, auf Deutsch und auf Englisch. 
 
@@ -33,24 +33,27 @@ How many processes are created during the execution of this program?
 	- Beim Ausführen von Fork, bekommt man einen Resultat zurück (einen PID zurück).
 		- Falls dieser Resultat $-1$ ist, dann ist fork fehlgeschlagen
 		- Falls diese $> 0$ ist, dann ist der Resultat, die PID von dem Vater prozess, und er hat den Resultat zurückgegeben 
-		- Falls diese $= 0$ ist, dann ist das Kindprozess angesprochen
-	- Durch diese Unterscheidung, kann man mit Anfragen nach fork Resultat, Anweisungen nur für das Kind bzw. nur für den Vater geben
+		- Falls diese $= 0$ ist, dann ist das Kindprozess angesprochen worden und hat 0 zurück gegeben
+	- Durch diese Unterscheidung, kann man mit Anfragen nach fork Resultaten, Anweisungen nur für das Kind bzw. nur für den Vater geben
 
 *Lösung:*
 ```mermaid
 graph TD;
-    A((fork)) --> B((fork));
-    A((fork)) --> C((fork));
-    B((fork)) --> D[A];
-    B((fork)) --> E[B];
-    C((fork)) --> F[C];
-    C((fork)) --> G[D];
+    A((fork)) -->|v| B((fork));
+    A((fork)) -->|k| C((fork));
+    B((fork)) -->|v| D[A];
+    B((fork)) -->|k| E[B];
+    C((fork)) -->|k| F[C];
+    C((fork)) -->|k| G[D];
     
 
 ```
+Das hier ist nur ein Beispiel Forkbaum zur Veranschaulichung, links geht immer das Vaterprozess weiter, und rechts werden dann die Kindprozesse erzeugt,
 
 - erstes fork: ein Vater erzeugt ein Kind prozess
 - zweites fork: Jede von den zwei Prozesse erzeugt weiter ein Kindprozess
+Insgesamt haben wir 4 Prozesse, davon sind 3 durch die forks neu erzeugt worden
+
 ### Question 2:
 
 In a non-preemptive batch system, there are four jobs waiting to be executed with expected run times: A(9), B(6), C(3), D(5). Which scheduling algorithm should be used to minimize the average response time (latency)? What would be the optimal order for running these jobs?
