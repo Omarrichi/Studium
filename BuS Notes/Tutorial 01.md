@@ -39,12 +39,12 @@ How many processes are created during the execution of this program?
 *Lösung:*
 ```mermaid
 graph TD;
-    A((fork)) -->|v| B((fork));
-    A((fork)) -->|k| C((fork));
-    B((fork)) -->|v| D[A];
-    B((fork)) -->|k| E[B];
-    C((fork)) -->|k| F[C];
-    C((fork)) -->|k| G[D];
+    A((fork)) -->|p| B((fork));
+    A((fork)) -->|c| C((fork));
+    B((fork)) -->|p| D[A];
+    B((fork)) -->|c| E[B];
+    C((fork)) -->|c| F[C];
+    C((fork)) -->|c| G[D];
     
 
 ```
@@ -92,13 +92,14 @@ $$\frac{(3+(3+5)+(3+5+6)+(3+5+6+9))}{4}=12$$
 
 Suppose we are operating a preemptive system using the algorithm identified in the previous question. At time t=10, two new processes arrive, E(2) and F(7). what is the current state of the processes? Which scheduling algorithm should be employed now to minimize the average response time? What will be the sequence of execution  starting from t=10 to achieve this goal?
 
-*Lösung:* 
-- Wir nehmen die geänderte Version von SPT nämlich SRPT
-- Bei Zeit $t = 10$ werden $C(3)+D(5)$ ihre Ausführung durch haben. $B$ wird dann für zwei Zeiteinheiten ausgeführt.
-- Folgende Prozesse sind nun geblieben: $B(4),A(9),E(2),F(7)$
-- Bei Zeit 10 werden wir einen Kontextwechsel haben, da $E(2)$, weniger Ausführungszeit hat als $B(4)$
-- Die neue Reihenfolge ist somit: $E(2),B(4),F(7),A(9)$
-- Die Latenz ab $t=10$ ist somit: $$\frac{(2+(2+4)+(2+4+7)+(2+4+7+9))}{4}=10.75$$
+_Solution:_
+
+- We will use the modified version of SPT, namely SRPT.
+- At time $t = 10$, $C(3)$ and $D(5)$ will have completed their execution. $B$ will then be executed for two units of time.
+- The remaining processes are now: $B(4),A(9),E(2),F(7)$
+- At time 10, we will have a context switch, as $E(2)$ has less execution time left than $B(4)$.
+- The new order is therefore: $E(2),B(4),F(7),A(9)$
+-The latency from $t=10$ onwards is thus: $$\frac{(2+(2+4)+(2+4+7)+(2+4+7+9))}{4}=10.75$$
 
 
 ### Question 4:
@@ -107,8 +108,8 @@ Why in addition to the states $ready$ and $running$, is there another state call
 
 Using the top program in the Linux shell, you can view the processes currently managed by the kernel. It provides a real-time view, including current information about process state, CPU usage, and memory usage. On a typical Linux system, you’ll notice that a large number of processes are in the sleeping state (corresponds to blocked based on our definition). This does not represent the ready state - which is combined with the running state in top. What do you suspect: why are so many processes in the blocked state?
 
-*Grundlagen:* 
-Prozess-Zustands-Diagramm:
+_Basics:_ 
+Process State Diagram:
 
 ```mermaid
 stateDiagram
@@ -120,8 +121,8 @@ running --> terminated
 waiting --> ready
 ```
 
-- Diese Prozesse, sind in der Regel I/O prozesse, die nur ausgeführt werden sollen wenn sie benutzt bzw. genötigt werden.
-- Wenn sie nicht benutzt werden zum Beispiel ein Drucker, werden sie keine CPU-Zeit bekommen, damit sie nicht die CPU umsonst blockieren.
+- These processes are typically I/O processes that should only be executed when they are being used or required.
+- If they are not being used, for example, a printer, they will not receive CPU time to prevent them from unnecessarily blocking the CPU.
 
 ## Tasks
 
@@ -167,14 +168,13 @@ pid_t pid;
 }
 ```
 
-1. Loop: 1 Prozess wird erzeugt: Gesamt = 2
-2. Loop: 2 Prozess wird erzeugt: Gesamt = 4
-3. Loop: 4 Prozess wird erzeugt: Gesamt = 8
-4. Loop: 8 Prozess wird erzeugt: Gesamt = 16
-5. Loop: 16 Prozess wird erzeugt: Gesamt = 32
+1st loop: 1 process created, total = 2 
+2nd loop: 2 processes created, total = 4 
+3rd loop: 4 processes created, total = 8 
+4th loop: 8 processes created, total = 16 
+5th loop: 16 processes created, total = 32
 
-- Insgesamt gibt's 32 Prozesse, 31 davon sind neu erzeugt
-- Falls die Schleife weitergeht, dann erreicht man die maximale Anzahl an Prozesse in dem System, diese wird als Fork-Bomb bezeichnet, und das System stürzt ab. 
+ 
 
 ### Task 2.2 Thread global variable increment
 
