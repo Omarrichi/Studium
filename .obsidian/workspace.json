@@ -6,7 +6,6 @@
       {
         "id": "0f17f16f9ce993d2",
         "type": "tabs",
-        "dimension": 99.99999999999999,
         "children": [
           {
             "id": "3925084716893ce0",
@@ -69,7 +68,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -135,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Untitled.md",
+                "file": "BuS Notizen/Tutorial 1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -152,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Untitled.md",
+                "file": "BuS Notizen/Tutorial 1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -175,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Untitled.md"
+                "file": "BuS Notizen/Tutorial 1.md"
               }
             }
           },
@@ -215,10 +214,10 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "f12023f97399840f",
+  "active": "e6b5f8462cfb9d39",
   "lastOpenFiles": [
-    "5. Semester/Datenkommunikation/3. Data Link Layer.md",
     "Untitled.md",
+    "5. Semester/Datenkommunikation/3. Data Link Layer.md",
     "BuS Notizen/Tutorial 1.md",
     "BuS Notizen/Tutorial 2.md",
     "BuS Notizen/Tutorial 0.md",
