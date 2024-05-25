@@ -60,6 +60,7 @@ In a non-preemptive batch system, there are four jobs waiting to be executed wit
 
 *Grundlagen:*
 
+
 Was ist Scheduling?
 - Verteilung und Zuweisung von begrenzten Ressourcen an Prozessen
     - Wenn z.B. zwei Prozesse existieren, dann entscheidet der Scheduler welcher Prozess als nächstes ausgeführt werden soll.
@@ -108,7 +109,11 @@ Using the top program in the Linux shell, you can view the processes currently m
 *Grundlagen:* 
 Prozess-Zustands-Diagramm:
 
-
+```mermaid
+stateDiagram
+new --> ready
+ready --> running
+```
 
 ## Tasks
 
