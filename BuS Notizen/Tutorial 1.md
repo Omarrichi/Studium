@@ -36,7 +36,14 @@ How many processes are created during the execution of this program?
 		- Falls diese $= 0$ ist, dann ist das Kindprozess angesprochen
 	- Durch diese Unterscheidung, kann man mit Anfragen nach fork Resultat, Anweisungen nur für das Kind bzw. nur für den Vater geben
 
+*Lösung:*
+```mermaid
+graph TD;
+    ((fork1))-->fork2;
+    fork1-->fork2`;
+    
 
+```
 ### Question 2:
 
 In a non-preemptive batch system, there are four jobs waiting to be executed with expected run times: A(9), B(6), C(3), D(5). Which scheduling algorithm should be used to minimize the average response time (latency)? What would be the optimal order for running these jobs?
