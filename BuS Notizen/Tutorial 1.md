@@ -139,14 +139,8 @@ write a simple C program following these specifications:
 
 *Question*: Observe the output, how many processes are created by the end of execution? What happens if the loop doesn't stop so early?
 
-### Task 2.2 Thread global variable increment
-
-Modify the program from Task 2.1 to use threads instead of fork(). Use the pthread API (```pthread_create```, ```pthread_exit```,```pthread_join```).
-
-*Question*: how many threads are created in total? Why is it different from the ```fork``` version
-
-
 *Lösung:*
+
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -179,7 +173,49 @@ pid_t pid;
 5. Loop: 16 Prozess wird erzeugt: Gesamt = 32
 
 - Insgesamt gibt's 32 Prozesse, 31 davon sind neu erzeugt
-- Falls die Schleife weitergeht, dann erreicht man die maximale Anzahl an Prozesse in dem System, d
+- Falls die Schleife weitergeht, dann erreicht man die maximale Anzahl an Prozesse in dem System, diese wird als Fork-Bomb bezeichnet, und das System stürzt ab. 
+
+### Task 2.2 Thread global variable increment
+
+Modify the program from Task 2.1 to use threads instead of fork(). Use the pthread API (```pthread_create```, ```pthread_exit```,```pthread_join```).
+
+*Question*: how many threads are created in total? Why is it different from the ```fork``` version
+
+*Lösung:*
+
+```c
+#include <pthread.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+int global_variable = 0;
+void *thread_routine(void *args) {
+  pthread_t current = (pthread_t)args;
+  /* maximum number of threads that a thread can create, in this specific case
+   */
+  pthread_t thread_id[5];
+  /* we keep track of the number of threads created within this thread */
+  int nb_childs = 0;
+  while (global_variable < 5) {
+    global_variable++;
+    printf("Thread %lu, Global variable %d\n", current, global_variable);
+    pthread_create(&thread_id[nb_childs], NULL, thread_routine,
+                   &thread_id[nb_childs]);
+    nb_childs++;
+  }
+  for (int id = 0; id < nb_childs; id++) {
+    pthread_join(thread_id[id], NULL);
+  }
+  return NULL;
+}
+int main() {
+  long main_thread_id = 0;
+  thread_routine(&main_thread_id);
+  return 0;
+}
+
+```
+
 
 ### Task 2.3 Exec Syscall
 
