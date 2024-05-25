@@ -52,11 +52,34 @@ Das hier ist nur ein Beispiel Forkbaum zur Veranschaulichung, links geht immer d
 
 - erstes fork: ein Vater erzeugt ein Kind prozess
 - zweites fork: Jede von den zwei Prozesse erzeugt weiter ein Kindprozess
-Insgesamt haben wir 4 Prozesse, davon sind 3 durch die forks neu erzeugt worden
+- Insgesamt haben wir 4 Prozesse, davon sind 3 durch die forks neu erzeugt worden
 
 ### Question 2:
 
 In a non-preemptive batch system, there are four jobs waiting to be executed with expected run times: A(9), B(6), C(3), D(5). Which scheduling algorithm should be used to minimize the average response time (latency)? What would be the optimal order for running these jobs?
+
+*Grundlagen:*
+
+Was ist Scheduling?
+- Verteilung und Zuweisung von begrenzten Ressourcen an Prozessen
+    - Wenn z.B. zwei Prozesse existieren, dann entscheidet der Scheduler welcher Prozess als nächstes ausgeführt werden soll.
+- Es gibt mehrere Schedulingstrategien, die versuchen folgende Ziele zu erreichen:
+    1. Fairness: Jeder Prozess soll fair behandelt werden, D.h jeder Prozess soll nach einer gewissen Zeit seine CPU-Zuteilung bekommen
+    2. Auslastung der CPU: Die CPU darf keine Pause haben, sie soll möglichst ausgelastet werden
+    3. Durchsatz maximieren: Die Anzahl der zubearbeiteten Prozesse soll pro Zeiteinheit möglichst hoch sein.
+    4. Minimierung der Ausführungszeit: Diese beginnt wenn der Prozess an kommt, und endet wenn der Prozess terminiert, Wir können nicht ändern wie lange ein Prozess braucht, jedoch können wir dafür sorgen, dass er nicht viel warten muss zum Beispiel.
+    5. Antwortzeit minimieren: sorgen für schnelle Reaktionen des Systems auf die Eingaben, also die Zeitspanne zwischen ankommen des Prozesses und die erste Ausführung sollte minimiert sein.
+
+beim Scheduling unterscheidet man zwischen **Präemptiv** und **Non-Präemptiv**
+
+|                                  Präemptiv                                   |                      Non-Präemptiv                       |
+|:---------------------------------------------------------------------------:|:--------------------------------------------------------:|
+|                     Ermöglicht Prozesse zu unterbrechen                     |           Prozesse laufen bis sie terminieren  (Oder der PC wird ausgeschaltet)          |
+|               Andere Prozess können zwischengeschoben werden                |                          |
+|              Unterbrochenen Prozesse können fortgesetzt werden              |                                                          |
+|           Bsp: Round Robin, SRPT (Shortest Remaining Time First)            |                      Bsp: FIFO, SPT                      | 
+| Nachteil: höhe Anzahl an Kontextwechsel (Verlängert die Zeit bis Bedingung) | Nachteil: Prozesse können für eine lange Zeit blockeiren |
+
 
 ### Question 3:
 

@@ -6,6 +6,7 @@
       {
         "id": "0f17f16f9ce993d2",
         "type": "tabs",
+        "dimension": 53.640776699029125,
         "children": [
           {
             "id": "3925084716893ce0",
@@ -61,6 +62,7 @@
       {
         "id": "480fc1ac377436c8",
         "type": "tabs",
+        "dimension": 46.359223300970875,
         "children": [
           {
             "id": "6bc9a7585440900a",
@@ -124,7 +126,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "005a87686d04f700",
@@ -220,7 +223,7 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "6bc9a7585440900a",
+  "active": "e6b5f8462cfb9d39",
   "lastOpenFiles": [
     "Untitled.md",
     "5. Semester/Datenkommunikation/3. Data Link Layer.md",
