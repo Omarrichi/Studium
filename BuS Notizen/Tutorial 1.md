@@ -292,7 +292,7 @@ int main() {
 
 *Questions*: What differences do you observe between using ```fork()``` and creating a new thread (```pthread_create()```) in this context?
 
-Wir bemerken, dass der Hauptthread seine Nachricht nie ausgibt (in der threaded Version). Das Kind ruft exec auf, wodurch sein Adressraum durch den Adressraum des ls-Executables ersetzt wird. Da Eltern- und Kindprozess denselben Adressraum teilen, wird der gesamte Adressraum der beiden Threads ebenfalls durch den Code von ls ersetzt. Da es keinen Sinn ergeben würde, den Hauptthread beliebigen Code ausführen zu lassen, enthält die Implementierung des Systemaufrufs folgenden Kommentar:
+Wir bemerken, dass der Hauptthread seine Nachricht nie ausgibt (in der threaded Version). Das Kind ruft ```exec``` auf, wodurch sein Adressraum durch den Adressraum des ```ls```-Executables ersetzt wird. Da Eltern- und Kindprozess denselben Adressraum teilen, wird der gesamte Adressraum der beiden Threads ebenfalls durch den Code von ```ls``` ersetzt. Da es keinen Sinn ergeben würde, den Hauptthread beliebigen Code ausführen zu lassen, enthält die Implementierung des Systemaufrufs folgenden Kommentar:
 
 ```ad-abstract
 title: All threads other than the calling thread are destroyed during an execve(). Mutexes, condition variables, and other pthreads objects are not preserved.
@@ -300,3 +300,29 @@ title: All threads other than the calling thread are destroyed during an execve(
 
 - Beachtet, dass ```execl()```, die Version, die wir verwendet haben, immer ```
 execve()``` aufruft
+
+
+### Task 2.4 Scheduling Algorithms Implementation
+
+For this week’s assignment, you will be implementing various scheduling algorithms seen during the lecture. It will include some interactive and batch scheduler. 
+Begin by defining C structs that can manipulate abstract programs. Consider the necessary fields these structs will require, as well as additional structures needed by an operating system to facilitate scheduling (events, states, etc.). 
+Some schedulers are preemptive, what additional event would be needed?
+
+*Questions:*
+1. Define a ```struct``` for representing a program ( ```task``` ). What fields should this ```struct``` include to manage program execution and scheduling? Provide a detailed list of essential fields and their purposes.
+2. Describe subsequent data structures that an operating system would use to handle scheduling. How would this structure maintain and manage the list of ready processes efficiently? Discuss possible implementations.
+
+
+```c
+	// Scheduling-related enum
+	enum state {
+	BLOCKED,
+	RUNNING,
+	READY
+	};
+
+	enum event {
+	START,
+	WAIT,
+	WAKE}
+```
