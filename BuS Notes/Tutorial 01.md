@@ -32,9 +32,9 @@ How many processes are created during the execution of this program?
 	- Each process has a unique PID, which allows us to distinguish between the parent and child processes.
 	- When executing fork, you get a result back (a PID).
 		- If this result is −1-1−1, then fork has failed.
-		- if it is $> 0$, then the result is the PID of the parent process, wjhi 
-		- Falls diese $= 0$ ist, dann ist das Kindprozess angesprochen worden und hat 0 zurück gegeben
-	- Durch diese Unterscheidung, kann man mit Anfragen nach fork Resultaten, Anweisungen nur für das Kind bzw. nur für den Vater geben
+		- if it is $> 0$, then the result is the PID of the parent process, which has returned the result. 
+		- if it is $= 0$, then the child process is being addressed and has returned $0$
+	- Through this distinction, you can issue instructions only for the child or only for the parent by checking the fork results.
 
 *Lösung:*
 ```mermaid
@@ -48,11 +48,12 @@ graph TD;
     
 
 ```
-Das hier ist nur ein Beispiel Forkbaum zur Veranschaulichung, links geht immer das Vaterprozess weiter, und rechts werden dann die Kindprozesse erzeugt,
 
-- erstes fork: ein Vater erzeugt ein Kind prozess
-- zweites fork: Jede von den zwei Prozesse erzeugt weiter ein Kindprozess
-- Insgesamt haben wir 4 Prozesse, davon sind 3 durch die forks neu erzeugt worden
+This is just an example fork tree for illustration. The parent process always continues to the left, and the child processes are created to the right.
+
+- First fork: 1 parent creates 1 child
+- Second fork: each of the two processes create an additional process
+- We end up with 3 new processes created
 
 ### Question 2:
 
@@ -61,10 +62,10 @@ In a non-preemptive batch system, there are four jobs waiting to be executed wit
 *Grundlagen:*
 
 
-Was ist Scheduling?
-- Verteilung und Zuweisung von begrenzten Ressourcen an Prozessen
-    - Wenn z.B. zwei Prozesse existieren, dann entscheidet der Scheduler welcher Prozess als nächstes ausgeführt werden soll.
-- Es gibt mehrere Schedulingstrategien, die versuchen folgende Ziele zu erreichen:
+What is Scheduling?
+- Distribution and allocation of limited resources to processes.
+    - For example, if two processes exist, the scheduler decides which process should be executed next.
+- There are several scheduling strategies that aim to achieve the following goals:
     1. Fairness: Jeder Prozess soll fair behandelt werden, D.h jeder Prozess soll nach einer gewissen Zeit seine CPU-Zuteilung bekommen
     2. Auslastung der CPU: Die CPU darf keine Pause haben, sie soll möglichst ausgelastet werden
     3. Durchsatz maximieren: Die Anzahl der zubearbeiteten Prozesse soll pro Zeiteinheit möglichst hoch sein.
