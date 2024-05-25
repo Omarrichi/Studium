@@ -235,7 +235,68 @@ int execl(const char *pathname, const char *arg, ...
 int ret = execl("/bin/ls","ls", "/", NULL);
 ```
 
+*Lösung:*
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/wait.h>
+#include <unistd.h>
+
+int main() {
+  pid_t pid = fork();
+
+  if (pid == 0) {
+    if (!execl("/bin/ls", "ls", "/", NULL)) {
+      perror("execve\n");
+    }
+  } else if (pid == -1) {
+  	perror("fork");
+  }
+  wait(&pid);
+
+  printf("\nChild exited!\n");
+}
+
+```
+
 Write a second C program that has the same behavior, except that it will create a new thread instead of a fork. The new thread will be calling the ```ls /``` command with ```execl()```. The main thread should be waiting for the child completion and print an exit message.
+
+*Lösung:*
+
+```c
+#include <stdio.h>
+#include <pthread.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+void *routine(void *arg) {
+  if (!execve("/bin/ls", arg, NULL)) {
+	  perror("execve");
+  }
+  return NULL;
+}
+
+int main() {
+  pthread_t tid;
+
+  char *args[] = {"ls", "/", NULL};
+  pthread_create(&tid, NULL, routine, args);
+  pthread_join(tid, NULL);
+
+  printf("\nchild exited\n");
+}
+
+```
+
 
 *Questions*: What differences do you observe between using ```fork()``` and creating a new thread (```pthread_create()```) in this context?
 
+Wir bemerken, dass der Hauptthread seine Nachricht nie ausgibt (in der threaded Version). Das Kind ruft exec auf, wodurch sein Adressraum durch den Adressraum des ls-Executables ersetzt wird. Da Eltern- und Kindprozess denselben Adressraum teilen, wird der gesamte Adressraum der beiden Threads ebenfalls durch den Code von ls ersetzt. Da es keinen Sinn ergeben würde, den Hauptthread beliebigen Code ausführen zu lassen, enthält die Implementierung des Systemaufrufs folgenden Kommentar:
+
+```ad-abstract
+title: All threads other than the calling thread are destroyed during an execve(). Mutexes, condition variables, and other pthreads objects are not preserved.
+```
+
+- Beachtet, dass ```execl()```, die Version, die wir verwendet haben, immer ```
+execve()``` aufruft
