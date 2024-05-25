@@ -54,7 +54,14 @@
                 "source": true
               }
             }
-          },
+          }
+        ],
+        "currentTab": 3
+      },
+      {
+        "id": "480fc1ac377436c8",
+        "type": "tabs",
+        "children": [
           {
             "id": "6bc9a7585440900a",
             "type": "leaf",
@@ -62,13 +69,12 @@
               "type": "markdown",
               "state": {
                 "file": "BuS Notizen/Tutorial 1.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": true
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -214,7 +220,7 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "e6b5f8462cfb9d39",
+  "active": "6bc9a7585440900a",
   "lastOpenFiles": [
     "Untitled.md",
     "5. Semester/Datenkommunikation/3. Data Link Layer.md",
