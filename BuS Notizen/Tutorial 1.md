@@ -72,14 +72,19 @@ Was ist Scheduling?
 
 beim Scheduling unterscheidet man zwischen **Präemptiv** und **Non-Präemptiv**
 
-|                                  Präemptiv                                   |                      Non-Präemptiv                       |
-|:---------------------------------------------------------------------------:|:--------------------------------------------------------:|
-|                     Ermöglicht Prozesse zu unterbrechen                     |           Prozesse laufen bis sie terminieren  (Oder der PC wird ausgeschaltet)          |
-|               Andere Prozess können zwischengeschoben werden                |                          |
-|              Unterbrochenen Prozesse können fortgesetzt werden              |                                                          |
-|           Bsp: Round Robin, SRPT (Shortest Remaining Time First)            |                      Bsp: FIFO, SPT                      | 
-| Nachteil: höhe Anzahl an Kontextwechsel (Verlängert die Zeit bis Bedingung) | Nachteil: Prozesse können für eine lange Zeit blockeiren |
+|                                  Präemptiv                                  |                             Non-Präemptiv                             |
+|:---------------------------------------------------------------------------:|:---------------------------------------------------------------------:|
+|                     Ermöglicht Prozesse zu unterbrechen                     | Prozesse laufen bis sie terminieren  (Oder der PC wird ausgeschaltet) |
+|               Andere Prozess können zwischengeschoben werden                |                                                                       | 
+|              Unterbrochenen Prozesse können fortgesetzt werden              |                                                                       |
+|           Bsp: Round Robin, SRPT (Shortest Remaining Time First)            |                            Bsp: FIFO, SPT                             |
+| Nachteil: höhe Anzahl an Kontextwechsel (Verlängert die Zeit bis Bedingung) |       Nachteil: Prozesse können für eine lange Zeit blockieren        |
 
+*Lösung:* 
+- In der Frage ist lediglich die erwartete Laufzeit gegeben, deswegen entscheiden wir uns für SPT (da diese Methode sich nur auf die Ausführungszeit fokussiert).
+- Die Reihenfolge ist dann: $C(3),D(5)B(6),A(9)$
+- die Latenz wird hierfür folgendes gerechnet:
+- $$$$
 
 ### Question 3:
 
