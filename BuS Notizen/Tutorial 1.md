@@ -113,7 +113,14 @@ Prozess-Zustands-Diagramm:
 stateDiagram
 new --> ready
 ready --> running
+running --> ready
+running --> waiting
+running --> terminated
+waiting --> ready
 ```
+
+- Diese Prozesse, sind in der Regel I/O prozesse, die nur ausgeführt werden sollen wenn sie benutzt bzw. genötigt werden.
+- Wenn sie nicht benutzt werden zum Beispiel ein Drucker, werden sie keine CPU-Zeit bekommen, damit sie nicht die CPU umsonst blockieren.
 
 ## Tasks
 
@@ -137,6 +144,31 @@ write a simple C program following these specifications:
 Modify the program from Task 2.1 to use threads instead of fork(). Use the pthread API (```pthread_create```, ```pthread_exit```,```pthread_join```).
 
 *Question*: how many threads are created in total? Why is it different from the ```fork``` version
+
+
+*Lösung:*
+```c
+#include <stdio.h>  
+#include <stdlib.h>  
+#include <unistd.h>
+int global_variable = 0;  
+int main() {  
+pid_t pid;  
+while (global_variable++ < 5) {  
+pid = fork();  
+if (pid == -1) {  
+perror("fork");  
+exit(EXIT_FAILURE);  
+} else if (pid == 0)  
+printf("Child: Global variable = %d, PID = %d\n", global_variable,  
+getpid());  
+else  
+printf("Parent: Global variable = %d, PID = %d\n", global_variable,  
+getpid());  
+}  
+return 0;  
+}
+```
 
 ### Task 2.3 Exec Syscall
 
