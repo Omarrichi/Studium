@@ -84,7 +84,7 @@ beim Scheduling unterscheidet man zwischen **Präemptiv** und **Non-Präemptiv**
 - In der Frage ist lediglich die erwartete Laufzeit gegeben, deswegen entscheiden wir uns für SPT (da diese Methode sich nur auf die Ausführungszeit fokussiert).
 - Die Reihenfolge ist dann: $C(3),D(5)B(6),A(9)$
 - die Latenz wird hierfür folgendes gerechnet:
-$$\frac{(0+3(3+5)+(3+5+6)+(3+5+6+9)}{4}=12$$
+$$\frac{(3+(3+5)+(3+5+6)+(3+5+6+9))}{4}=12$$
 
 ### Question 3:
 
@@ -94,6 +94,9 @@ Suppose we are operating a preemptive system using the algorithm identified in t
 - Wir nehmen die geänderte Version von SPT nämlich SRPT
 - Bei Zeit $t = 10$ werden $C(3)+D(5)$ ihre Ausführung durch haben. $B$ wird dann für zwei Zeiteinheiten ausgeführt.
 - Folgende Prozesse sind nun geblieben: $B(4),A(9),E(2),F(7)$
+- Bei Zeit 10 werden wir einen Kontextwechsel haben, da $E(2)$, weniger Ausführungszeit hat als $B(4)$
+- Die neue Reihenfolge ist somit: $E(2),B(4),F(7),A(9)$
+- Die Latenz ab $t=10$ ist somit: $$\frac{(2+(2+4)+(2+4+7)+(2+4+7+9)))}{4}=10.75$$
 
 
 ### Question 4:
