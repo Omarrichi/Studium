@@ -174,7 +174,8 @@ pid_t pid;
 4th loop: 8 processes created, total = 16 
 5th loop: 16 processes created, total = 32
 
- 
+ - In total, there are 32 processes, with 31 of them being newly created.
+- If the loop keeps going, we would quickly saturate the number of processes in the operating system, which is usually called a fork bomb, and it can crash the system.
 
 ### Task 2.2 Thread global variable increment
 
@@ -182,7 +183,7 @@ Modify the program from Task 2.1 to use threads instead of fork(). Use the pthre
 
 *Question*: how many threads are created in total? Why is it different from the ```fork``` version
 
-*Lösung:*
+*Solution:*
 
 ```c
 #include <pthread.h>
@@ -217,6 +218,8 @@ int main() {
 
 ```
 
+- 5 threads are created. (Sometimes more threads can be created because of the lack of synchronization mechanisms).
+- The address space of every thread is now shared, so is the global variable. Every thread is incrementing the same variable until 5, so only five threads are created.
 
 ### Task 2.3 Exec Syscall
 
@@ -236,7 +239,7 @@ int execl(const char *pathname, const char *arg, ...
 int ret = execl("/bin/ls","ls", "/", NULL);
 ```
 
-*Lösung:*
+*Solution:*
 
 ```c
 #include <stdio.h>
@@ -263,7 +266,7 @@ int main() {
 
 Write a second C program that has the same behavior, except that it will create a new thread instead of a fork. The new thread will be calling the ```ls /``` command with ```execl()```. The main thread should be waiting for the child completion and print an exit message.
 
-*Lösung:*
+*Solution:*
 
 ```c
 #include <stdio.h>
@@ -293,7 +296,7 @@ int main() {
 
 *Questions*: What differences do you observe between using ```fork()``` and creating a new thread (```pthread_create()```) in this context?
 
-Wir bemerken, dass der Hauptthread seine Nachricht nie ausgibt (in der threaded Version). Das Kind ruft ```exec``` auf, wodurch sein Adressraum durch den Adressraum des ```ls```-Executables ersetzt wird. Da Eltern- und Kindprozess denselben Adressraum teilen, wird der gesamte Adressraum der beiden Threads ebenfalls durch den Code von ```ls``` ersetzt. Da es keinen Sinn ergeben würde, den Hauptthread beliebigen Code ausführen zu lassen, enthält die Implementierung des Systemaufrufs folgenden Kommentar:
+We notice that the main thread never prints its message (in the threaded version). The child calls ```exec``` causing its address space to be replaced with the address space of the ```ls``` executable. Since the parent and the child share the same address space, the whole address space of the two threads is replaced as well by the code of ```ls``` . Since it wouldn’t make sense to keep the main from executing arbitrary code, the implementation of the syscall includes the follow comment:
 
 ```ad-abstract
 title: All threads other than the calling thread are destroyed during an execve(). Mutexes, condition variables, and other pthreads objects are not preserved.

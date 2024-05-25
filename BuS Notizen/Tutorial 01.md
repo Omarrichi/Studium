@@ -216,6 +216,8 @@ int main() {
 
 ```
 
+- Es werden 5 Threads erstellt. (Manchmal können mehr Threads erstellt werden, aufgrund des Mangels an Synchronisationsmechanismen).
+- Der Adressraum jedes Threads wird nun geteilt, ebenso wie die globale Variable. Jeder Thread erhöht dieselbe Variable bis 5, daher werden nur fünf Threads erstellt.
 
 ### Task 2.3 Exec Syscall
 
