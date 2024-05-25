@@ -29,7 +29,12 @@ How many processes are created during the execution of this program?
 - read, write, open, close, fork
 - Allgemein zur fork:
 	- Fork erzeugt einen Kopieprozess aus einem Vaterprozess, beide Prozesse sind zunächst identisch. Die Kopie wird Kindprozess genannt und der originale Prozess wird Vaterprozess genannt.
-	- Jeder Prozess hat einen eindeutigen PID
+	- Jeder Prozess hat einen eindeutigen PID, damit können wir aber auch zwischen Vater- und Kindprozess unterscheiden
+	- Beim Ausführen von Fork, bekommt man einen Resultat zurück (einen PID zurück).
+		- Falls dieser Resultat $-1$ ist, dann ist fork fehlgeschlagen
+		- Falls diese $> 0$ ist, dann ist der Resultat, die PID von dem Vater prozess, und er hat den Resultat zurückgegeben 
+		- Falls diese $= 0$ ist, dann ist das Kindprozess angesprochen
+	- Durch diese Unterscheidung, kann man mit Anfragen nach fork Resultat, Anweisungen nur für das Kind bzw. nur für den Vater geben
 
 
 ### Question 2:
