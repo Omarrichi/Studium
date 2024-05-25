@@ -96,7 +96,7 @@ Suppose we are operating a preemptive system using the algorithm identified in t
 - Folgende Prozesse sind nun geblieben: $B(4),A(9),E(2),F(7)$
 - Bei Zeit 10 werden wir einen Kontextwechsel haben, da $E(2)$, weniger Ausführungszeit hat als $B(4)$
 - Die neue Reihenfolge ist somit: $E(2),B(4),F(7),A(9)$
-- Die Latenz ab $t=10$ ist somit: $$\frac{(2+(2+4)+(2+4+7)+(2+4+7+9)))}{4}=10.75$$
+- Die Latenz ab $t=10$ ist somit: $$\frac{(2+(2+4)+(2+4+7)+(2+4+7+9))}{4}=10.75$$
 
 
 ### Question 4:
@@ -104,6 +104,11 @@ Suppose we are operating a preemptive system using the algorithm identified in t
 Why in addition to the states $ready$ and $running$, is there another state called $blocked$? What is achieved by this state?
 
 Using the top program in the Linux shell, you can view the processes currently managed by the kernel. It provides a real-time view, including current information about process state, CPU usage, and memory usage. On a typical Linux system, you’ll notice that a large number of processes are in the sleeping state (corresponds to blocked based on our definition). This does not represent the ready state - which is combined with the running state in top. What do you suspect: why are so many processes in the blocked state?
+
+*Grundlagen:* 
+Prozess-Zustands-Diagramm:
+
+
 
 ## Tasks
 
