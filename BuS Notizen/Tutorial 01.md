@@ -83,7 +83,7 @@ beim Scheduling unterscheidet man zwischen **Präemptiv** und **Non-Präemptiv**
 
 *Lösung:* 
 - In der Frage ist lediglich die erwartete Laufzeit gegeben, deswegen entscheiden wir uns für SPT (da diese Methode sich nur auf die Ausführungszeit fokussiert).
-- Die Reihenfolge ist dann: $C(3),D(5)B(6),A(9)$
+- Die Reihenfolge ist dann: $C(3),D(5),B(6),A(9)$
 - die Latenz wird hierfür folgendes gerechnet:
 $$\frac{(3+(3+5)+(3+5+6)+(3+5+6+9))}{4}=12$$
 

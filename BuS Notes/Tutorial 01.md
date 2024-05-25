@@ -66,26 +66,26 @@ What is Scheduling?
 - Distribution and allocation of limited resources to processes.
     - For example, if two processes exist, the scheduler decides which process should be executed next.
 - There are several scheduling strategies that aim to achieve the following goals:
-    1. Fairness: Jeder Prozess soll fair behandelt werden, D.h jeder Prozess soll nach einer gewissen Zeit seine CPU-Zuteilung bekommen
-    2. Auslastung der CPU: Die CPU darf keine Pause haben, sie soll möglichst ausgelastet werden
-    3. Durchsatz maximieren: Die Anzahl der zubearbeiteten Prozesse soll pro Zeiteinheit möglichst hoch sein.
-    4. Minimierung der Ausführungszeit: Diese beginnt wenn der Prozess an kommt, und endet wenn der Prozess terminiert, Wir können nicht ändern wie lange ein Prozess braucht, jedoch können wir dafür sorgen, dass er nicht viel warten muss zum Beispiel.
-    5. Antwortzeit minimieren: sorgen für schnelle Reaktionen des Systems auf die Eingaben, also die Zeitspanne zwischen ankommen des Prozesses und die erste Ausführung sollte minimiert sein.
+    1. Fairness: Every process should be treated fairly, meaning each process should receive its CPU allocation after a certain amount of time.
+    2. CPU Utilization: The CPU should not have idle time; it should be kept as busy as possible.
+    3. Maximizing Throughput: The number of processes completed per unit of time should be as high as possible.
+    4. Minimizing Turnaround Time: This starts when the process arrives and ends when the process terminates. We cannot change how long a process takes to complete, but we can ensure it doesn't have to wait long, for example.
+    5. Minimizing Response Time: Ensure quick system responses to inputs, meaning the time between the process arriving and its first execution should be minimized.
 
-beim Scheduling unterscheidet man zwischen **Präemptiv** und **Non-Präemptiv**
+In scheduling, a distinction is made between **preemptive** and **non-preemptive**.
 
-|                                  Präemptiv                                  |                             Non-Präemptiv                             |
-|:---------------------------------------------------------------------------:|:---------------------------------------------------------------------:|
-|                     Ermöglicht Prozesse zu unterbrechen                     | Prozesse laufen bis sie terminieren  (Oder der PC wird ausgeschaltet) |
-|               Andere Prozess können zwischengeschoben werden                |                                                                       | 
-|              Unterbrochenen Prozesse können fortgesetzt werden              |                                                                       |
-|           Bsp: Round Robin, SRPT (Shortest Remaining Time First)            |                            Bsp: FIFO, SPT                             |
-| Nachteil: höhe Anzahl an Kontextwechsel (Verlängert die Zeit bis Bedingung) |       Nachteil: Prozesse können für eine lange Zeit blockieren        |
+|                                    Präemptiv                                    |                        Non-Präemptiv                        |
+|:-------------------------------------------------------------------------------:|:-----------------------------------------------------------:|
+|                       Allows processes to be interrupted                        | Processes run until they terminate (or the PC is shut down) |
+|              Allows other processes to be interleaved or inserted               |                                                             |
+|                      Interrupted processes can be resumed                       |                                                             |
+|           Examples: Round Robin, SRPT (Shortest Remaining Time First)           |                     Examples: FIFO, SPT                     |
+| Drawback: High number of context switches (Increases the time until completion) |        Drawback: Processes can block for a long time        | 
 
-*Lösung:* 
-- In der Frage ist lediglich die erwartete Laufzeit gegeben, deswegen entscheiden wir uns für SPT (da diese Methode sich nur auf die Ausführungszeit fokussiert).
-- Die Reihenfolge ist dann: $C(3),D(5)B(6),A(9)$
-- die Latenz wird hierfür folgendes gerechnet:
+_Solution:_
+- Only the expected runtime is given in the question, so we opt for SPT (since this method focuses solely on execution time).
+- The order is then: $C(3),D(5),B(6),A(9)$
+- The latency is calculated as follows:
 $$\frac{(3+(3+5)+(3+5+6)+(3+5+6+9))}{4}=12$$
 
 ### Question 3:

@@ -8,79 +8,36 @@
         "type": "tabs",
         "children": [
           {
-            "id": "3925084716893ce0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "5. Semester/Datenkommunikation/3. Data Link Layer.md",
-                "mode": "source",
-                "source": true
-              }
-            }
-          },
-          {
-            "id": "f12023f97399840f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "BuS Notes/Tutorial 00.md",
-                "mode": "preview",
-                "source": true
-              }
-            }
-          },
-          {
-            "id": "1c9ae18c8d983a21",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "BuS Notizen/Tutorial 00.md",
-                "mode": "source",
-                "source": true
-              }
-            }
-          },
-          {
-            "id": "e6b5f8462cfb9d39",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "BuS Notes/Tutorial 00.md",
-                "mode": "source",
-                "source": true
-              }
-            }
-          },
-          {
-            "id": "dc4680fa37fcc43b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "BuS Notes/Tutorial 01.md",
-                "mode": "source",
-                "source": true
-              }
-            }
-          },
-          {
             "id": "b0e22ab8bfdf82eb",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "BuS Notes/Tutorial 01.md",
+                "file": "BuS Notizen/Tutorial 01.md",
                 "mode": "source",
                 "source": true
               }
             }
           }
-        ],
-        "currentTab": 5
+        ]
+      },
+      {
+        "id": "57d50198ae965c51",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "42d329f8a2449023",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "BuS Notes/Tutorial 01.md",
+                "mode": "preview",
+                "source": true
+              }
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -130,8 +87,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "005a87686d04f700",
@@ -227,7 +183,7 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "b0e22ab8bfdf82eb",
+  "active": "42d329f8a2449023",
   "lastOpenFiles": [
     "BuS Notizen/Tutorial 01.md",
     "BuS Notes/Tutorial 01.md",
