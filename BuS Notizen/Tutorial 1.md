@@ -324,5 +324,25 @@ Some schedulers are preemptive, what additional event would be needed?
 	enum event {
 	START,
 	WAIT,
-	WAKE}
+	WAKE_UP,
+	TERMINATE,
+	CLOCK_TICK
+	};
+
+	// Struct representing a program/task
+	struct task{
+	int pid; // Process ID
+	int ppid; // Parent Process ID
+	int registers[20]; // Register set
+	
+	unsigned int cputime: // CPU time consumed
+	unsigned int alarm; // Alarm for time-based events
+	
+	enum state state; // Current state of the task
+	
+	// Other necessary fields...
+	};
+
+	// Run queue to manage ready processes
+	// This could be implemented using a linked list of fixed-size array
 ```
