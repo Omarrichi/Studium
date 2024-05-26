@@ -8,3 +8,18 @@
 **c)** Is it possible that a virtual address is called for which no physical address exists? If so, how should the MMU handle it? 
 
 **d)** Why is it beneficial to implement the MMU as a hardware component rather than performing the necessary calculations in software?
+
+*Solution:*
+
+**a)**
+- Translating virtual addresses into physical ones  
+- Allocating memory to processes, releasing memory  
+- Preventing unauthorized memory accesses  
+- Paging memory to or from secondary storage  
+- Facilitating shared memory
+
+**b)**
+- The MMU translates logical addresses into physical ones
+- It is located between the CPU and memory
+- Through segmentation, the size of the mapping table of the MMU is reduced
+	- 
