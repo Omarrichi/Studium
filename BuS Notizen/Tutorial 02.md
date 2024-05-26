@@ -12,4 +12,21 @@
 *Lösung:*
 **a)**
 - Übersetzen von logischen und physikalischen Adressen
-- Zuweisung von Speicher an Prozesse, Freigabe vo
+- Zuweisung von Speicher an Prozesse, Freigabe von Speicher
+- Auslagerung von Speicher auf bzw. Laden vom Hintergrundspeicher
+- Ermöglichung von Shared Memory
+
+**b)**
+- Die MMU rechnet logische Adressen in physikalischen um
+- befindet sich zwischen CPU und Speicher
+- Durch die Zweitteilung wird der Umfang der Abbildungstabelle der MMU reduziert
+	- muss nicht zu jeder möglichen Adresse ein Eintrag in der Tabelle existieren, sondern nur jeder möglichen Adresse eines Segments / Seite
+
+**c)**
+- darf vorkommen, ist auch ein normaler Fall also kommt regelmäßig vor
+- Es heißt, ein Prozess will auf eine Speicherstelle zugreifen, die aber nicht in den Hauptspeicher geladen ist
+- Erzeugt Page Fault
+	- Page Fault: Die MMU übersetzt und sucht die angefragte Adresse, und sie wird dann in den Hauptspeicher geladen
+
+**d)**
+- Geschwindigkeit, 
