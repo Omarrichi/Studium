@@ -1,4 +1,4 @@
-10.07.2024 - Omar Richi (omar.richi@rwth-aachen.de)
+10.05.2024 - Omar Richi (omar.richi@rwth-aachen.de)
 
 ```ad-note
 title: General Informations
