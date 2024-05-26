@@ -88,12 +88,32 @@ First of all, why is the CPU not being efficiently loaded? It is not because of 
 
 For memory management using segmentation, the following segment table is given for a process
 
-| segment | base address | length |
-| :-------: | :------------: | :------: |
-| 0x0     | 0x528        | 320    |
-| 0x1     | 0x232        | 58     |
-| 0x2     | 0x136        | 120    |
-| 0x3     | 0x2ee        | 60     |
-| 0x4     | 0x33e        | 150    |
-| 0x5     | 0x3de        | 110    | 
+|  segment  | base address | length |
+|:---------:|:------------:|:------:|
+| ```0x0``` | ```0x528```  |  320   |
+| ```0x1``` | ```0x232```  |   58   |
+| ```0x2``` | ```0x136```  |  120   |
+| ```0x3``` | ```0x2ee```  |   60   |
+| ```0x4``` | ```0x33e```  |  150   |
+| ```0x5``` | ```0x3de```  |  110   |
+
+
+Both the base address and the length are given in bytes.  
+
+**a)** How many bytes are available to the process in physical memory?  
+
+**b)** The address is coded on 16 bits. The maximum segment number is 16, how would you split the virtual address between the segment number and the address within the segment? What is the maximum segment length?
+
+**c)** The process requests the address ```0x31``` within segment number 2, what virtual address will be sent to the MMU?
+
+**d)** At what time is the virtual address from question *c)* determined?
+
+**e)** If two separate processes each have a memory segment labeled with the same segment number within their address space, how does the operating system ensure that these segments do not overlap in physical memory?
+
+**f)** The following virtual addresses are now requested by the process. What does the MMU return in each case?
+- ```0x301e```
+- ```0x1012```
+- ```0x207e```
+- ```0x4095```
+
 
