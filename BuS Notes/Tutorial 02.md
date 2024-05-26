@@ -73,6 +73,27 @@ Describes the system for managing memory so that memory is only accessed when ne
 
 *Solution:*
 
-First of all, why is the CPU not being efficiently loaded? It is not because of I/O-heavy processes, as 5% is   hardly any access to I/O devices. But the access to the background memory (97,7%) is as high as it gets,  
-therefore apparently the CPU cannot compute more because pages have to be constantly reloaded for  
-the processes. This means we have to reduce the page fault rate.
+First of all, why is the CPU not being efficiently loaded? It is not because of I/O-heavy processes, as 5% is   hardly any access to I/O devices. But the access to the background memory (97,7%) is as high as it gets, therefore apparently the CPU cannot compute more because pages have to be constantly reloaded for the processes. This means we have to reduce the page fault rate.
+
+1. This doesn't help; our CPU is already not fully utilized. A faster CPU would be even less utilized, and the speed of loading pages doesn't change here.
+2. This also doesn't help. Memory space is not the problem; the problem is the speed.
+    - You can imagine: if our pages are like items in a warehouse and the door is the size of a normal door, making the warehouse bigger doesn't automatically mean we have a bigger door (or shoes in running mode :) ).
+3. More processes mean more page requests, which means more page faults, so this doesn't help either.
+4. Similar to three but in reverse: fewer processes mean fewer requests, so fewer page faults. This will help.
+5. More main memory means more space for our pages, so we will need to swap pages less often $\Rightarrow$ fewer page faults, so this will also help.
+6. This will help; although we still have the same number of page faults, the CPU can get the data faster.
+    - Similar to 2: the warehouse remains the same size, but the door gets bigger, allowing faster movement in and out (running mode is also a good analogy here).
+
+### Question 2:
+
+For memory management using segmentation, the following segment table is given for a process
+
+| segment | base address | length |
+| :-------: | :------------: | :------: |
+| 0x0     | 0x528        | 320    |
+| 0x1     | 0x232        | 58     |
+| 0x2     | 0x136        | 120    |
+| 0x3     | 0x2ee        | 60     |
+| 0x4     | 0x33e        | 150    |
+| 0x5     | 0x3de        | 110    | 
+
