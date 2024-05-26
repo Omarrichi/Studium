@@ -24,7 +24,7 @@ int main() {
 
 How many processes are created during the execution of this program?
 
-*Grundlagen:* 
+*Basics:* 
 - The 5 important syscalls are: 
 - read, write, open, close, fork
 - General information about fork:
@@ -36,7 +36,7 @@ How many processes are created during the execution of this program?
 		- if it is $= 0$, then the child process is being addressed and has returned $0$
 	- Through this distinction, you can issue instructions only for the child or only for the parent by checking the fork results.
 
-*Lösung:*
+*Solution:*
 ```mermaid
 graph TD;
     A((fork)) -->|p| B((fork));

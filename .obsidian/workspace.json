@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "BuS Notizen/Tutorial 02.md",
+                "file": "BuS Notes/Tutorial 02.md",
                 "mode": "source",
                 "source": true
               }
@@ -32,7 +32,7 @@
               "type": "markdown",
               "state": {
                 "file": "BuS Notizen/Tutorial 02.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": true
               }
             }
@@ -103,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "BuS Notizen/Tutorial 02.md",
+                "file": "BuS Notes/Tutorial 02.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "BuS Notizen/Tutorial 02.md",
+                "file": "BuS Notes/Tutorial 02.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,7 +143,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "BuS Notizen/Tutorial 02.md"
+                "file": "BuS Notes/Tutorial 02.md"
               }
             }
           },
@@ -185,9 +185,9 @@
   },
   "active": "b0e22ab8bfdf82eb",
   "lastOpenFiles": [
+    "BuS Notizen/Tutorial 02.md",
     "BuS Notes/Tutorial 02.md",
     "BuS Notes/Tutorial 01.md",
-    "BuS Notizen/Tutorial 02.md",
     "BuS Notizen/Tutorial 01.md",
     "BuS Notes/Tutorial 00.md",
     "BuS Notizen/Tutorial 00.md",

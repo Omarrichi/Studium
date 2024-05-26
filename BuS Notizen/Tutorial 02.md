@@ -31,7 +31,7 @@
 **d)**
 - Geschwindigkeit, übersetzen passiert sehr häufig, deswegen extra Komponente, sonst muss die CPU übersetzen und das verlangsamt das System allgemein
 
-### Question 2:
+### Question 1.2:
 
 Given a demand paging system that is currently occupied as follows:
 - CPU load: 20%
@@ -81,3 +81,4 @@ Zunächst einmal, warum wird die CPU nicht effizient ausgelastet? Es liegt nicht
 5. Mehr Hauptspeicher, heißt mehr Platz für unsere Seiten, also wir werden weniger Seiten austauschen müssen $\Rightarrow$ weniger Seitenfehler, also das wird auch helfen
 6. Das wird helfen, zwar haben wir immer noch die gleiche Anzahl an Seitenfehler, aber die CPU kann die Daten schneller bekommen
 	1. Das gleiche wie bei 2. Lager bleibt diesmal gleiche große, jedoch die Tür wird größer, sodass man schneller hin und her laufen kann, (Running Modus ist hier auch gut treffend)
+
