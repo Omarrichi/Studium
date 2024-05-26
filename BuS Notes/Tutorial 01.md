@@ -302,8 +302,7 @@ We notice that the main thread never prints its message (in the threaded version
 title: All threads other than the calling thread are destroyed during an execve(). Mutexes, condition variables, and other pthreads objects are not preserved.
 ```
 
-- Beachtet, dass ```execl()```, die Version, die wir verwendet haben, immer ```
-execve()``` aufruft
+- Note that ```execl()```, the version we used, always calls```execve()```
 
 
 ### Task 2.4 Scheduling Algorithms Implementation
