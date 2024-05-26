@@ -62,3 +62,22 @@ Wenn ein Prozess ausgeführt wird, werden entsprechend seine Daten geladen dies 
 	- Prozess ggfs. schlafen legen
 	- Fehlende Seite wird lokalisiert und nachgeladen (eventuell werden andere Seiten verdrängt!)
 - Seitenfehler verbringen einiges an Zeit deswegen: Seitenfehler Vermeiden!
+
+```ad-note
+title: Demand Paging
+Beschreibt das System Speicher zu verwalten, sodass Speicher nur dann zugegriffen wird, wenn es gebraucht ist. Auf unserem System, holen wir uns also nur die Seiten die wir brauchen, und verdrängen die, die wir nicht mehr brauchen würden.
+Das System ist nicht optimal implementierbar, da man nicht wissen kann, wann welche Seite angefragt werden wird, deswegen behandeln wir Allgemein, Strategien um eine Approximation zu erreichen.
+```
+
+*Lösung:*
+
+Zunächst einmal, warum wird die CPU nicht effizient ausgelastet? Es liegt nicht an I/O-lastigen Prozessen, da 5% kaum Zugriff auf I/O-Geräte bedeuten. Aber der Zugriff auf den Hintergrundspeicher (97,7%) ist so hoch wie möglich, daher kann die CPU anscheinend nicht mehr berechnen, weil Seiten ständig für die Prozesse neu geladen werden müssen. Das bedeutet, wir müssen die Seitenfehlerquote reduzieren.
+
+1. hilft nicht, unser CPU ist jetzt schon nicht ausgelastet, eine schnellere wird nun weniger ausgelastet sein, die Geschwindigkeit Seiten zu laden ändert sich hier nicht.
+2.  Hilft auch nicht, Speicherplatz ist kein Problem, Problem ist die Geschwindigkeit.
+	1. Ihr könnt euch vorstellen: Wenn unser Seiten Objekte in einem Lager sind, und die Tür ist so groß wie eine normale Tür, wenn wir den Lager größer machen, heißt nicht automatisch, dass wir eine größere Tür haben (Oder Schuhe auf Running Modus :) ) 
+3. Mehr Prozesse, heißt mehr Seiten Anfragen, heißt mehr Seitenfehler, also hilft auch nicht
+4. Analog wie drei jedoch umgekehrt, weniger Prozesse, heißt weniger Anfragen, also weniger Seitenfehler, dies wird also helfen.
+5. Mehr Hauptspeicher, heißt mehr Platz für unsere Seiten, also wir werden weniger Seiten austauschen müssen $\Rightarrow$ weniger Seitenfehler, also das wird auch helfen
+6. Das wird helfen, zwar haben wir immer noch die gleiche Anzahl an Seitenfehler, aber die CPU kann die Daten schneller bekommen
+	1. Das gleiche wie bei 2. Lager bleibt diesmal gleiche große, jedoch die Tür wird größer, sodass man schneller hin und her laufen kann, (Running Modus ist hier auch gut treffend)
