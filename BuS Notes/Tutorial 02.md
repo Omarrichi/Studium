@@ -84,7 +84,7 @@ First of all, why is the CPU not being efficiently loaded? It is not because of 
 6. This will help; although we still have the same number of page faults, the CPU can get the data faster.
     - Similar to 2: the warehouse remains the same size, but the door gets bigger, allowing faster movement in and out (running mode is also a good analogy here).
 
-### Question 2:
+###  2. Segmentation:
 
 For memory management using segmentation, the following segment table is given for a process
 
@@ -132,4 +132,38 @@ Both the base address and the length are given in bytes.
 - ```0x1012```: The segment number is 1, ```0x012``` + ```0x232``` = ```0x244```. ```0x207a```: The segment number is 2, and the address is ```0x07a``` (or 122). But the length of segment 2 is 120, and 122 exceeds the segment length. This leads to an invalid memory access: the MMU sends a segmentation fault interrupt to the CPU. 
 - ```0x4095```: The segment number is 4, ```0x33e``` + ```0x095``` = ```0x3d3```.
 
-### Question 3:
+### 3. Paging:
+
+```ad-note
+title: a reminder for the bitwise operations in C
+```
+
+![[Pasted image 20240526171811.png]]
+
+Suppose we have a 32 bits System, managing virtual memory with paging. The page size is 4KiB and the TLB is empty.
+
+The system uses a two level page table, the virtual addresses are divided as follows:
+- 10 bits for the index of the first level page table  
+- 10 bits for the index of the second level page table  
+- 12 bits for the offset within the page
+
+For instance, the address ```0xc01b36e4``` is divided like this: ```0b1100000000|0110110011|011011100100```
+
+- the index for the first level of the page table is 768  
+- the index for the second level is 435  
+- the offset is 1764
+The page Table Entry is composed of 20 bits for the page frame number, and the last 12 bits are used for metadata
+
+PTE
+
+![[Pasted image 20240526172147.png]]
+
+The last three bits represent the following flags:
+
+- U/S: set to 1 if the page can be accessed either in user or supervisor mode  
+- R/W: set to 1 if the page is r/w, 0 if read-only  
+- P: set to 1 if the page is present in memory
+
+![[Pasted image 20240526172231.png]]
+
+Suppose that a task is running, the page table pointer of the taks 
