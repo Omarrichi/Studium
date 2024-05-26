@@ -166,4 +166,12 @@ The last three bits represent the following flags:
 
 ![[Pasted image 20240526172231.png]]
 
-Suppose that a task is running, the page table pointer of the taks 
+Suppose that a task is running, the page table pointer of the task contains 
+```0xef2e5000```
+
+
+*Questions:*
+1. The third page displayed above starts at the address 0x1432c000 . What is the associated page number?
+2. The value 0x6cb4f481 is stored inside the first page, at the index 4. What is the virtual address at which the value is stored?
+3. What is the size of each page table level? Why is it convenient?
+4. What is the total size of memory used by the page table for a single address translation?
