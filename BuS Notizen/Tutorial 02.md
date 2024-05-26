@@ -8,3 +8,8 @@
 **c)** Is it possible that a virtual address is called for which no physical address exists? If so, how should the MMU handle it? 
 
 **d)** Why is it beneficial to implement the MMU as a hardware component rather than performing the necessary calculations in software?
+
+*Lösung:*
+**a)**
+- Übersetzen von logischen und physikalischen Adressen
+- Zuweisung von Speicher an Prozesse, Freigabe vo
