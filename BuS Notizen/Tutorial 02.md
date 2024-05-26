@@ -30,3 +30,8 @@
 
 **d)**
 - Geschwindigkeit, übersetzen passiert sehr häufig, deswegen extra Komponente, sonst muss die CPU übersetzen und das verlangsamt das System allgemein
+
+### Question 2:
+
+Given a demand paging system that is currently occupied as follows:
+- CPU load
