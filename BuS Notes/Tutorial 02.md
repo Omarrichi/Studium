@@ -116,4 +116,12 @@ Both the base address and the length are given in bytes.
 - ```0x207e```
 - ```0x4095```
 
+**a)** Simply taking the sum of the last column results in 818 bytes. (320 + 58 + 120 + 60 + 150 + 110 = 818)
 
+**b)** The segment numbers go up to 0xf (16 segments so 15 + 1), so we need at least 4 bits to store this value. With 4 bits, we can store segment numbers from 0x0 to 0xf. We use the remaining 12 bits for the address within the segment. The address is stored in 12 bits, ranging between 0x000 and 0xfff. Therefore, the maximum segment length is 0xfff + 1 = 4096.
+
+c) We take the segment number 0x2 and use the last 12 bits for the address: 0x2031.
+
+d) This is done transparently during compilation.
+
+e) In operating systems with segmentation, each process is linked to a unique segment table, which ensures memory isolation by assigning distinct base addresses to each segment. During a context switch, the operating system loads the segment table of the selected process into the Memory Management Unit (MMU). This setup guarantees that even if different processes use the same segment numbers, they will not access the same physical memory locations, since each process operates with its own segment table.
