@@ -1,6 +1,6 @@
 17.05.2024 - Omar Richi (omar.richi@rwth-aachen.de)
 
-### Question 1:
+### 1.1 The MMU:
 
 **a)** What are the tasks of memory management in operating systems? 
 
@@ -33,7 +33,7 @@
 **d)**
 - Speed! Accesses to virtual addresses occur very frequently and must be converted into accesses to physical addresses as quickly as possible, otherwise the entire process execution will be slowed down.
 
-### Question 1.2:
+### 1.2 System Preformance:
 
 Given a demand paging system that is currently occupied as follows:
 - CPU load: 20%
@@ -120,8 +120,16 @@ Both the base address and the length are given in bytes.
 
 **b)** The segment numbers go up to 0xf (16 segments so 15 + 1), so we need at least 4 bits to store this value. With 4 bits, we can store segment numbers from 0x0 to 0xf. We use the remaining 12 bits for the address within the segment. The address is stored in 12 bits, ranging between 0x000 and 0xfff. Therefore, the maximum segment length is 0xfff + 1 = 4096.
 
-c) We take the segment number 0x2 and use the last 12 bits for the address: 0x2031.
+**c)** We take the segment number 0x2 and use the last 12 bits for the address: 0x2031.
 
-d) This is done transparently during compilation.
+**d)** This is done transparently during compilation.
 
-e) In operating systems with segmentation, each process is linked to a unique segment table, which ensures memory isolation by assigning distinct base addresses to each segment. During a context switch, the operating system loads the segment table of the selected process into the Memory Management Unit (MMU). This setup guarantees that even if different processes use the same segment numbers, they will not access the same physical memory locations, since each process operates with its own segment table.
+**e)** In operating systems with segmentation, each process is linked to a unique segment table, which ensures memory isolation by assigning distinct base addresses to each segment. During a context switch, the operating system loads the segment table of the selected process into the Memory Management Unit (MMU). This setup guarantees that even if different processes use the same segment numbers, they will not access the same physical memory locations, since each process operates with its own segment table.
+
+**f)**
+
+- ```0x301e```: The segment is ```0x3``` and the address is ```0x01e```. We take the base address for segment 3: ```0x2ee```, and sum it with the address: the MMU returns ```0x30c```. 
+- ```0x1012```: The segment number is 1, ```0x012``` + ```0x232``` = ```0x244```. ```0x207a```: The segment number is 2, and the address is ```0x07a``` (or 122). But the length of segment 2 is 120, and 122 exceeds the segment length. This leads to an invalid memory access: the MMU sends a segmentation fault interrupt to the CPU. 
+- ```0x4095```: The segment number is 4, ```0x33e``` + ```0x095``` = ```0x3d3```.
+
+### Question 3:
