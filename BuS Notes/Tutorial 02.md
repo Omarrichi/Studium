@@ -58,7 +58,7 @@ When a process is executed, its data is loaded by bringing the pages into the ma
     - The MMU checks if the page already exists in the main memory.
     - If yes, it is translated (logical $\Rightarrow$ physical).
     - If no:
-        - 1. The page actually exists but needs to be loaded from the hard disk into the main memory (page fault).
+	    - 1. The page actually exists but needs to be loaded from the hard disk into the main memory (page fault).
         - 2. The page does not exist or does not belong to this process, then access is denied (segmentation fault).
 - When a page fault occurs:
     - Execute the page fault handler.

@@ -178,10 +178,10 @@ Suppose that a task is running, the page table pointer of the task contains
 
 *Solution:*
 
-1. Each page is 4KiB in size, or ```0x1000``` bytes. We can determine the page number; ```0x1432c000``` // ```0x1000``` = ```0x1432x```
-2. The value is located in the page number ```0xef2e5``` at the index 4. Each entry is 4 bytes in size. (because we have a 32 bit system, each the page table needs to store addresses of 32 bits). The virtual address is 0xef2e5000 + ($4*4$) = ```0xef2e5000``` + 16 = ```0xef2e5000``` + ```0x10``` = ```0xef2e5010```
-3. A single page level table is $2^{10}$ entries of $2^2$ bytes (Because we are on a 32 bits system). The size of a page table is $2^2 * 2^{10} = 4 KiB$. This is convenient because this is the size of a page.
-4. A single translation corresponds to 1 first level page table (4 KiB) and 1 second level page table (4 KiB). Total size of 8 KiB.
+1. Jede Seite ist 4KiB groß, oder `0x1000` Bytes. Wir können die Seitennummer bestimmen; `0x1432c000` // `0x1000` = `0x1432x`.
+2. Der Wert befindet sich in der Seitennummer `0xef2e5` an Index 4. Jeder Eintrag ist 4 Bytes groß (da wir ein 32-Bit-System haben, muss die Seitentabelle Adressen von 32 Bit speichern). Die virtuelle Adresse ist 0xef2e5000 + (4 * 4) = `0xef2e5000` + 16 = `0xef2e5000` + `0x10` = `0xef2e5010`.
+3. Eine einzelne Seitentabelle hat $2^{10}$ Einträge von je $2^2$ Bytes (da wir auf einem 32-Bit-System sind). Die Größe einer Seitentabelle beträgt $2^2 * 2^{10} = 4 KiB$. Dies ist praktisch, da dies die Größe einer Seite ist.
+4. Eine einzelne Übersetzung entspricht einer ersten Stufe Seitentabelle (4 KiB) und einer zweiten Stufe Seitentabelle (4 KiB). Gesamte Größe von 8 KiB.
 
 *Tasks:* 
 The CPU is performing the following actions:
