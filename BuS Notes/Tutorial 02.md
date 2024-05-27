@@ -178,5 +178,10 @@ Suppose that a task is running, the page table pointer of the task contains
 
 *Solution:*
 
-1. Each page is 4Kib in size, or ```0x1000``` bytes. We can determine the page number; ```0x1432c000``` // ```0x1000``` = ```0x1432x```
-2. The value is located in the page number ```0xef2e5``` at the index 4. Each entry is 4 bytes in size. (because we have a 32 bit system, each the page table needs to s)
+1. Each page is 4KiB in size, or ```0x1000``` bytes. We can determine the page number; ```0x1432c000``` // ```0x1000``` = ```0x1432x```
+2. The value is located in the page number ```0xef2e5``` at the index 4. Each entry is 4 bytes in size. (because we have a 32 bit system, each the page table needs to store addresses of 32 bits). The virtual address is 0xef2e5000 + ($4*4$) = ```0xef2e5000``` + 16 = ```0xef2e5000``` + ```0x10``` = ```0xef2e5010```
+3. A single page level table is $2^{10}$ entries of $2^2$ bytes (Because we are on a 32 bits system). The size of a page table is $2^2 * 2^{10} = 4 KiB$. This is convenient because this is the size of a page.
+4. A single translation corresponds to 1 first level page table (4 KiB) and 1 second level page table (4 KiB). Total size of 8 KiB.
+
+*Tasks:* 
+The CPU is performing the following actions
