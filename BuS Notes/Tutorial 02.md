@@ -310,5 +310,5 @@ The TLB at the end is filled with:
 | 0x5fbd2 | 0xbf84f    | U/S R/W P |
 | 0x97ffb | 0x8c88c    | R/W P     |
 
-
-Bonus 
+---
+**Bonus Task will be separat**
