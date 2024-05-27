@@ -184,4 +184,16 @@ Suppose that a task is running, the page table pointer of the task contains
 4. A single translation corresponds to 1 first level page table (4 KiB) and 1 second level page table (4 KiB). Total size of 8 KiB.
 
 *Tasks:* 
-The CPU is performing the following actions
+The CPU is performing the following actions:
+
+1. In user mode, read at the address ```
+0x97ea0329```
+2. In user mode, write to the address ```0x5fbc6582```
+3. In kernel mode, read at the address``` 0x5fbcd6f0```
+4. In user mode, read at the address ```0x5fbd2bad```
+5. In user mode, read at the address ```0x97ffbc21```
+6. In user mode, read at the address ```0x97ea0fe2```
+
+For each action, document the steps involved in MMU translation. Explain how the MMU accesses the Page Table Entry associated with the virtual address. translates the virtual address to a physical address, and handles any interrupts or exceptions encountered during the translation process.
+
+TLB (Translation Lookaside Buffe)
