@@ -6,6 +6,7 @@
       {
         "id": "0f17f16f9ce993d2",
         "type": "tabs",
+        "dimension": 49.65909090909091,
         "children": [
           {
             "id": "b0e22ab8bfdf82eb",
@@ -24,6 +25,7 @@
       {
         "id": "57d50198ae965c51",
         "type": "tabs",
+        "dimension": 50.34090909090909,
         "children": [
           {
             "id": "42d329f8a2449023",
@@ -183,7 +185,7 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "42d329f8a2449023",
+  "active": "b0e22ab8bfdf82eb",
   "lastOpenFiles": [
     "BuS Notizen/Tutorial 02.md",
     "BuS Notes/Tutorial 02.md",

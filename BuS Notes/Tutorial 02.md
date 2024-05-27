@@ -196,4 +196,47 @@ The CPU is performing the following actions:
 
 For each action, document the steps involved in MMU translation. Explain how the MMU accesses the Page Table Entry associated with the virtual address. translates the virtual address to a physical address, and handles any interrupts or exceptions encountered during the translation process.
 
-TLB (Translation Lookaside Buffe)
+TLB (Translation Lookaside Buffer)
+
+| Page | Page Frame | FLAGS |
+| ---- | ---------- | ----- |
+|      |            |       |
+|      |            |       |
+|      |            |       |
+|      |            |       |
+|      |            |       |
+|      |            |       |
+
+Finally, update the TLB accordingly: each entry one after the other. To make things easier, don't flush the TLB and suppose that all entries are valid (!= present).
+
+```ad-note
+title: Note
+On a more realistic system, the TLB contains more flags for caching etc.
+The TLB is either flushed between each context switch or contains a PCID (Process Context Identifier) to associate each entry with a specific process.
+```
+
+*Solution:*
+
+The page table pointer points to the address ```0xef2e5000``` .  
+1. Address ```0x97ea0329```
+In binary, the address looks like this:  
+```0b 1001011111 1010100000 001100101001```  
+The first 10 bits represent the index in the first level page table: 607  
+The next 10 bits represent the index in the second level page table: 672  
+The last 12 bits represent the offset within the page frame: ```0x329``` (or 809)  
+On the first page table (pointed by the page table pointer), the index 607 gives us the second level page table: ```0x1432c000```  
+On the second level page table, the index 672 gives us the PTE (Page Table Entry): 0x747a7a3f  
+This PTE in binary is: 0b 01110100011110100111 101000111111  
+The first 20 bits of the PTE represent the page frame number: 0x747a7  
+The last 12 bits represent the flags associated with the page. We can see that the last three bits are  
+set to 1, which mean that the page is:  
+set to U/S, the page can be accessed in either user or supervisor mode  
+set to R/W, the page is read/write (it’s not important in our case, since the access is a read)  
+set to P, the page is present in memory  
+The page is present: we can store this result in the TLB. We only store the virtual page number  
+(0x97ea0 ), the page frame number (0x747a7 ) and the relevant flags (U/S, R/W and P because they  
+were set to 1).  
+The permissions are OK (the page is not protected against user mode).  
+Finally, the translation can be determined with the operation: ( page frame << 12) | offset , we  
+obtain 0x747a7329 , this is the value that will be returned by the MMU.  
+The translation steps remain the same for the next values.
