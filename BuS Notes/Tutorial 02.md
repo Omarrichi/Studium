@@ -175,3 +175,4 @@ Suppose that a task is running, the page table pointer of the task contains
 2. The value 0x6cb4f481 is stored inside the first page, at the index 4. What is the virtual address at which the value is stored?
 3. What is the size of each page table level? Why is it convenient?
 4. What is the total size of memory used by the page table for a single address translation?
+

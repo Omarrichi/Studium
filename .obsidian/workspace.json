@@ -31,8 +31,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "BuS Notizen/Tutorial 02.md",
-                "mode": "source",
+                "file": "BuS Notes/Tutorial 02.md",
+                "mode": "preview",
                 "source": true
               }
             }
@@ -183,13 +183,13 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "b0e22ab8bfdf82eb",
+  "active": "42d329f8a2449023",
   "lastOpenFiles": [
+    "BuS Notizen/Tutorial 02.md",
+    "BuS Notes/Tutorial 02.md",
     "Pasted image 20240526172231.png",
     "Pasted image 20240526172147.png",
     "Pasted image 20240526171811.png",
-    "BuS Notizen/Tutorial 02.md",
-    "BuS Notes/Tutorial 02.md",
     "BuS Notes/Tutorial 01.md",
     "BuS Notizen/Tutorial 01.md",
     "BuS Notes/Tutorial 00.md",
