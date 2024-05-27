@@ -253,10 +253,37 @@ The translation steps remain the same for the next values.
 2. Address ```0x5fbc6582:```
 
 - TLB miss, we perform a full page walk  
-- index of the first level page table: 382, gives 0xc13e4000  
-- index of the second level page table: 966, gives PTE 0xb869f0bd  
+- index of the first level page table: 382, gives ```0xc13e4000```  
+- index of the second level page table: 966, gives PTE ```0xb869f0bd```
 - flags are U/S and P  
 - page present (P) in memory: we add the translation to the TLB  
- -the operation was a write but the page is protected (flag R/W is not set)  
-the MMU triggers a segmentation fault  
-the kernel kills the faulty application
+- the operation was a write but the page is protected (flag R/W is not set)  
+- the MMU triggers a segmentation fault  
+- the kernel kills the faulty application
+
+3. Address ```0x5fbcd6f0```
+
+- TLB miss, we perform a full page walk
+- index of the first level page table: 382, gives ```0xc13e4000```
+- index of the second level page table: 973, gives PTE ```0x64c2d6f9```
+- only P is set: we add the translation to the TLB
+- U/S is not set, only supervisor mode can access the page
+- the read operation was made by the kernel: it runs in supervisor mode, no segmentation fault occurs
+- we can add the translation to the TLB
+- the MMU returns ```0x64c2d6f0```
+
+4. Address ```0x5fbd2bad```
+
+- TLB miss, we perform a full page walk
+- index of the first page table: 382, gives ```0xc13e4000```
+- index of the second level page table: 978, gives PTE ```0xbf84f8f6```
+- flags are U/S, R/W
+- P is not set, the MMU triggers is a page fault
+- the kernel gets the interrupt and swaps the page back from disk to memory
+- the translation is added to the TLB (with P flag updated)
+- return the address ```0xbf84fbad```
+
+5. Address 0x97ffbc21
+
+- TLB miss, we perform a full page walk
+- 
