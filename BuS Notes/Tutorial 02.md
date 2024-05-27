@@ -286,4 +286,29 @@ The translation steps remain the same for the next values.
 5. Address 0x97ffbc21
 
 - TLB miss, we perform a full page walk
-- 
+- index of the first level page table: 607, gives ```0x1432c000```
+- index of the second level page table: 1019, gives PTE ```0x8c88cbd3```
+- flags are R/W, P
+- P is set: we add the translation to the TLB
+- U/S is not set, the page is protected, user mode can’t access the page
+- MMU triggers a segmentation fault
+- the kernel kill the application that tried to do the memory access
+
+6. Address ```0x97ea0fe2```
+- the page frame ```0x97ea0``` is present in the TLB, this is a hit
+- we supposed all entries to be valid, so we simply check the permissions
+- the flags in the TLB indicate that the page is accessible in user mode (U/S)
+- the MMU returns the translation ```0x747a7fe2```
+
+The TLB at the end is filled with:
+
+| Page    | Page Frame | FLAGS     |
+| ------- | ---------- | --------- |
+| 0x97ea0 | 0x747a7    | U/S RW P  |
+| 0x5fbc6 | 0xb869f    | U/S P     |
+| 0x5fbcd | 0x64c2d    | P         |
+| 0x5fbd2 | 0xbf84f    | U/S R/W P |
+| 0x97ffb | 0x8c88c    | R/W P     |
+
+
+Bonus 
