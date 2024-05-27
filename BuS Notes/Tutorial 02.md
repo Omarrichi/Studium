@@ -171,8 +171,12 @@ Suppose that a task is running, the page table pointer of the task contains
 
 
 *Questions:*
-1. The third page displayed above starts at the address 0x1432c000 . What is the associated page number?
-2. The value 0x6cb4f481 is stored inside the first page, at the index 4. What is the virtual address at which the value is stored?
+1. The third page displayed above starts at the address ```0x1432c000 ```. What is the associated page number?
+2. The value ```0x6cb4f481``` is stored inside the first page, at the index 4. What is the virtual address at which the value is stored?
 3. What is the size of each page table level? Why is it convenient?
 4. What is the total size of memory used by the page table for a single address translation?
 
+*Solution:*
+
+1. Each page is 4Kib in size, or ```0x1000``` bytes. We can determine the page number; ```0x1432c000``` // ```0x1000``` = ```0x1432x```
+2. The value is located in the page number ```0xef2e5``` at the index 4. Each entry is 4 bytes in size. (because we have a 32 bit system, each the page table needs to s)
