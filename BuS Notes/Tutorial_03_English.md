@@ -69,10 +69,7 @@ Some operating systems provide a system call `rename` to give a file a new name.
 
 *Solution 1:*
 
-Basic file system (like FAT and EXT seen during the lecture) copy the file block by block for the syscall  
-copy , and they create a new inode associated with the new copied file. On the other hand, renaming a  
-file is just updating the name of the file inside the directory, the only IO happens when getting the  
-directory block to update the file name. This is much more efficient, especially when dealing with big files.
+Basic file system (like FAT and EXT seen during the lecture) copy the file block by block for the syscall `copy`, and they create a new inode associated with the new copied file. On the other hand, renaming a file is just updating the name of the file inside the directory, the only IO happens when getting the directory block to update the file name. This is much more efficient, especially when dealing with big files.
 
 *Question 2:*
 
@@ -80,11 +77,15 @@ If `/home/root/` is the current working directory, what is the absolute path nam
 
 *Solution 2:*
 
+The full path name is `/home/redha/BuS/sched.txt` because the special path character `..` goes one directory behind, relative to `/home/root/`
+
 *Question 3:*
 
 Contiguous allocation of files leads to disk fragmentation, because some space in the last disk block will be wasted in files whose length is not an integral number of blocks. Describe the internal and external fragmentation during the allocation and deletion of block.s
 
 *Solution 3:*
+
+We have internal fragmentation because there is wasted space inside allocated blocks, if the file is not exactly a multiple of the block size. The moment we start to delete files, we will be deleting blocks and create external fragmentation as well.
 
 *Question 4:*
 
