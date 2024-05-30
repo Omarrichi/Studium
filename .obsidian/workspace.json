@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "BuS Notizen/Tutorial 02_Bonus.md",
+                "file": "BuS Notizen/Tutorial_02_Bonus_Deutsch.md",
                 "mode": "source",
                 "source": true
               }
@@ -38,7 +38,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "BuS Notes/Tutorial 02_Bonus.md",
+                "file": "BuS Notizen/Tutorial_02_Bonus_Deutsch.md",
                 "mode": "source",
                 "source": true
               }
@@ -58,8 +58,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "BuS Notes/Tutorial 02_Bonus.md",
-                "mode": "preview",
+                "file": "BuS Notizen/Tutorial_02_Bonus_Deutsch.md",
+                "mode": "source",
                 "source": true
               }
             }
@@ -114,8 +114,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "005a87686d04f700",
@@ -131,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "BuS Notes/Tutorial 02_Bonus.md",
+                "file": "BuS Notizen/Tutorial_02_Bonus_Deutsch.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -148,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "BuS Notes/Tutorial 02_Bonus.md",
+                "file": "BuS Notizen/Tutorial_02_Bonus_Deutsch.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -171,7 +170,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "BuS Notes/Tutorial 02_Bonus.md"
+                "file": "BuS Notizen/Tutorial_02_Bonus_Deutsch.md"
               }
             }
           },
@@ -213,16 +212,16 @@
   },
   "active": "94a523de32957604",
   "lastOpenFiles": [
+    "BuS Notes/Tutorial_02_Bonus_English.md",
+    "BuS Notizen/Tutorial_02_Bonus_Deutsch.md",
+    "BuS Notes/Tutorial 01.md",
+    "BuS Notes/Tutorial 00.md",
     "BuS Notes/Tutorial 02.md",
-    "BuS Notes/Tutorial 02_Bonus.md",
-    "BuS Notizen/Tutorial 02_Bonus.md",
     "BuS Notizen/Tutorial 02.md",
     "Pasted image 20240526172231.png",
     "Pasted image 20240526172147.png",
     "Pasted image 20240526171811.png",
-    "BuS Notes/Tutorial 01.md",
     "BuS Notizen/Tutorial 01.md",
-    "BuS Notes/Tutorial 00.md",
     "BuS Notizen/Tutorial 00.md",
     "BuS Notes",
     "5. Semester/Datenkommunikation/3. Data Link Layer.md",

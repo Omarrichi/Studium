@@ -1,3 +1,5 @@
+17.05.2024 - Omar Richi (omar.richi@rwth-aachen.de)
+
 ## Bonus: Segmentation vs. Paging
 
 Given a computer with *16 GiB* main memory and *64-bit* address space. You are considering whether to use segmentation or paging. You have the choice between 3 options
@@ -60,3 +62,18 @@ title: Side note:
 We should also increase the number of levels in the page table
 ```
 
+*Option 3: Segmentation with best fit as a strategy for searching for free memory*
+
+**3.1** is there any internal / external fragmentation?
+
+*Solution:*
+
+**3.1** Internal fragmentation does not occur, as any size can be requested, but external fragmentation does appear. Also, best fit as a strategy is chosen quite arbitrarily here. It would look the same with the other strategies.
+
+*Conclusion:*
+
+- Based on the questions discussed above, what can we conclude about the optimal solution for memory management?
+
+*Solution:*
+
+- There isn’t an optimal solution, and this holds for memory management in general. Improving on one problem usually worsens another. Therefore, in practice, medium-sized page sizes (4 KiB) are chosen as a trade-off (see Linux).
