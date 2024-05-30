@@ -131,17 +131,23 @@ Can you spot the hard links in these directory entries? What would the file `/bi
 
 *Solution 5:*
 
+`/bin/sh` and `/usr/bin/sh` contain the same inode number. They both point to the same file therefore they are hard links. If `/bin/sh` is a symbolic link to `bash`, then the file associated with `/bin/sh` (inode 938819) contains a path to `/bin/bash`
+
 *Question 6:*
 
 What would `/usr/lib64` contain if it was a symbolic link to the directory `/usr/lib`? Is this possible with a hard link?
 
 *Solution 6:*
 
+If `/usr/lib64` is a symbolic link to `/usr/lib` , then the entry is also a file containing a path to `/usr/lib` This is not possible with a hard link.
+
 *Question 7:*
 
 Name one advantage of symbolic link over hard links and one advantage of hard links over symbolic links.
 
 *Solution 7:*
+
+Symbolic link allow link between folders and across partitions, that is not possible for hard links. Hard link don’t have the problem of broken links, if the file is deleted, and another hard links exists, the link will still be valid. With symbolic links, if the original file (inode) is deleted, all the other link will become “broken”.
 
 *Question 8:*
 
