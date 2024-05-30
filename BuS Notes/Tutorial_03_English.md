@@ -47,4 +47,6 @@ File descriptor:
 ![[Pasted image 20240530203736.png]]
 
 Hard Links and Symbolic Links:
-- hard link: 
+- Hard Link: Copy the file $\Rightarrow$ a file can appear in multiple directories
+- Symbolic Link: special file containing a path to another file
+	- when Symbolic Link is deleted it does not delete the file is it pointing at
