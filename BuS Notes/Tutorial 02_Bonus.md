@@ -1,6 +1,9 @@
 ## Bonus: Segmentation vs. Paging
 
-Note: 1 GiB = $2^{30} bytes, 1 MiB =2^{20}bytes$
+Given a computer with *16 GiB* main memory and *64-bit* address space. You are considering whether to use segmentation or paging. You have the choice between 3 options
+
+
+Note : 1 GiB = $2^{30} bytes, 1 MiB =2^{20}bytes$
 
 *Option 1: Paging with pages of 4 bytes in size*
 1.1 How many entries would there be in the page table?
@@ -14,3 +17,5 @@ Note: 1 GiB = $2^{30} bytes, 1 MiB =2^{20}bytes$
 1.5 What about 7 levels of page table?
 
 1.6 Why is this number of levels problematic?
+
+*Solution:*
