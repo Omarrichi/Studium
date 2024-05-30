@@ -154,5 +154,15 @@ Symbolic link allow link between folders and across partitions, that is not poss
 How many disk operations are needed to fetch the inode for a file with the path name `/usr/ast/courses/os/handout.t`? Assume that the inode for the root directory is in memory, but nothing else along the path is in memory. Also assume that all directories fit in one disk block.
 
 How can we reduce that number of disk operations?
+
 *Solution 8:*
 
+- 1 disk IO for fetching the block directory for `/` (inside the block, we get the inode number of `usr`)
+- 1 disk IO for fetching the inode of `/usr`
+- 1 disk IO for fetching the block directory for `/usr` (we get the inode number of `ast`)
+- 1 disk IO for fetching the inode of `/usr/ast`
+- 1 disk IO for fetching the block directory for `/usr/ast`
+- 1 disk IO for fetching the inode of `/usr/ast/courses`
+- 1 disk IO for fetching the block directory for `/usr/ast/courses`
+- 1 disk IO for fetching the inode of `/usr/ast/courses/os`
+- 1 disk IO for fetching the block directory for `/usr/ast/courses/os`
