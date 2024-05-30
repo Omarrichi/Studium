@@ -169,3 +169,8 @@ How can we reduce that number of disk operations?
 - 1 disk IO for fetching the inode of `/usr/ast/courses/os/handout.t`
 
 10 disk accesses in total. To reduce that number (and because disk IO is very expensive), modern operating systems usually have an associative cache between the directory entries and the inode number
+
+### Basic file management:
+
+1. Read the manual:
+Read and understand the `open` syscall on the manual, what are the arguments, what is the return value?
