@@ -174,3 +174,14 @@ How can we reduce that number of disk operations?
 
 1. Read the manual:
 Read and understand the `open` syscall on the manual, what are the arguments, what is the return value?
+
+https://man7.org/linux/man-pages/man2/open.2.html
+
+![[Pasted image 20240530214132.png]]
+
+
+### 2. Open and modify a file
+
+![[Pasted image 20240530214311.png]]
+
+### Understanding relations between file descriptor, file table and inodes
