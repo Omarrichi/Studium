@@ -114,7 +114,16 @@ Each direct entry points directly to a 4 KiB block.
 
 A single indirect entry points to a block that contains disk addresses of other data blocks.
 
-Number of addresses in a single block = $1024\frac{4096 \text{bytes}}{4 \text{ bytes/address}} = ​ $=1024$
+- Number of addresses in a single block = $\frac{4096 \text{bytes}}{4 \text{ bytes/address}}=1024$
+
+- Each of these 1024 addresses points to a 4 KiB block.
+
+- Total storage from a single indirect entry = - $1024 \times 4096$ bytes.
+
+$1024^2 * 4$ KiB for the double indirect block
+$1024^3 * 4$ KiB for the triple indirect block
+
+For a total of 4402345713664 bytes (around 4 TB)
 
 *Question 5:*
 
