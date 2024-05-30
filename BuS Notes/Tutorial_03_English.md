@@ -207,3 +207,73 @@ int fd3 = dup(fd2);
 - `fd1` opens `file2.txt` in read-write mode.
 - `fd2` attempts to open `file3.txt` in read-only mode, but `O_TRUNCATE` is invalid here since it's used for write mode; this call might fail or be ignored.
 - `fd3` duplicates `fd2`, so `fd3` is another file descriptor for `file3.txt`.
+
+3. **Seeking in Files:**
+
+```c
+lseek(fd0, 19, SEEK_SET);
+lseek(fd1, 122, SEEK_SET);
+lseek(fd2, 5, SEEK_SET);
+```
+
+- `lseek` changes the file offset for the file descriptors.
+- `fd0`'s offset is moved to byte 19.
+- `fd1`'s offset is moved to byte 122.
+- `fd2`'s offset is moved to byte 5.
+
+4. **Reading from File:**
+
+```c
+read(fd3, buffer, 16);
+```
+- Reads 16 bytes from `fd3` (which is `file3.txt` at offset 5) into `buffer`.
+
+5. **Forking a Child Process:**
+
+```c
+if (fork() == 0) {
+```
+
+- `fork()` creates a new process. If `fork()` returns 0, it's the child process.
+
+6. **Child Process Execution:**
+
+```c
+close(fd0);
+close(fd2);
+```
+
+- Child process closes `fd0` and `fd2`.
+
+```c
+int fd4 = open("file5.txt", O_RDONLY);
+lseek(fd4, 12, SEEK_SET);
+write(fd1, buffer, 16);
+lseek(fd3, -12, SEEK_CUR);
+```
+
+- Opens `file5.txt` in read-only mode as `fd4`.
+- Seeks to byte 12 in `file5.txt`.
+- Writes the 16 bytes from `buffer` to `fd1` (which is `file2.txt` at offset 122).
+- Moves the offset of `fd3` (still `file3.txt`) back by 12 bytes from the current position.
+
+```c
+close(fd1);
+close(fd3);
+close(fd4);
+return;
+```
+
+- Closes `fd1`, `fd3`, and `fd4`.
+- Child process exits
+
+7. **Parent Process Execution:**
+
+```c
+close(fd0);
+close(fd1);
+close(fd2);
+close(fd3);
+```
+
+- Parent process closes all file descriptors: `fd0`, `fd1`, `fd2`, and `fd3`.
