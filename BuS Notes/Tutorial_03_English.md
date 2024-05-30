@@ -69,56 +69,53 @@ Some operating systems provide a system call `rename` to give a file a new name.
 
 *Solution 1:*
 
+Basic file system (like FAT and EXT seen during the lecture) copy the file block by block for the syscall  
+copy , and they create a new inode associated with the new copied file. On the other hand, renaming a  
+file is just updating the name of the file inside the directory, the only IO happens when getting the  
+directory block to update the file name. This is much more efficient, especially when dealing with big files.
+
 *Question 2:*
 
-Some operating systems provide a system call `rename` to give a file a new name. Is there any difference at all between using this call to rename a file and just copying the file to a new file with the new name, followed by deleting the old one?
+If `/home/root/` is the current working directory, what is the absolute path name for the file whose relative path name is `../redha/BuS/sched.txt`
 
 *Solution 2:*
 
 *Question 3:*
 
-Some operating systems provide a system call `rename` to give a file a new name. Is there any difference at all between using this call to rename a file and just copying the file to a new file with the new name, followed by deleting the old one?
+Contiguous allocation of files leads to disk fragmentation, because some space in the last disk block will be wasted in files whose length is not an integral number of blocks. Describe the internal and external fragmentation during the allocation and deletion of block.s
 
 *Solution 3:*
 
 *Question 4:*
 
-Some operating systems provide a system call `rename` to give a file a new name. Is there any difference at all between using this call to rename a file and just copying the file to a new file with the new name, followed by deleting the old one?
+A UNIX file system has 4 KiB blocks and 4-bytes disk addresses. What is the maximum file size in bytes if the inode contains 10 direct entries, and one single, double and triple indirect entry each?
+
+![[Pasted image 20240530204952.png]]
 
 *Solution 4:*
 
 *Question 5:*
 
-Some operating systems provide a system call `rename` to give a file a new name. Is there any difference at all between using this call to rename a file and just copying the file to a new file with the new name, followed by deleting the old one?
+Can you spot the hard links in these directory entries? What would the file `/bin/sh` contain if it was a symbolic link to `bash`?
 
 *Solution 5:*
 
 *Question 6:*
 
-Some operating systems provide a system call `rename` to give a file a new name. Is there any difference at all between using this call to rename a file and just copying the file to a new file with the new name, followed by deleting the old one?
+What would `/usr/lib64` contain if it was a symbolic link to the directory `/usr/lib`? Is this possible with a hard link?
 
 *Solution 6:*
 
 *Question 7:*
 
-Some operating systems provide a system call `rename` to give a file a new name. Is there any difference at all between using this call to rename a file and just copying the file to a new file with the new name, followed by deleting the old one?
+Name one advantage of symbolic link over hard links and one advantage of hard links over symbolic links.
 
 *Solution 7:*
 
 *Question 8:*
 
-Some operating systems provide a system call `rename` to give a file a new name. Is there any difference at all between using this call to rename a file and just copying the file to a new file with the new name, followed by deleting the old one?
+How many disk operations are needed to fetch the inode for a file with the path name `/usr/ast/courses/os/handout.t`? Assume that the inode for the root directory is in memory, but nothing else along the path is in memory. Also assume that all directories fit in one disk block.
 
+How can we reduce that number of disk operations?
 *Solution 8:*
 
-*Question 9:*
-
-Some operating systems provide a system call `rename` to give a file a new name. Is there any difference at all between using this call to rename a file and just copying the file to a new file with the new name, followed by deleting the old one?
-
-*Solution 9:*
-
-*Question 10:*
-
-Some operating systems provide a system call `rename` to give a file a new name. Is there any difference at all between using this call to rename a file and just copying the file to a new file with the new name, followed by deleting the old one?
-
-*Solution 10:*
