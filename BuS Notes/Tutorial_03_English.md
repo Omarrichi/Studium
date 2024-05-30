@@ -110,7 +110,11 @@ Direct Entries:
 Each direct entry points directly to a 4 KiB block.
 
 - Number of direct entries = 10
-- Total storage from direct entries = $10 \times 4096bytes 10 \times 4096 \text{bytes}10×4096 bytes
+- Total storage from direct entries = $10 \times 4096$ bytes $10 \times 4096$  bytes  $10 \times 4096$ bytes.
+
+A single indirect entry points to a block that contains disk addresses of other data blocks.
+
+Number of addresses in a single block = $1024\frac{4096 \text{bytes}}{4 \text{ bytes/address}} = ​ $=1024$
 
 *Question 5:*
 
