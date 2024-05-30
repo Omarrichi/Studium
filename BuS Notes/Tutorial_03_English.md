@@ -95,6 +95,23 @@ A UNIX file system has 4 KiB blocks and 4-bytes disk addresses. What is the maxi
 
 *Solution 4:*
 
+Parameters:
+
+- **Block size**: $4 KiB$ (4096 bytes)
+- **Disk address size**: $4 bytes$ (32-bit addresses)
+- **Inode structure**:
+    - 10 direct entries
+    - 1 single indirect entry
+    - 1 double indirect entry
+    - 1 triple indirect entry
+
+Direct Entries:
+
+Each direct entry points directly to a 4 KiB block.
+
+- Number of direct entries = 10
+- Total storage from direct entries = $10 \times 4096bytes 10 \times 4096 \text{bytes}10×4096 bytes
+
 *Question 5:*
 
 Can you spot the hard links in these directory entries? What would the file `/bin/sh` contain if it was a symbolic link to `bash`?
