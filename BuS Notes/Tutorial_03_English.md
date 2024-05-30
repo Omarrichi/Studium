@@ -27,3 +27,18 @@ File:
 - descriptors
 
 File Types: 
+- Regular files
+- Directories
+
+File Operations: 
+- Create
+- Delete
+- Get/Set attributes
+- Rename
+- Open: Returns a *file descriptor*
+- Close
+- Read/Write
+- Seek
+
+File descriptor:
+- state of curre
