@@ -132,6 +132,10 @@ Both the base address and the length are given in bytes.
 - ```0x1012```: The segment number is 1, ```0x012``` + ```0x232``` = ```0x244```. ```0x207a```: The segment number is 2, and the address is ```0x07a``` (or 122). But the length of segment 2 is 120, and 122 exceeds the segment length. This leads to an invalid memory access: the MMU sends a segmentation fault interrupt to the CPU. 
 - ```0x4095```: The segment number is 4, ```0x33e``` + ```0x095``` = ```0x3d3```.
 
+<div style="page-break-after: always; visibility: hidden">
+\pagebreak
+</div>
+
 ### 3. Paging:
 
 ```ad-note

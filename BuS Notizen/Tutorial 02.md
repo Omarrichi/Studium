@@ -1,6 +1,6 @@
 17.05.2024 - Omar Richi (omar.richi@rwth-aachen.de)
 
-### Question 1:
+### 1.1 The MMU:
 
 **a)** What are the tasks of memory management in operating systems? 
 
@@ -31,7 +31,7 @@
 **d)**
 - Geschwindigkeit, übersetzen passiert sehr häufig, deswegen extra Komponente, sonst muss die CPU übersetzen und das verlangsamt das System allgemein
 
-### Question 1.2:
+### 1.2 System Preformance:
 
 Given a demand paging system that is currently occupied as follows:
 - CPU load: 20%
@@ -131,6 +131,10 @@ Both the base address and the length are given in bytes.
 - `0x1012`: Die Segmentnummer ist 1, `0x012` + `0x232` = `0x244`.
 - `0x207a`: Die Segmentnummer ist 2 und die Adresse ist `0x07a` (oder 122). Aber die Länge des Segments 2 beträgt 120, und 122 überschreitet die Segmentlänge. Dies führt zu einem ungültigen Speicherzugriff: die MMU sendet einen Segmentierungsfehler-Interrupt an die CPU.
 - `0x4095`: Die Segmentnummer ist 4, `0x33e` + `0x095` = `0x3d3`.
+
+<div style="page-break-after: always; visibility: hidden">
+\pagebreak
+</div>
 
 ### 3. Paging:
 
