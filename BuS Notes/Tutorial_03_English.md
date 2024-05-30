@@ -41,4 +41,10 @@ File Operations:
 - Seek
 
 File descriptor:
-- state of curre
+- state of currently open file
+- multi open == multi file descriptors
+
+![[Pasted image 20240530203736.png]]
+
+Hard Links and Symbolic Links:
+- hard link: 
