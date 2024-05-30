@@ -15,4 +15,15 @@ Need for Abstraction
 - Can't expose directly to users
 
 Main Abstraction for users $\Rightarrow$ files
-OS component to manage 
+OS component to manage files $\Rightarrow$ file System
+
+---
+File:
+- name
+- structure
+- types
+- attributes
+- operations
+- descriptors
+
+File Types: 
