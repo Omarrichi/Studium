@@ -20,30 +20,29 @@ Note : 1 GiB = $2^{30} bytes, 1 MiB =2^{20}bytes$
 
 **1.6** Why is this number of levels problematic?
 
-*Solution:*
+*Lösung:*
 
-**1.1** With an address space of 64 bits, there are $2^{64}$ possible virtual addresses, each containing one byte. These are then divided into pages of 4 byte in size, resulting in $\frac{2^{64}}{2^2}=2^{62}$ pages.  
+**1.1** Bei einem Adressraum von 64 Bit gibt es $2^{64}$ mögliche virtuelle Adressen, von denen jede ein Byte enthält. Diese werden dann in Seiten von 4 Byte Größe unterteilt, was zu $\frac{2^{64}}{2^2} = 2^{62}$ Seiten führt.
 
-**1.2** Since the page size is so small (4), the translation is shared by only 4 virtual addresses. (a single entry for 4 addresses in the page table). As the page size decreases, fewer addresses share the same translation, resulting in a greater variety of translations and consequently, an increased rate of TLB misses.
+**1.2** Da die Seitengröße so klein ist (4 Byte), wird die Übersetzung nur von 4 virtuellen Adressen gemeinsam genutzt (ein einzelner Eintrag für 4 Adressen in der Seitentabelle). Wenn die Seitengröße abnimmt, teilen sich weniger Adressen die gleiche Übersetzung, was zu einer größeren Vielfalt an Übersetzungen und folglich zu einer erhöhten Rate an TLB-Fehlzugriffen führt.
 
-**1.3** Since we have a single level of page table, we need only 1 table of $2^{62}$ entries. 1 address is $2^3$ bytes so we would end up with $2^{65}$ bytes of memory for a single translation. This is not possible on a 64 bit machine.
+**1.3** Da wir nur eine einzige Ebene der Seitentabelle haben, benötigen wir nur eine Tabelle mit $2^{62}$ Einträgen. Eine Adresse ist $2^3$ Bytes groß, sodass wir mit $2^{65}$ Bytes Speicher für eine einzige Übersetzung enden würden. Dies ist auf einem 64-Bit-System nicht möglich.
 
-**1.4** With two level page table, we need to split the 62 bits in two. We end up with two page tables of $2^{31}$ entries. The total size for a single address translation is at least one 1st-level page table and one  
-2nd-level page table. We end up with a total size of $2\times 2^{31}\times 2^3 = 2^{35} = 32$ GiB  
+**1.4** Mit einer zweistufigen Seitentabelle müssen wir die 62 Bit in zwei Teile teilen. Wir enden mit zwei Seitentabellen mit jeweils $2^{31}$ Einträgen. Die Gesamtgröße für eine einzige Adressübersetzung beträgt mindestens eine Seitentabelle der ersten Ebene und eine der zweiten Ebene. Insgesamt ergibt sich eine Größe von $2 \times 2^{31} \times 2^3 = 2^{35} = 32$ GiB.
 
-**1.5** With seven levels, we need to split the 62 bits in $7: 62=7\times 8 + 6$.
+**1.5** Mit einer siebenstufigen Seitentabelle müssen wir die 62 Bit in 7 Teile aufteilen: $62 = 7 \times 8 + 6$.
 
-We have 6 bits unused (this means that some addresses can’t be translated anymore, but this is not a big deal, $2^{56}$ pages or $2^{58}$ addresses is already more than enough for each process; on a modern system, processes only have access to $2^{48}$ virtual memory addresses) 
+Wir haben 6 ungenutzte Bits (das bedeutet, dass einige Adressen nicht mehr übersetzt werden können, aber das ist kein großes Problem, $2^{56}$ Seiten oder $2^{58}$ Adressen sind bereits mehr als genug für jeden Prozess; in einem modernen System haben Prozesse nur Zugriff auf $2^{48}$ virtuelle Speicheradressen).
 
-Each of the seven tables contains $2^8$ entries of $2^3$ bytes, about 2 KiB per table. 
+Jede der sieben Tabellen enthält $2^8$ Einträge zu je $2^3$ Bytes, etwa 2 KiB pro Tabelle.
 
-7 tables would be 14 KiB in total.  
+7 Tabellen ergeben insgesamt 14 KiB.
 
-A single translation would require only 14 KiB with 7 level page table.
+Eine einzige Übersetzung würde mit einer siebenstufigen Seitentabelle nur 14 KiB erfordern.
 
-**1.6** We have way too much computational overhead from consulting all the page tables each time.
+**1.6** Wir haben viel zu viel Rechenaufwand durch das Konsultieren aller Seitentabellen bei jedem Zugriff.
 
-But at least, there would be virtually no problems with fragmentation: external fragmentation does not occur with paging anyway, and since memory can be requested in multiples of 4 bytes, there is not much internal fragmentation either
+Aber zumindest gäbe es praktisch keine Probleme mit Fragmentierung: Externe Fragmentierung tritt bei Paging ohnehin nicht auf, und da Speicher in Vielfachen von 4 Bytes angefordert werden kann, gibt es auch kaum interne Fragmentierung.
 
 *Option 2: Paging with pages of 256 MiB in size*
 
@@ -51,29 +50,30 @@ But at least, there would be virtually no problems with fragmentation: external 
 
 **2.2** Why is having pages of this size problematic?
 
-*Solution:*
+*Lösung:*
 
-**2.1** If we split the entire address space of $2^{64}$ addresses by group of $256 Mib = 2^{28}$, we end up with $\frac{2^{64}}{2^{28}}=2^{36}$ different pages. The page table needs to hold $2^{36}$ entries.
+**2.1** Wenn wir den gesamten Adressraum von $2^{64}$ Adressen in Gruppen von $256$ MiB ($2^{28}$) unterteilen, enden wir mit $\frac{2^{64}}{2^{28}} = 2^{36}$ verschiedenen Seiten. Die Seitentabelle muss also $2^{36}$ Einträge enthalten.
 
-**2.2** Again, there is no problem with external fragmentation. However, there is likely to be a lot of internal fragmentation, as you can only ever request multiples of 256 MiB.
+**2.2** Auch hier gibt es kein Problem mit externer Fragmentierung. Es wird jedoch wahrscheinlich viel interne Fragmentierung geben, da man immer nur Vielfache von 256 MiB anfordern kann.
 
 ```ad-note
-title: Side note:
-We should also increase the number of levels in the page table
+title: Anmerkung:
+Wir sollten auch die Anzahl der Ebenen in der Seitentabelle erhöhen.
+
 ```
 
 *Option 3: Segmentation with best fit as a strategy for searching for free memory*
 
 **3.1** is there any internal / external fragmentation?
 
-*Solution:*
+*Lösung:*
 
-**3.1** Internal fragmentation does not occur, as any size can be requested, but external fragmentation does appear. Also, best fit as a strategy is chosen quite arbitrarily here. It would look the same with the other strategies.
+**3.1** Interne Fragmentierung tritt nicht auf, da jede Größe angefordert werden kann, aber externe Fragmentierung tritt auf. Außerdem wird die Strategie "Best Fit" hier ziemlich willkürlich gewählt. Es würde mit den anderen Strategien ähnlich aussehen.
 
 *Conclusion:*
 
 - Based on the questions discussed above, what can we conclude about the optimal solution for memory management?
 
-*Solution:*
+*Lösung:*
 
-- There isn’t an optimal solution, and this holds for memory management in general. Improving on one problem usually worsens another. Therefore, in practice, medium-sized page sizes (4 KiB) are chosen as a trade-off (see Linux).
+- Es gibt keine optimale Lösung, und das gilt allgemein für das Speichermanagement. Die Verbesserung eines Problems verschlechtert in der Regel ein anderes. Daher werden in der Praxis mittelgroße Seitengrößen (4 KiB) als Kompromiss gewählt (siehe Linux).
