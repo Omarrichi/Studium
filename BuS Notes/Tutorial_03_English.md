@@ -9,3 +9,10 @@ file management:
 4. Caching
 
 Volatile vs. Non-Volatile Memory
+
+Need for Abstraction
+- Every device work differently
+- Can't expose directly to users
+
+Main Abstraction for users $\Rightarrow$ files
+OS component to manage 
