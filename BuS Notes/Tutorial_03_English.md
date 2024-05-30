@@ -166,3 +166,6 @@ How can we reduce that number of disk operations?
 - 1 disk IO for fetching the block directory for `/usr/ast/courses`
 - 1 disk IO for fetching the inode of `/usr/ast/courses/os`
 - 1 disk IO for fetching the block directory for `/usr/ast/courses/os`
+- 1 disk IO for fetching the inode of `/usr/ast/courses/os/handout.t`
+
+10 disk accesses in total. To reduce that number (and because disk IO is very expensive), modern operating systems usually have an associative cache between the directory entries and the inode number
