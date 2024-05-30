@@ -6,7 +6,6 @@
       {
         "id": "0f17f16f9ce993d2",
         "type": "tabs",
-        "dimension": 49.09090909090909,
         "children": [
           {
             "id": "b0e22ab8bfdf82eb",
@@ -33,38 +32,31 @@
             }
           },
           {
-            "id": "94a523de32957604",
+            "id": "bef69a5a2fb053f4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "BuS Notizen/Tutorial_02_Bonus_Deutsch.md",
+                "file": "BuS Notizen/Tutorial_03_Deutsch.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "836d4a7a96a33710",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "BuS Notes/Tutorial_03_English.md",
                 "mode": "source",
                 "source": true
               }
             }
           }
         ],
-        "currentTab": 2
-      },
-      {
-        "id": "57d50198ae965c51",
-        "type": "tabs",
-        "dimension": 50.90909090909091,
-        "children": [
-          {
-            "id": "42d329f8a2449023",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "BuS Notizen/Tutorial_02_Bonus_Deutsch.md",
-                "mode": "preview",
-                "source": true
-              }
-            }
-          }
-        ]
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -130,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "BuS Notizen/Tutorial_02_Bonus_Deutsch.md",
+                "file": "BuS Notes/Tutorial_03_English.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "BuS Notizen/Tutorial_02_Bonus_Deutsch.md",
+                "file": "BuS Notes/Tutorial_03_English.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "BuS Notizen/Tutorial_02_Bonus_Deutsch.md"
+                "file": "BuS Notes/Tutorial_03_English.md"
               }
             }
           },
@@ -210,14 +202,16 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "42d329f8a2449023",
+  "active": "836d4a7a96a33710",
   "lastOpenFiles": [
+    "BuS Notes/Tutorial 02.md",
+    "BuS Notes/Tutorial_03_English.md",
+    "BuS Notizen/Tutorial_03_Deutsch.md",
     "BuS Notes/Tutorial_02_Bonus_English.md",
     "BuS Notizen/Tutorial_02_Bonus_Deutsch.md",
+    "BuS Notizen/Tutorial 02.md",
     "BuS Notes/Tutorial 01.md",
     "BuS Notes/Tutorial 00.md",
-    "BuS Notes/Tutorial 02.md",
-    "BuS Notizen/Tutorial 02.md",
     "Pasted image 20240526172231.png",
     "Pasted image 20240526172147.png",
     "Pasted image 20240526171811.png",
@@ -252,10 +246,8 @@
     "5. Semester/Introduction to Artificial Intelligence",
     "5. Semester/Erfüllbarkeitsüberprüfung",
     "5. Semester/Einführung in Webtechnologien",
-    "Machine Learning/Machine Learning.md",
     "5. Semester/Berechenbarkeit und Komplexität",
     "5. Semester/Machine Learning",
-    "5. Semester/Untitled.md",
     "5. Semester/Datenkommunikation",
     "5. Semester"
   ]
