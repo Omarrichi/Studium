@@ -185,3 +185,25 @@ https://man7.org/linux/man-pages/man2/open.2.html
 ![[Pasted image 20240530214311.png]]
 
 ### Understanding relations between file descriptor, file table and inodes
+
+### Detailed Explanation:
+
+1. **Variable Declarations:**
+```c
+char buffer[16];
+```
+- Declares a buffer of 16 characters to hold data read from a file.
+
+2. Opening Files: 
+
+```c
+int fd0 = open("file1.txt", O_RDONLY);
+int fd1 = open("file2.txt", O_RDWR);
+int fd2 = open("file3.txt", O_RDONLY, O_TRUNCATE);
+int fd3 = dup(fd2);
+```
+
+- `fd0` opens `file1.txt` in read-only mode.
+- `fd1` opens `file2.txt` in read-write mode.
+- `fd2` attempts to open `file3.txt` in read-only mode, but `O_TRUNCATE` is invalid here since it's used for write mode; this call might fail or be ignored.
+- `fd3` duplicates `fd2`, so `fd3` is another file descriptor for `file3.txt`.
