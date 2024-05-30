@@ -277,3 +277,11 @@ close(fd3);
 ```
 
 - Parent process closes all file descriptors: `fd0`, `fd1`, `fd2`, and `fd3`.
+
+Line 14: 
+
+![[Pasted image 20240530221149.png]]
+
+Line 24:
+
+![[Pasted image 20240530221236.png]]
