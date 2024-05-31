@@ -470,9 +470,13 @@ Line 14:
 
 Line 24:
 
-![[Pasted image 20240530221236.png]]
+![[Pasted image 20240531230318.png]]
 
+- the child inherits all the file descriptors of its parent
+- in our code, the child closes the files associated with the files descriptor 3 and 5 
+- when it opens `file5.txt`, the first file descriptor that is not in use is 3, it now points to the new file.
 
 **Questions:**
+1. If the file permission of `file1.txt` was 0444, what would be the result of executing the previous code
 
 ![[Pasted image 20240530222635.png]]
