@@ -480,4 +480,5 @@ Line 24:
 1. If the file permission of `file1.txt` was 0444, what would be the result of executing the previous code
 
 **Solution:**
-1. `444` is, in UNIX permission `r--r--r--` ()
+1. `444` is, in UNIX permission `r--r--r--` (read for others, groups and owners). Line 6, the call to `open` would fail and return `-1` because we cannot open a file with write permission if the file is read-only. (and we should check for this error in the code!).
+
