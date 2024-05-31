@@ -104,7 +104,7 @@ Direct Entries:
 Each direct entry points directly to a 4 KiB block.
 
 - Number of direct entries = 10
-- Total storage from direct entries = $10 \times 4096$ bytes $10 \times 4096$  bytes  $10 \times 4096$ bytes.
+- Total storage from direct entries = $10 \times 4096$ bytes
 
 A single indirect entry points to a block that contains disk addresses of other data blocks.
 
@@ -114,8 +114,8 @@ A single indirect entry points to a block that contains disk addresses of other 
 
 - Total storage from a single indirect entry = - $1024 \times 4096$ bytes.
 
-$1024^2 * 4$ KiB for the double indirect block
-$1024^3 * 4$ KiB for the triple indirect block
+- $1024^2 * 4$ KiB for the double indirect block
+- $1024^3 * 4$ KiB for the triple indirect block
 
 For a total of 4402345713664 bytes (around 4 TB)
 
@@ -164,9 +164,13 @@ How can we reduce that number of disk operations?
 
 10 disk accesses in total. To reduce that number (and because disk IO is very expensive), modern operating systems usually have an associative cache between the directory entries and the inode number
 
-### Basic file management:
+## Basic file management:
 
-1. Read the manual:
+In this exercise, you will learn how to:
+1. read the manual pages for system calls
+2. access files at low level
+
+### 1. Read the manual:
 Read and understand the `open` syscall on the manual, what are the arguments, what is the return value?
 
 https://man7.org/linux/man-pages/man2/open.2.html
