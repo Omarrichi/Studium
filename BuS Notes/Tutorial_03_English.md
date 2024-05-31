@@ -285,3 +285,8 @@ Line 14:
 Line 24:
 
 ![[Pasted image 20240530221236.png]]
+
+
+**Questions:**
+
+![[Pasted image 20240530222635.png]]
