@@ -358,10 +358,15 @@ int main()
 }
 ```
 
-### Detailed Explanation:
+Please note that `file1.txt` and `file2.txt` are hard links. Suppose that no file descriptor is in use at the start of the program, except for the standard input, standard output and standard error.
 
+**Task:**
+At the specified lines (14 and 24), draw the state of:
+- The file descriptor table for each process.
+- The associated file structures (including inode, mode, and cursor)
+- The corresponding inode.
 
-
+##### Detailed Explanation:
 
 **1. Variable Declarations:**
 ```c
@@ -455,7 +460,13 @@ close(fd3);
 
 Line 14: 
 
-![[Pasted image 20240530221149.png]]
+![[Pasted image 20240531230104.png]]
+
+- file descriptor 0,1,2 correspond respectively to stdin, stdout and stderr
+- there is 1 structure file per call to `open()`
+- `file1.txt` and `file2.txt` are hard links so they share the same inode
+- `dup(fd2)` duplicated the file descriptor 5 to the file descriptor 6
+- the cursors (or offset) are updated for each call of `lseek`, `read` and `write`
 
 Line 24:
 
