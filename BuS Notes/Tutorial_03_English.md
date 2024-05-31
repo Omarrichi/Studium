@@ -2,15 +2,13 @@
 
 *Basics:* 
 
-file management:
+**file management:**
 1. File abstraction
 2. Directory abstraction
 3. File systems
 4. Caching
 
-Volatile vs. Non-Volatile Memory
-
-Need for Abstraction
+**Need for Abstraction**
 - Every device work differently
 - Can't expose directly to users
 
@@ -18,7 +16,7 @@ Main Abstraction for users $\Rightarrow$ files
 OS component to manage files $\Rightarrow$ file System
 
 ---
-File:
+**File:**
 - name
 - structure
 - types
@@ -26,11 +24,11 @@ File:
 - operations
 - descriptors
 
-File Types: 
+**File Types: **
 - Regular files
 - Directories
 
-File Operations: 
+**File Operations: **
 - Create
 - Delete
 - Get/Set attributes
@@ -40,24 +38,20 @@ File Operations:
 - Read/Write
 - Seek
 
-File descriptor:
+**File descriptor:**
 - state of currently open file
 - multi open == multi file descriptors
 
 ![[Pasted image 20240530203736.png]]
 
----
-
-Paths:
+**Paths:**
 - Absolute: starts from the root of the system up to the file
 - relativ: starts from the current location, the current working directory (cwd) 
 
----
-
-Hard Links and Symbolic Links:
+**Hard Links and Symbolic Links:**
 - Hard Link: Copy the file $\Rightarrow$ a file can appear in multiple directories
 - Symbolic Link: special file containing a path to another file
-	- when Symbolic Link is deleted it does not delete the file is it pointing at
+	- when Symbolic Link is deleted it does not delete the file it is pointing at
 
 ---
 
