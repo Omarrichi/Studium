@@ -197,12 +197,81 @@ The flag `O_TRUNCATE` is used to truncate a file upon open, which discards all d
 Finally, to combine multiple flags, we use the OR operator. for example, to write to a file and discord the current data:
 
 ```c
-1 int fd = open
+1 int fd = open("file", O_RDWR | O_TRUNCATE);
 ```
 
 ### 2. Open and modify a file
 
-![[Pasted image 20240530214311.png]]
+Write a C code that opens a file, that modifies all the occurrences of the char `'a'` to `'b'`, starting at the offset 592, until the end of the file.
+
+*Solution:*
+
+```c
+int main() {
+	int fd = open("file", O_RDWR);
+	if (fd < 0) {
+		perror("open");
+		exit(1);
+	}
+
+	int ret = lseek(fd, 592, SEEK_SET);
+	if (ret == -1) {
+		perror("lseek");
+		goto out;
+	}
+
+	char buf;
+
+	do {
+		ret = read(fd, &buf, 1);
+		if (ret != 1) {
+			goto out;
+		}
+		if (buf == 'a') {
+			buf = 'b';
+			if (lseek(fd, -1, SEEK_CUR) == -1) {
+				perror("lseek\n");
+				exit(1);
+			}
+			ret = write(fd, &buf, 1);
+		}
+	} while(ret == 1);
+
+out:
+	close(fd);
+}
+```
+
+**Detailed Explanation:**
+
+1. Open File:
+
+```c
+int fd = open("file", O_RDWR);
+if (fd < 0) {
+    perror("open");
+    exit(1);
+}
+```
+
+- The `open` function is used to open the file named "file" with read and write permissions (`O_RDWR`).
+- If the file cannot be opened (`fd < 0`), `perror` prints an error message, and `exit(1)` terminates the program.
+
+2. Seek to a specific position:
+
+```c
+int ret = lseek(fd, 592, SEEK_SET);
+if (ret == -1) {
+    perror("lseek");
+    goto out;
+}
+```
+
+
+
+
+
+
 
 ### Understanding relations between file descriptor, file table and inodes
 
