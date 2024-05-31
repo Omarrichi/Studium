@@ -175,8 +175,30 @@ Read and understand the `open` syscall on the manual, what are the arguments, wh
 
 https://man7.org/linux/man-pages/man2/open.2.html
 
-![[Pasted image 20240530214132.png]]
+How will you call this function to create a new file? What does the flag `O_TRUNCATE` is doing? How to combine multiple flags?
 
+*Solution:*
+
+The arguments are:
+- a `string` that represent the pathname of the file
+- a `int` that represent flags
+- an optional argument `mode` used when creating a new file
+
+On success, the function returns the new file descriptor, on error, -1 is returned
+
+Creating a new file can be made using the flag `O_CREAT`, and we need to add the mode (refer to UNIX permissions on the manual of `open()`).
+
+```c
+1 int fd =  open("new_file", O_CREAT, 00700);
+```
+
+The flag `O_TRUNCATE` is used to truncate a file upon open, which discards all data inside the file.
+
+Finally, to combine multiple flags, we use the OR operator. for example, to write to a file and discord the current data:
+
+```c
+1 int fd = open
+```
 
 ### 2. Open and modify a file
 
