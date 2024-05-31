@@ -479,4 +479,5 @@ Line 24:
 **Questions:**
 1. If the file permission of `file1.txt` was 0444, what would be the result of executing the previous code
 
-![[Pasted image 20240530222635.png]]
+**Solution:**
+1. `444` is, in UNIX permission `r--r--r--` ()
