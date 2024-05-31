@@ -242,7 +242,7 @@ out:
 }
 ```
 
-**Detailed Explanation:**
+##### **Detailed Explanation:**
 
 **1. Open File:**
 
@@ -318,22 +318,58 @@ This program opens a file named "file" in read-write mode, seeks to byte offset 
 
 ### Understanding relations between file descriptor, file table and inodes
 
-In this task, we'll be analyzing the statre
+In this task, we'll be analyzing the state of file descriptors, file structures, and inodes in a parent and child process at specific points in the program execution
 
+```c
+int main()
+{
+	char buffer[16];
 
+	int fd0 = open("file1.txt", O_RDONLY);
+	int fd1 = open("file2.txt", O_RDWR);
+	int fd2 = open("file3.txt", O_RDONLY, O_TRUNCATE);
+	int fd3 = dup(fd2);
+
+	lseek(fd0, 19, SEEK_SET);
+	lseek(fd1, 122, SEEK_SET);
+	lseek(fd2, 5, SEEK_SET);
+	read(fd3, buffer, 16);
+
+	if (fork() == 0) {
+		close(fd0);
+		close(fd2);
+
+		int fd4 = open("file5.txt", O_RDONLY);
+
+		lseek(fd4, 12, SEEK_SET);
+		write(fd1, BUFFER, 16);
+		lseek(fd3, -21, SEEK_CUR);
+
+		close(fd1);
+		close(fd3);
+		close(fd4);
+		return;
+	}
+
+	close(fd0);
+	close(fd1);
+	close(fd2);
+	close(fd3);
+}
+```
 
 ### Detailed Explanation:
 
 
 
 
-1. **Variable Declarations:**
+**1. Variable Declarations:**
 ```c
 char buffer[16];
 ```
 - Declares a buffer of 16 characters to hold data read from a file.
 
-2. Opening Files: 
+**2. Opening Files: **
 
 ```c
 int fd0 = open("file1.txt", O_RDONLY);
@@ -347,7 +383,7 @@ int fd3 = dup(fd2);
 - `fd2` attempts to open `file3.txt` in read-only mode, but `O_TRUNCATE` is invalid here since it's used for write mode; this call might fail or be ignored.
 - `fd3` duplicates `fd2`, so `fd3` is another file descriptor for `file3.txt`.
 
-3. **Seeking in Files:**
+**3. Seeking in Files:**
 
 ```c
 lseek(fd0, 19, SEEK_SET);
@@ -360,14 +396,14 @@ lseek(fd2, 5, SEEK_SET);
 - `fd1`'s offset is moved to byte 122.
 - `fd2`'s offset is moved to byte 5.
 
-4. **Reading from File:**
+**4. Reading from File:**
 
 ```c
 read(fd3, buffer, 16);
 ```
 - Reads 16 bytes from `fd3` (which is `file3.txt` at offset 5) into `buffer`.
 
-5. **Forking a Child Process:**
+**5. Forking a Child Process:**
 
 ```c
 if (fork() == 0) {
@@ -375,7 +411,7 @@ if (fork() == 0) {
 
 - `fork()` creates a new process. If `fork()` returns 0, it's the child process.
 
-6. **Child Process Execution:**
+**6. Child Process Execution:**
 
 ```c
 close(fd0);
@@ -388,13 +424,13 @@ close(fd2);
 int fd4 = open("file5.txt", O_RDONLY);
 lseek(fd4, 12, SEEK_SET);
 write(fd1, buffer, 16);
-lseek(fd3, -12, SEEK_CUR);
+lseek(fd3, -21, SEEK_CUR);
 ```
 
 - Opens `file5.txt` in read-only mode as `fd4`.
 - Seeks to byte 12 in `file5.txt`.
 - Writes the 16 bytes from `buffer` to `fd1` (which is `file2.txt` at offset 122).
-- Moves the offset of `fd3` (still `file3.txt`) back by 12 bytes from the current position.
+- Moves the offset of `fd3` (still `file3.txt`) back by 21 bytes from the current position.
 
 ```c
 close(fd1);
@@ -406,7 +442,7 @@ return;
 - Closes `fd1`, `fd3`, and `fd4`.
 - Child process exits
 
-7. **Parent Process Execution:**
+**7. Parent Process Execution:**
 
 ```c
 close(fd0);
