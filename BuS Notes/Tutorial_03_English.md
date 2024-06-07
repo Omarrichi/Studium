@@ -709,3 +709,29 @@ while((size = read(fd, buffer, BUFFER_SIZE)) > 0) {
 - The `while` loop reads from the file in chunks of `BUFFER_SIZE` bytes and writes those bytes to stdout.
 - `read(fd, buffer, BUFFER_SIZE)` reads up to `BUFFER_SIZE` bytes from the file into `buffer`.
 - `write(STDOUT_FILENO, buffer, size)` writes the bytes stored in `buffer` to stdout.
+
+*Error Handling and Closing the File:*
+
+```c
+if (size < 0) {
+    perror("read");
+}
+close(fd);
+```
+
+- After the loop, if `read` returned a negative value (indicating an error), it prints an error message.
+- `close(fd)` closes the file descriptor for the current file.
+
+*Return Statement:*
+
+```c
+return 0;
+```
+
+- The function returns `0`, indicating successful completion.
+
+**Summary**
+
+- The `cat` function reads the contents of multiple files and writes them to stdout.
+- It handles errors for both opening and reading files, printing appropriate error messages.
+- It processes each file in turn, reading and writing in chunks to efficiently handle large files.
