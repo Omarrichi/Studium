@@ -495,4 +495,76 @@ Write a C function that executes a ``command`` with the arguments ``args`` . The
 
 If the file descriptor of the `output_file` is `fd`, we can use: `dup2(fd, 1).`
 
-If we want to add the stderr as well, we can add to the code a call to dup2(fd,2)
+If we want to add the stderr as well, we can add to the code a call to `dup(fd,2)` where 2 is the file descriptor for the stderr by default.
+
+
+```c
+int stdout_to_file(char *command, char *args[], char *output_file)
+{
+	// ensure the file is created and truncated when it's opened
+	int fd = open(output_file, O_RDWR | O_CREAT | O_TRUNC, 00777);
+	pid_t pid;
+	int wstatus;
+	if (fd < 0) {
+		perror("open");
+		return -1;
+	}
+
+	pid = fork();
+	if (pid == 0) {
+		// the macro STDOUT_FILENO is equal to 1
+		if (dup2(fd, STDOUT_FILENO) == -1) {
+			perror("dup2");
+			exit(1);
+		}
+		// now, stdout is closed, instead the file descriptor is pointing to
+		// the output file
+		if (execv(command, args) == -1) {
+			perror("execv");
+			exit(1);
+		}
+	}
+	if (waitpid(pid, &wstatus, 0) != pid) {
+		perror("waitpid");
+		close(fd);
+		exit(1);
+	}
+	close(fd);
+	return wstatus;
+}
+
+```
+
+**Detailed Explination:**
+
+*Function Signature*
+
+```c
+int stdout_to_file(char *command, char *args[], char *output_file)
+```
+- `command`: A string representing the path to the executable command.
+- `args[]`: An array of strings representing the arguments to the command. The first element should be the command itself, and the last element must be `NULL`.
+- `output_file`: A string representing the path to the output file where stdout will be redirected.
+
+*Variable Declarations and File Handling*
+
+```c
+int fd = open(output_file, O_RDWR | O_CREAT | O_TRUNC, 00777);
+pid_t pid;
+int wstatus;
+if (fd < 0) {
+    perror("open");
+    return -1;
+}
+```
+
+- `fd` is the file descriptor for the output file.
+- `open` is used to open the file with read/write permissions, creating it if it doesn't exist, and truncating it to zero length if it does. The permissions are set to `0777`.
+- If `open` fails (`fd < 0`), it prints an error message and returns `-1`.
+
+
+*Forking a New Process:*
+```c
+pid = fork();
+if (pid == 0) {
+```
