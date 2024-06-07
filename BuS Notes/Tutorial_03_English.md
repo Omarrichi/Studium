@@ -535,9 +535,9 @@ int stdout_to_file(char *command, char *args[], char *output_file)
 
 ```
 
-**Detailed Explination:**
+**Detailed Explanation:**
 
-*Function Signature*
+*Function Signature:*
 
 ```c
 int stdout_to_file(char *command, char *args[], char *output_file)
@@ -546,7 +546,7 @@ int stdout_to_file(char *command, char *args[], char *output_file)
 - `args[]`: An array of strings representing the arguments to the command. The first element should be the command itself, and the last element must be `NULL`.
 - `output_file`: A string representing the path to the output file where stdout will be redirected.
 
-*Variable Declarations and File Handling*
+*Variable Declarations and File Handling:*
 
 ```c
 int fd = open(output_file, O_RDWR | O_CREAT | O_TRUNC, 00777);
@@ -621,3 +621,91 @@ return wstatus;
 ##### Implement the UNIX cat command
 
 Implement the following C function that concatenate all the files passed in argument. It should write the content of the files to the standard output.
+
+
+*Solution:*
+
+```c
+int cat(char *filenames[], int nr_files)
+{
+	char *filename;
+	int fd;
+	char buffer[BUFFER_SIZE];
+	size_t size;
+
+	for (int i = 0; i < nr_files; i++) {
+		filename = filenames[i];
+		fd = open(filename, O_RDONLY);
+		if (fd < 0) {
+			perror("open");
+			continue;
+		}
+
+		size = BUFFER_SIZE;
+		while((size = read(fd, buffer, BUFFER_SIZE)) > 0) {
+			write(STDOUT_FILENO, buffer, size); // write to stdout (or we could use printf)
+		}
+
+		if (size < 0) {
+			perror("read");
+		}
+		close(fd);
+	}
+	return 0;
+}
+```
+
+**Detailed Explanation:**
+
+*Function Signature:*
+
+```c
+int cat(char *filenames[], int nr_files)
+```
+
+- `filenames`: An array of strings where each string is the name of a file to be read.
+- `nr_files`: The number of files in the `filenames` array.
+
+*Variable Declarations:*
+
+```c
+char *filename;
+int fd;
+char buffer[BUFFER_SIZE];
+size_t size;
+```
+
+- `filename`: A pointer to the current filename being processed.
+- `fd`: The file descriptor for the current file.
+- `buffer`: A buffer used to store data read from the file.
+- `size`: The number of bytes read from the file.
+
+*Loop Through Each File:*
+
+```c
+for (int i = 0; i < nr_files; i++) {
+    filename = filenames[i];
+    fd = open(filename, O_RDONLY);
+    if (fd < 0) {
+        perror("open");
+        continue;
+    }
+```
+
+- The loop iterates over each file name in the `filenames` array.
+- `open(filename, O_RDONLY)` attempts to open the current file in read-only mode.
+- If `open` fails (`fd < 0`), it prints an error message and continues to the next file.
+
+*Reading and Writing File Content:*
+
+```c
+size = BUFFER_SIZE;
+while((size = read(fd, buffer, BUFFER_SIZE)) > 0) {
+    write(STDOUT_FILENO, buffer, size);
+}
+```
+
+- `size = BUFFER_SIZE;` initializes the variable `size`.
+- The `while` loop reads from the file in chunks of `BUFFER_SIZE` bytes and writes those bytes to stdout.
+- `read(fd, buffer, BUFFER_SIZE)` reads up to `BUFFER_SIZE` bytes from the file into `buffer`.
+- `write(STDOUT_FILENO, buffer, size)` writes the bytes stored in `buffer` to stdout.
