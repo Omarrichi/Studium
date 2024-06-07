@@ -568,3 +568,56 @@ if (fd < 0) {
 pid = fork();
 if (pid == 0) {
 ```
+- `fork` creates a new process. The new process (child) gets a process ID (PID) of `0`, and the parent gets the child's PID.
+- In the child process (`pid == 0`), the code proceeds to redirect stdout and execute the command.
+
+*Redirecting stdout:*
+
+```c
+if (dup2(fd, STDOUT_FILENO) == -1) {
+    perror("dup2");
+    exit(1);
+}
+```
+
+- `dup2(fd, STDOUT_FILENO)` duplicates `fd` to the file descriptor for stdout (1).
+- This means any output to stdout will now go to the file represented by `fd`.
+- If `dup2` fails, it prints an error message and exits the child process.
+
+*Executing the Command:*
+
+```c
+if (execv(command, args) == -1) {
+    perror("execv");
+    exit(1);
+}
+```
+
+- `execv` replaces the current process image with a new process image specified by `command` and `args`.
+- If `execv` fails, it prints an error message and exits the child process.
+
+*Waiting for the Child Process to Finish:*
+
+```c
+if (waitpid(pid, &wstatus, 0) != pid) {
+    perror("waitpid");
+    close(fd);
+    exit(1);
+}
+close(fd);
+return wstatus;
+```
+
+- `waitpid` waits for the child process (`pid`) to finish and stores the status in `wstatus`.
+- If `waitpid` fails, it prints an error message, closes the file descriptor, and exits.
+- After the child process finishes, the parent closes the file descriptor and returns the status of the child process.
+
+**Summary**
+
+- The function redirects the stdout of the command to a file.
+- It ensures proper error handling for opening files, duplicating file descriptors, forking, executing commands, and waiting for the child process.
+- The function returns the exit status of the executed command or `-1` in case of an error before execution.
+
+##### Implement the UNIX cat command
+
+Implement the following C function that concatenate all the files passed in argument. It should write the content of the files to the standard output.
