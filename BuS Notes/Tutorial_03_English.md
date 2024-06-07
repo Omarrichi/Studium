@@ -482,3 +482,17 @@ Line 24:
 **Solution:**
 1. `444` is, in UNIX permission `r--r--r--` (read for others, groups and owners). Line 6, the call to `open` would fail and return `-1` because we cannot open a file with write permission if the file is read-only. (and we should check for this error in the code!).
 
+### Coding exercises
+
+##### Dup 2 manipulation
+
+Write a C function that executes a ``command`` with the arguments ``args`` . The function should call ``fork()`` , then executes the program with ``execv()`` and redirect the output of the command to the file ``output_file`` .
+
+
+*Solution:*
+
+`dup2()` will replace a file descriptor by another one. In our case, we want to replace the file descriptor of the standard output with the file descriptor of the file `output_file`.
+
+If the file descriptor of the `output_file` is `fd`, we can use: `dup2(fd, 1).`
+
+If we want to add the stderr as well, we can add to the code a call to dup2(fd,2)
