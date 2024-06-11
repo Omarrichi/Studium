@@ -274,3 +274,247 @@ out:
 	close(fd);
 }
 ```
+
+##### **Ausführliche Erklärung:**
+
+**1. Öffnen der Datei:**
+
+```c
+int fd = open("file", O_RDWR);
+if (fd < 0) {
+    perror("open");
+    exit(1);
+}
+```
+
+- Die Funktion `open` wird verwendet, um die Datei mit dem Namen "file" mit Lese- und Schreibberechtigungen (`O_RDWR`) zu öffnen.
+- Wenn die Datei nicht geöffnet werden kann (`fd < 0`), gibt `perror` eine Fehlermeldung aus, und `exit(1)` beendet das Programm.
+
+**2. Positionieren an eine bestimmte Stelle:**
+
+```c
+int ret = lseek(fd, 592, SEEK_SET);
+if (ret == -1) {
+    perror("lseek");
+    goto out;
+}
+```
+
+- Die Funktion `lseek` setzt den Datei-Offset auf Byte 592 ab dem Anfang der Datei (`SEEK_SET`).
+- Wenn die Positionsänderung fehlschlägt (`ret == -1`), gibt `perror` eine Fehlermeldung aus, und das Programm springt zum Label `out`, um die Datei zu schließen und zu beenden.
+
+**3. Lesen und Ändern des Dateiinhalts**
+
+```c
+char buf;
+
+do {
+    ret = read(fd, &buf, 1);
+    if (ret != 1) {
+        goto out;
+    }
+    if (buf == 'a') {
+        buf = 'b';
+        if (lseek(fd, -1, SEEK_CUR) == -1) {
+            perror("lseek\n");
+            exit(1);
+        }
+        ret = write(fd, &buf, 1);
+    }
+} while (ret == 1);
+```
+
+- Es wird eine Variable `char buf` deklariert, um das gelesene Byte aus der Datei zu speichern.
+- Die `do-while`-Schleife liest kontinuierlich Byte für Byte aus der Datei in `buf`.
+- Wenn `read` nicht 1 zurückgibt (was das Ende der Datei oder einen Fehler anzeigt), springt das Programm zum Label `out`.
+- Wenn das gelesene Byte `'a'` ist, wird es in `'b'` geändert.
+- Der Aufruf von `lseek(fd, -1, SEEK_CUR)` verschiebt den Datei-Offset um ein Byte zurück, damit das gerade gelesene Byte überschrieben werden kann.
+- Wenn `lseek` fehlschlägt, wird eine Fehlermeldung ausgegeben, und das Programm wird beendet.
+- Die Funktion `write` schreibt das modifizierte Byte (`'b'`) zurück in die Datei.
+- Die Schleife wird fortgesetzt, bis `read` nicht mehr 1 zurückgibt, was das Ende der Datei oder einen Fehler anzeigt.
+
+**4. Bereinigung und Beenden**
+
+```c
+out:
+close(fd);
+return 0;
+```
+
+- Das Label `out` wird verwendet, um den Dateideskriptor `fd` zu schließen und 0 zurückzugeben, was das Programm beendet.
+- Dadurch wird sichergestellt, dass die Datei ordnungsgemäß geschlossen wird, egal ob das Programm normal beendet wird oder auf einen Fehler stößt.
+
+
+**Zusammenfassung:**
+
+Dieses Programm öffnet eine Datei namens "file" im Lese-Schreib-Modus, positioniert sich an Byte-Offset 592 und liest dann die Datei Byte für Byte ab diesem Punkt. Wenn es auf das Zeichen `'a'` stößt, ändert es es in `'b'`, schreibt das modifizierte Byte zurück an die gleiche Position und liest weiter. Dies wird fortgesetzt, bis das Ende der Datei erreicht ist oder ein Fehler auftritt. Die Datei wird ordnungsgemäß geschlossen, bevor das Programm beendet wird, um eine ordnungsgemäße Ressourcenfreigabe sicherzustellen.
+
+### Understanding relations between file descriptor, file table and inodes
+
+In this task, we'll be analyzing the state of file descriptors, file structures, and inodes in a parent and child process at specific points in the program execution
+
+```c
+int main()
+{
+	char buffer[16];
+
+	int fd0 = open("file1.txt", O_RDONLY);
+	int fd1 = open("file2.txt", O_RDWR);
+	int fd2 = open("file3.txt", O_RDONLY, O_TRUNCATE);
+	int fd3 = dup(fd2);
+
+	lseek(fd0, 19, SEEK_SET);
+	lseek(fd1, 122, SEEK_SET);
+	lseek(fd2, 5, SEEK_SET);
+	read(fd3, buffer, 16);
+
+	if (fork() == 0) {
+		close(fd0);
+		close(fd2);
+
+		int fd4 = open("file5.txt", O_RDONLY);
+
+		lseek(fd4, 12, SEEK_SET);
+		write(fd1, BUFFER, 16);
+		lseek(fd3, -21, SEEK_CUR);
+
+		close(fd1);
+		close(fd3);
+		close(fd4);
+		return;
+	}
+
+	close(fd0);
+	close(fd1);
+	close(fd2);
+	close(fd3);
+}
+```
+
+Please note that `file1.txt` and `file2.txt` are hard links. Suppose that no file descriptor is in use at the start of the program, except for the standard input, standard output and standard error.
+
+**Task:**
+At the specified lines (14 and 24), draw the state of:
+- The file descriptor table for each process.
+- The associated file structures (including inode, mode, and cursor)
+- The corresponding inode.
+
+##### Detailed Explanation:
+
+**1. Variablendeklarationen:**
+```c
+char buffer[16];
+```
+- Deklariert einen Puffer von 16 Zeichen, um Daten aus einer Datei zu halten.
+
+**2. Öffnen von Dateien:**
+
+```c
+int fd0 = open("file1.txt", O_RDONLY);
+int fd1 = open("file2.txt", O_RDWR);
+int fd2 = open("file3.txt", O_RDONLY, O_TRUNCATE);
+int fd3 = dup(fd2);
+```
+
+- `fd0` öffnet `file1.txt` im Nur-Lese-Modus.
+- `fd1` öffnet `file2.txt` im Lese-Schreib-Modus.
+- `fd2` versucht, `file3.txt` im Nur-Lese-Modus zu öffnen, aber `O_TRUNCATE` ist hier ungültig, da es für den Schreibmodus verwendet wird; Dieser Aufruf könnte fehlschlagen oder ignoriert werden.
+- `fd3` dupliziert `fd2`, sodass `fd3` ein weiterer Dateideskriptor für `file3.txt` ist.
+
+
+**3. Positionieren in Dateien:**
+
+```c
+lseek(fd0, 19, SEEK_SET);
+lseek(fd1, 122, SEEK_SET);
+lseek(fd2, 5, SEEK_SET);
+```
+
+- `lseek` ändert den Datei-Offset für die Dateideskriptoren.
+- Der Offset von `fd0` wird auf Byte 19 verschoben.
+- Der Offset von `fd1` wird auf Byte 122 verschoben.
+- Der Offset von `fd2` wird auf Byte 5 verschoben.
+
+**4. Lesen aus der Datei:**
+
+```c
+read(fd3, buffer, 16);
+```
+- Liest 16 Bytes von `fd3` (das ist `file3.txt` am Offset 5) in `buffer`.
+
+**5. Erzeugen eines Kindprozesses:**
+
+```c
+if (fork() == 0) {
+```
+
+- `fork()` erzeugt einen neuen Prozess. Wenn `fork()` 0 zurückgibt, ist es der Kindprozess.
+
+**6. Ausführung des Kindprozesses:**
+
+```c
+close(fd0);
+close(fd2);
+```
+
+- Der Kindprozess schließt `fd0` und `fd2`.
+
+```c
+int fd4 = open("file5.txt", O_RDONLY);
+lseek(fd4, 12, SEEK_SET);
+write(fd1, buffer, 16);
+lseek(fd3, -21, SEEK_CUR);
+```
+
+- Öffnet `file5.txt` im Nur-Lese-Modus als `fd4`.
+- Sucht nach Byte 12 in `file5.txt`.
+- Schreibt die 16 Bytes aus `buffer` nach `fd1` (das ist `file2.txt` am Offset 122).
+- Verschiebt den Offset von `fd3` (immer noch `file3.txt`) um 21 Bytes zurück von der aktuellen Position.
+
+```c
+close(fd1);
+close(fd3);
+close(fd4);
+return;
+```
+
+- Schließt `fd1`, `fd3` und `fd4`.
+- Der Kindprozess beendet sich.
+
+**7. Ausführung des Elternprozesses:**
+
+```c
+close(fd0);
+close(fd1);
+close(fd2);
+close(fd3);
+```
+
+- Der Elternprozess schließt alle Dateideskriptoren: `fd0`, `fd1`, `fd2` und `fd3`.
+
+Zeile 14: 
+
+![[Pasted image 20240531230104.png]]
+
+- Dateideskriptor 0,1,2 entsprechen stdin, stdout und stderr
+- Es gibt 1 Dateistruktur pro Aufruf von `open()`
+- `file1.txt` und `file2.txt` sind Hardlinks, daher teilen sie dieselbe Inode
+- `dup(fd2)` dupliziert den Dateideskriptor 5 zum Dateideskriptor 6
+- Die Cursor (oder Offset) werden für jeden Aufruf von `lseek`, `read` und `write` aktualisiert
+
+Zeile 24:
+
+![[Pasted image 20240531230318.png]]
+
+- Das Kind erbt alle Dateideskriptoren seines Elternprozesses
+- In unserem Code schließt das Kind die Dateien, die mit den Dateideskriptoren 3 und 5 verbunden sind.
+- Wenn es `file5.txt` öffnet, ist der erste nicht verwendete Dateideskriptor 3, er zeigt nun auf die neue Datei.
+
+**Questions:**
+1. If the file permission of `file1.txt` was 0444, what would be the result of executing the previous code
+
+**Lösung:**
+
+1. `444` entspricht in UNIX-Berechtigungen `r--r--r--` (Lesen für andere, Gruppen und Besitzer). In Zeile 6 würde der Aufruf von `open` fehlschlagen und `-1` zurückgeben, da wir keine Datei im Schreibmodus öffnen können, wenn die Datei schreibgeschützt ist. (und wir sollten diesen Fehler im Code überprüfen!).
+
+Coding Exercices
