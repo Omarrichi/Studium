@@ -96,3 +96,55 @@ Wir haben interne Fragmentierung, weil innerhalb zugewiesener Blöcke Platz vers
 A UNIX file system has 4 KiB blocks and 4-bytes disk addresses. What is the maximum file size in bytes if the inode contains 10 direct entries, and one single, double and triple indirect entry each?
 
 ![[Pasted image 20240530204952.png]]
+
+*Lösung 4:*
+
+Parameter:
+
+- **Blockgröße**: $4 \text{ KiB}$ (4096 Bytes)
+- **Festplattenadressgröße**: $4 \text{ Bytes}$ (32-Bit-Adressen)
+- **Inode-Struktur**:
+    - 10 direkte Einträge
+    - 1 einfacher indirekter Eintrag
+    - 1 doppelter indirekter Eintrag
+    - 1 dreifacher indirekter Eintrag
+
+Direkte Einträge:
+
+Jeder direkte Eintrag zeigt direkt auf einen 4 KiB Block.
+
+- Anzahl der direkten Einträge = 10
+- Gesamtspeicher durch direkte Einträge = $10 \times 4096$ Bytes = $40960$ Bytes = $40 \text{ KiB}$
+
+Einfacher indirekter Eintrag:
+
+Ein einfacher indirekter Eintrag zeigt auf einen Block, der Festplattenadressen anderer Datenblöcke enthält.
+
+- Anzahl der Adressen in einem Block = $\frac{4096 \text{ Bytes}}{4 \text{ Bytes/Adresse}} = 1024$
+- Jede dieser 1024 Adressen zeigt auf einen 4 KiB Block.
+- Gesamtspeicher durch einen einfachen indirekten Eintrag = $1024 \times 4096$ Bytes = $4194304$ Bytes = $4 \text{ MiB}$
+
+Doppelter indirekter Eintrag:
+
+Ein doppelter indirekter Eintrag zeigt auf einen Block, der auf andere Blöcke zeigt, die Festplattenadressen enthalten.
+
+- Jede der 1024 Adressen zeigt auf einen Block mit 1024 Adressen, die jeweils auf einen 4 KiB Block zeigen.
+- Gesamtspeicher durch einen doppelten indirekten Eintrag = $1024 \times 1024 \times 4096$ Bytes = $4294967296$ Bytes = $4 \text{ GiB}$
+
+Dreifacher indirekter Eintrag:
+
+Ein dreifacher indirekter Eintrag zeigt auf einen Block, der auf andere Blöcke zeigt, die wiederum auf weitere Blöcke mit Festplattenadressen zeigen.
+
+- Jede der 1024 Adressen zeigt auf einen Block mit 1024 Adressen, die auf Blöcke mit 1024 Adressen zeigen, die jeweils auf einen 4 KiB Block zeigen.
+- Gesamtspeicher durch einen dreifachen indirekten Eintrag = $1024 \times 1024 \times 1024 \times 4096$ Bytes = $4398046511104$ Bytes = $4 \text{ TiB}$
+
+**Maximale Dateigröße Berechnung:**
+
+- Direkte Einträge: $40 \text{ KiB}$
+- Einfacher indirekter Eintrag: $4 \text{ MiB}$
+- Doppelter indirekter Eintrag: $4 \text{ GiB}$
+- Dreifacher indirekter Eintrag: $4 \text{ TiB}$
+
+Durch Addition dieser Werte ergibt sich die maximale Dateigröße: 40 KiB+4 MiB+4 GiB+4 TiB≈4 TiB40 \text{ KiB} + 4 \text{ MiB} + 4 \text{ GiB} + 4 \text{ TiB} \approx 4 \text{ TiB}40 KiB+4 MiB+4 GiB+4 TiB≈4 TiB
+
+Somit beträgt die maximale Dateigröße etwa 4 TiB.
