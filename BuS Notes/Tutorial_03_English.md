@@ -75,7 +75,7 @@ The full path name is `/home/redha/BuS/sched.txt` because the special path chara
 
 *Question 3:*
 
-Contiguous allocation of files leads to disk fragmentation, because some space in the last disk block will be wasted in files whose length is not an integral number of blocks. Describe the internal and external fragmentation during the allocation and deletion of block.s
+Contiguous allocation of files leads to disk fragmentation, because some space in the last disk block will be wasted in files whose length is not an integral number of blocks. Describe the internal and external fragmentation during the allocation and deletion of block.s.
 
 *Solution 3:*
 
