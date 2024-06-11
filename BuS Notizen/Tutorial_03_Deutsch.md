@@ -517,4 +517,4 @@ Zeile 24:
 
 1. `444` entspricht in UNIX-Berechtigungen `r--r--r--` (Lesen für andere, Gruppen und Besitzer). In Zeile 6 würde der Aufruf von `open` fehlschlagen und `-1` zurückgeben, da wir keine Datei im Schreibmodus öffnen können, wenn die Datei schreibgeschützt ist. (und wir sollten diesen Fehler im Code überprüfen!).
 
-Coding Exercices
+Coding exercises findet ihr in der englischen Version 😅
