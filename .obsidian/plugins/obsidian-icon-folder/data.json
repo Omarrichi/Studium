@@ -6,6 +6,7 @@
     "emojiStyle": "none",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "UsSkull2Fill",
       "UsSkull2Line",
       "DoBookletFill",
       "DoBookFill"
@@ -55,5 +56,10 @@
   },
   "5. Semester/Datenkommunikation/1. Dienste und Protokolle.md": "DoBookFill",
   "5. Semester/Datenkommunikation/4. Network Layer.md": "DoBookFill",
-  "5. Semester/Einführung in Webtechnologien/Grundlagen zu HTTP, HTML und CSS.md": "DoBookFill"
+  "5. Semester/Einführung in Webtechnologien/Grundlagen zu HTTP, HTML und CSS.md": "DoBookFill",
+  "6. Semester": "UsSkull2Fill",
+  "6. Semester/Mathematische Logik": {
+    "iconName": "DoBookletFill",
+    "inheritanceIcon": "DoBookFill"
+  }
 }

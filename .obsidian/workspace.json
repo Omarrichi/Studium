@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "BuS Notes/Tutorial_03_English.md",
+                "file": "6. Semester/Mathematische Logik/VL 01 Di, 09.04.2024.md",
                 "mode": "source",
                 "source": true
               }
@@ -36,8 +36,21 @@
                 "source": true
               }
             }
+          },
+          {
+            "id": "ab9ed2bee121e9d4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "6. Semester/Mathematische Logik/VL 01 Di, 09.04.2024.md",
+                "mode": "preview",
+                "source": true
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -103,7 +116,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "BuS Notizen/Tutorial_03_Deutsch.md",
+                "file": "6. Semester/Mathematische Logik/VL 01 Di, 09.04.2024.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "BuS Notizen/Tutorial_03_Deutsch.md",
+                "file": "6. Semester/Mathematische Logik/VL 01 Di, 09.04.2024.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,7 +156,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "BuS Notizen/Tutorial_03_Deutsch.md"
+                "file": "6. Semester/Mathematische Logik/VL 01 Di, 09.04.2024.md"
               }
             }
           },
@@ -183,9 +196,12 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "3786f2b9cf3a0d1e",
+  "active": "836d4a7a96a33710",
   "lastOpenFiles": [
+    "6. Semester/Mathematische Logik/VL 01 Di, 09.04.2024.md",
     "BuS Notes/Tutorial_03_English.md",
+    "6. Semester/Mathematische Logik",
+    "6. Semester",
     "BuS Notizen/Tutorial_03_Deutsch.md",
     "BuS Notizen/Tutorial_02_Bonus_Deutsch.md",
     "Pasted image 20240531230318.png",
@@ -221,14 +237,11 @@
     "5. Semester/IT-Sicherheit/Untitled.md",
     "5. Semester/Introduction to Artificial Intelligence/Untitled.md",
     "5. Semester/Erfüllbarkeitsüberprüfung/Untitled.md",
-    "5. Semester/Berechenbarkeit und Komplexität/Untitled.md",
     "5. Semester/IT-Sicherheit",
     "5. Semester/Introduction to Artificial Intelligence",
     "5. Semester/Erfüllbarkeitsüberprüfung",
     "5. Semester/Einführung in Webtechnologien",
     "5. Semester/Berechenbarkeit und Komplexität",
-    "5. Semester/Machine Learning",
-    "5. Semester/Datenkommunikation",
-    "5. Semester"
+    "5. Semester/Machine Learning"
   ]
 }
