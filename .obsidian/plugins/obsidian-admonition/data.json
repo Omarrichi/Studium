@@ -1,5 +1,18 @@
 {
-  "userAdmonitions": {},
+  "userAdmonitions": {
+    "info": {
+      "type": "info",
+      "color": "188, 87, 87",
+      "icon": {
+        "name": "binoculars",
+        "type": "font-awesome"
+      },
+      "command": false,
+      "title": "Lemma",
+      "injectColor": true,
+      "noTitle": false
+    }
+  },
   "syntaxHighlight": false,
   "copyButton": false,
   "version": "10.1.1",
@@ -15,7 +28,10 @@
     "other": true,
     "advanced": false
   },
-  "icons": [],
+  "icons": [
+    "rpg",
+    "octicons"
+  ],
   "useFontAwesome": true,
   "rpgDownloadedOnce": false,
   "msDocConverted": false,
