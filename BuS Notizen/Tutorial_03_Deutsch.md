@@ -145,6 +145,132 @@ Ein dreifacher indirekter Eintrag zeigt auf einen Block, der auf andere Blöcke 
 - Doppelter indirekter Eintrag: $4 \text{ GiB}$
 - Dreifacher indirekter Eintrag: $4 \text{ TiB}$
 
-Durch Addition dieser Werte ergibt sich die maximale Dateigröße: 40 KiB+4 MiB+4 GiB+4 TiB≈4 TiB40 \text{ KiB} + 4 \text{ MiB} + 4 \text{ GiB} + 4 \text{ TiB} \approx 4 \text{ TiB}40 KiB+4 MiB+4 GiB+4 TiB≈4 TiB
+Durch Addition dieser Werte ergibt sich die maximale Dateigröße:
+
+$40 \text{ KiB} + 4 \text{ MiB} + 4 \text{ GiB} + 4 \text{ TiB} \approx 4 \text{ TiB}$
 
 Somit beträgt die maximale Dateigröße etwa 4 TiB.
+
+_Question 5:_
+
+Can you spot the hard links in these directory entries? What would the file `/bin/sh` contain if it was a symbolic link to `bash`?
+
+*Lösung 5:*
+
+`/bin/sh` und `/usr/bin/sh` enthalten dieselbe Inode-Nummer. Sie verweisen beide auf dieselbe Datei, daher sind sie Hard Links. Wenn `/bin/sh` ein symbolischer Link zu `bash` ist, enthält die Datei, die mit `/bin/sh` (Inode 938819) verknüpft ist, einen Pfad zu `/bin/bash`.
+
+_Question 6:_
+
+What would `/usr/lib64` contain if it was a symbolic link to the directory `/usr/lib`? Is this possible with a hard link?
+
+*Lösung 6:*
+
+Wenn `/usr/lib64` ein symbolischer Link zu `/usr/lib` ist, dann ist der Eintrag ebenfalls eine Datei, die einen Pfad zu `/usr/lib` enthält. Dies ist mit einem Hard Link nicht möglich.
+
+*Question 7:*
+
+Name one advantage of symbolic link over hard links and one advantage of hard links over symbolic links.
+
+*Lösung 7:*
+
+Symbolische Links ermöglichen Verknüpfungen zwischen Ordnern und über Partitionen hinweg, was für Hard Links nicht möglich ist. Hard Links haben nicht das Problem von defekten Links: Wenn die Datei gelöscht wird und ein weiterer Hard Link existiert, bleibt die Verknüpfung weiterhin gültig. Bei symbolischen Links werden jedoch alle anderen Verknüpfungen "gebrochen", wenn die Originaldatei (Inode) gelöscht wird.
+
+*Question 8:*
+
+How many disk operations are needed to fetch the inode for a file with the path name `/usr/ast/courses/os/handout.t`? Assume that the inode for the root directory is in memory, but nothing else along the path is in memory. Also assume that all directories fit in one disk block.
+
+How can we reduce that number of disk operations?
+
+*Lösung 8:*
+
+- 1 Festplatten-E/A-Vorgang zum Abrufen des Blockverzeichnisses für `/` (im Block erhalten wir die Inode-Nummer von `usr`)
+- 1 Festplatten-E/A-Vorgang zum Abrufen der Inode von `/usr`
+- 1 Festplatten-E/A-Vorgang zum Abrufen des Blockverzeichnisses für `/usr` (wir erhalten die Inode-Nummer von `ast`)
+- 1 Festplatten-E/A-Vorgang zum Abrufen der Inode von `/usr/ast`
+- 1 Festplatten-E/A-Vorgang zum Abrufen des Blockverzeichnisses für `/usr/ast`
+- 1 Festplatten-E/A-Vorgang zum Abrufen der Inode von `/usr/ast/courses`
+- 1 Festplatten-E/A-Vorgang zum Abrufen des Blockverzeichnisses für `/usr/ast/courses`
+- 1 Festplatten-E/A-Vorgang zum Abrufen der Inode von `/usr/ast/courses/os`
+- 1 Festplatten-E/A-Vorgang zum Abrufen des Blockverzeichnisses für `/usr/ast/courses/os`
+- 1 Festplatten-E/A-Vorgang zum Abrufen der Inode von `/usr/ast/courses/os/handout.t`
+
+Insgesamt 10 Festplattenzugriffe. Um diese Zahl zu reduzieren (und weil Festplatten-E/A-Vorgänge sehr teuer sind), haben moderne Betriebssysteme in der Regel einen assoziativen Cache zwischen den Verzeichniseinträgen und der Inode-Nummer.
+
+## Basic file management:
+
+In this exercise, you will learn how to:
+1. read the manual pages for system calls
+2. access files at low level
+
+### 1. Read the manual:
+Read and understand the `open` syscall on the manual, what are the arguments, what is the return value?
+
+https://man7.org/linux/man-pages/man2/open.2.html
+
+How will you call this function to create a new file? What does the flag `O_TRUNCATE` is doing? How to combine multiple flags?
+
+*Lösung:*
+
+Die Argumente sind:
+
+- ein `String`, der den Pfadnamen der Datei darstellt
+- eine `int`, die die Flags darstellt
+- ein optionaler Argument `mode`, der beim Erstellen einer neuen Datei verwendet wird
+
+Bei Erfolg gibt die Funktion den neuen Dateideskriptor zurück, bei einem Fehler wird -1 zurückgegeben.
+
+Das Erstellen einer neuen Datei kann mit dem Flag `O_CREAT` erfolgen, und wir müssen den Modus hinzufügen (siehe UNIX-Berechtigungen im Handbuch von `open()`).
+
+```c
+1 int fd =  open("new_file", O_CREAT, 00700);
+```
+
+Die Flagge `O_TRUNCATE` wird verwendet, um eine Datei beim Öffnen zu kürzen, wodurch alle Daten in der Datei verworfen werden.
+
+Schließlich verwenden wir den logischen ODER-Operator, um mehrere Flags zu kombinieren. Zum Beispiel, um in eine Datei zu schreiben und die aktuellen Daten zu verwerfen:
+
+```c
+1 int fd = open("file", O_RDWR | O_TRUNCATE);
+```
+
+### 2. Open and modify a file
+
+Write a C code that opens a file, that modifies all the occurrences of the char `'a'` to `'b'`, starting at the offset 592, until the end of the file.
+
+*Lösung:*
+
+```c
+int main() {
+	int fd = open("file", O_RDWR);
+	if (fd < 0) {
+		perror("open");
+		exit(1);
+	}
+
+	int ret = lseek(fd, 592, SEEK_SET);
+	if (ret == -1) {
+		perror("lseek");
+		goto out;
+	}
+
+	char buf;
+
+	do {
+		ret = read(fd, &buf, 1);
+		if (ret != 1) {
+			goto out;
+		}
+		if (buf == 'a') {
+			buf = 'b';
+			if (lseek(fd, -1, SEEK_CUR) == -1) {
+				perror("lseek\n");
+				exit(1);
+			}
+			ret = write(fd, &buf, 1);
+		}
+	} while(ret == 1);
+
+out:
+	close(fd);
+}
+```

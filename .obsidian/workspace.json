@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "BuS Notes/Tutorial_03_English.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": true
               }
             }
@@ -103,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "BuS Notizen/Tutorial_03_Deutsch.md",
+                "file": "BuS Notes/Tutorial_03_English.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "BuS Notizen/Tutorial_03_Deutsch.md",
+                "file": "BuS Notes/Tutorial_03_English.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,7 +143,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "BuS Notizen/Tutorial_03_Deutsch.md"
+                "file": "BuS Notes/Tutorial_03_English.md"
               }
             }
           },
@@ -183,10 +183,10 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "3786f2b9cf3a0d1e",
+  "active": "836d4a7a96a33710",
   "lastOpenFiles": [
-    "BuS Notes/Tutorial_03_English.md",
     "BuS Notizen/Tutorial_03_Deutsch.md",
+    "BuS Notes/Tutorial_03_English.md",
     "BuS Notizen/Tutorial_02_Bonus_Deutsch.md",
     "Pasted image 20240531230318.png",
     "Pasted image 20240531230104.png",
