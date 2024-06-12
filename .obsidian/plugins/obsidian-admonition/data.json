@@ -38,6 +38,18 @@
       "injectColor": true,
       "noTitle": false,
       "copy": false
+    },
+    "satz": {
+      "type": "satz",
+      "color": "54, 175, 191",
+      "icon": {
+        "type": "rpg",
+        "name": "desert-skull"
+      },
+      "command": false,
+      "title": "Satz",
+      "injectColor": true,
+      "noTitle": false
     }
   },
   "syntaxHighlight": false,
