@@ -25,6 +25,19 @@
       "injectColor": true,
       "noTitle": false,
       "copy": false
+    },
+    "beo": {
+      "type": "beo",
+      "color": "85, 247, 185",
+      "icon": {
+        "name": "glasses",
+        "type": "font-awesome"
+      },
+      "command": false,
+      "title": "Beobachtung",
+      "injectColor": true,
+      "noTitle": false,
+      "copy": false
     }
   },
   "syntaxHighlight": false,
