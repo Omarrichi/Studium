@@ -1,7 +1,7 @@
 {
   "userAdmonitions": {
-    "ad-warning": {
-      "type": "ad-warning",
+    "lemma": {
+      "type": "lemma",
       "color": "164, 50, 96",
       "icon": {
         "name": "binoculars",
@@ -13,29 +13,18 @@
       "noTitle": false,
       "copy": false
     },
-    "ad-danger": {
-      "type": "ad-danger",
-      "color": "128, 0, 0",
+    "def": {
+      "type": "def",
+      "color": "219, 0, 0",
       "icon": {
-        "name": "book",
+        "name": "angle-right",
         "type": "font-awesome"
       },
       "command": false,
       "title": "Definition",
       "injectColor": true,
-      "noTitle": false
-    },
-    "ad-info": {
-      "type": "ad-info",
-      "color": "#7d7d7d",
-      "icon": {
-        "name": "address-book",
-        "type": "font-awesome"
-      },
-      "command": false,
-      "title": "definition",
-      "injectColor": true,
-      "noTitle": false
+      "noTitle": false,
+      "copy": false
     }
   },
   "syntaxHighlight": false,
