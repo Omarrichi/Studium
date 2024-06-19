@@ -8,13 +8,36 @@ Following Basics are from me, you can find the official definition and co. in th
 *Interrupts:*
 
 ```ad-def
-A signal that temporarily halts the CPU's current activities to excute a predefined function, known as an interrupts service routine (ISR).
+A signal that temporarily halts the CPU's current activities to execute a predefined function, known as an interrupts service routine (ISR).
 ```
 
 Mechanism:
 - The CPU stops it's current task.
 - The interrupt is process, and the ISR is executed.
 - The CPU resumes the interrupted task after the ISR completes
+
+| Advantages                   | disadvantages                   |
+| ---------------------------- | ------------------------------- |
+| Efficient use of CPU time    | complex to implement and manage |
+| immediate response to events | overheading                     |
+
+
+*Polling:*
+
+
+```ad-def
+A technique where the CPU repeatedly checks the statue of perpheral devices to determine if they need attention
+```
+
+Mechanism:
+- The CPU periodically checks the statue register.
+- If the device needs service, the CPU executes the code.
+- The CPU then resumes its normal operation or continous polling
+
+| Advantages                                               | disadvantages          |
+| -------------------------------------------------------- | ---------------------- |
+| simple to implement                                      | inefficient use of CPU |
+| No need for interrupt hardware or complex ISR management | slower response to            |
 
 
 ### Introduction
