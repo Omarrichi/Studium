@@ -72,3 +72,23 @@ Consider the following Interrupt Service Routine (ISR) code:
 6 ack_interrupt();
 7 return_from_interrupt();
 ```
+
+What I/O software design goal this interruption service routine violates? Think of a solution to fix it.
+
+
+*Task 3*
+
+You are using a small computer board, such as a Raspberry Pi, to fetch the weather forecast and display it on a small LCD screen.
+
+1. Which method would you choose to interact with the LCD controller: Programmed I/O, Interrupt Driven I/O, or DMA? Justify your choice.
+
+Now, suppose you add a sensor to your computer. This sensor can read the room temperature and humidity directly from its controller's registers.
+
+1. Which method is best suited if you want to read the values every 5 minutes?
+2. Is there a better option if you want to read the values only when they change?
+3. How would you approach change if the board were battery-üpwered instead of being plugged into a constant power source?
+
+
+*Task 4*
+
+A typical sound ca
