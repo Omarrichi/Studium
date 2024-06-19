@@ -29,4 +29,25 @@ In which of the four I/O software layers is each of the following done.
 
 *Question 5*
 
-The clock interrupt handler on a certain computer requires 2 msec (including process switching overhead)
+The clock interrupt handler on a certain computer requires 2 msec (including process switching overhead) per clock tick. The clock ticks at 60 Hz. What fraction of the CPU is devoted to the clock?
+
+*Question 6*
+
+A computer uses a programmable clock in square-wave mode. If a 500 MHz crystal is used, what should be the value of the holding register to achieve a clock resolution of 
+
+1. a millisecond (a clock tick once every millisecond)?
+2. 100 microseconds
+
+*Question 7*
+
+Assuming that it takes 2 nsec to copy a byte, how much time does it take to completely rewrite the screen of an 1920 x 1080 pixel graphics screen with 24-bit color? How many copies can we do per second? with a 60 Hz monitor, how many buffers do we need to avoid screen tearing?
+
+
+### Tasks
+
+
+*Task 1*
+
+Disk requests come in to the disk driver for cylinders 10, 22, 20, 2, 40, 6 and 38, in that order. A seek takes 6 msec per cylinder. How much seek time is needed for 
+
+1. First-Come, First-
