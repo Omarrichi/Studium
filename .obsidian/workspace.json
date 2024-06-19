@@ -181,8 +181,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -196,7 +195,7 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "c5eaa8def02e900b",
+  "active": "836d4a7a96a33710",
   "lastOpenFiles": [
     "BuS Notizen/Tutorial_04_Deutsch.md",
     "BuS Notes/Tutorial_04_English.md",

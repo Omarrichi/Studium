@@ -173,6 +173,24 @@ What I/O software design goal this interruption service routine violates? Think 
 
 *Solution 2*
 
+This ISR violates the goal of ensuring data integrity and consistency. If another interrupt occurs during the execution of the ISR, especially before `nic_buffer_position_reg` has been incremented, the OS could end up copying the same network packet twice.
+
+To fix this, a proper synchronization mechanism is needed. One simple solution is to disable (or mask) interrupts during the execution of this ISR to prevent any other interrupts from interfering:
+
+```c
+1 disable_interrupts();
+2 index = *nic_buffer_position_reg;
+3 // buffer is a local array
+4 copy_buffer_from_driver(&kbuf[index], &buffer);
+5 schedule_upper_half(&buffer);
+6 *nic_buffer_position_reg++;
+7 enable_interrupts();
+8 ack_interrupt();
+9 return_from_interrupt();
+```
+
+This ensures that the ISR completes its critical section without interruption, maintaining data integrity.
+
 *Task 3*
 
 You are using a small computer board, such as a Raspberry Pi, to fetch the weather forecast and display it on a small LCD screen.
