@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6. Semester/Mathematische Logik/VL 06 Di, 30.04.2024.md",
+                "file": "BuS Notes/Tutorial_04_English.md",
                 "mode": "source",
                 "source": true
               }
@@ -116,7 +116,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "6. Semester/Mathematische Logik/VL 06 Di, 30.04.2024.md",
+                "file": "BuS Notes/Tutorial_04_English.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "6. Semester/Mathematische Logik/VL 06 Di, 30.04.2024.md",
+                "file": "BuS Notes/Tutorial_04_English.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -156,7 +156,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "6. Semester/Mathematische Logik/VL 06 Di, 30.04.2024.md"
+                "file": "BuS Notes/Tutorial_04_English.md"
               }
             }
           },
@@ -198,13 +198,15 @@
   },
   "active": "836d4a7a96a33710",
   "lastOpenFiles": [
+    "BuS Notizen/Tutorial_04_Deutsch.md",
+    "BuS Notes/Tutorial_04_English.md",
+    "BuS Notes/Tutorial_03_English.md",
     "6. Semester/Mathematische Logik/VL 06 Di, 30.04.2024.md",
     "6. Semester/Mathematische Logik/VL 04 Do, 18.04.2024.md",
     "6. Semester/Mathematische Logik/VL 05 Do, 25.04.2024.md",
     "6. Semester/Mathematische Logik/VL 03 Di, 16.04.2024.md",
     "6. Semester/Mathematische Logik/VL 02 Do, 11.04.2024.md",
     "6. Semester/Mathematische Logik/VL 01 Di, 09.04.2024.md",
-    "BuS Notes/Tutorial_03_English.md",
     "6. Semester/Mathematische Logik",
     "6. Semester",
     "BuS Notizen/Tutorial_03_Deutsch.md",
@@ -236,8 +238,6 @@
     "5. Semester/Datenkommunikation/1. Dienste und Protokolle.md",
     "5. Semester/Datenkommunikation/2. Physical Layer.md",
     "Einbürgerung.md",
-    "Abgabe 5.md",
-    "Abgabe 4.md",
     "5. Semester/IT-Sicherheit",
     "5. Semester/Introduction to Artificial Intelligence",
     "5. Semester/Erfüllbarkeitsüberprüfung",
