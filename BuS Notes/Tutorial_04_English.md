@@ -1,3 +1,7 @@
+14.06.2024 - Omar Richi (omar.richi@rwth-aachen.de)
+
+**Grundlagen:**
+
 ### Introduction
 
 *Question 1*
