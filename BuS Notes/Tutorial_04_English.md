@@ -206,6 +206,11 @@ Now, suppose you add a sensor to your computer. This sensor can read the room te
 
 *Solution 3*
 
+1. If the only purpose of the device is to display the weather, Programmed I/O can be used effectively. While Interrupt Driven I/O and DMA are also viable, they may be unnecessarily complex for this simple task.
+2. To read the values every 5 minutes, you can set a timer to read the sensor’s registers at 5-minute intervals.
+3. If you want to read the values only when they change, an Interrupt Driven I/O solution is better. This way, the sensor will notify the processor only when the data changes, avoiding unnecessary reads.
+4. If the board is battery powered, avoid using Programmed I/O as it consumes more power due to constant polling. Instead, use Interrupt Driven I/O, which allows the CPU to remain idle most of the time, conserving battery life.
+
 *Task 4*
 
 A typical sound card is working at 48 kHz with each sample being stored on 16 bits. The sound card controller is using two buffers. While the first buffer is used for playing sounds on the sound card, the other one is being filled by the driver. The drivers is using DMA to copy audio date from the kernel to the audio controller
@@ -221,3 +226,9 @@ A typical sound card is working at 48 kHz with each sample being stored on 16 bi
 
 
 *Solution 4*
+
+1. The audio sample rate is 48,000 samples/second, with each sample being 2 bytes. The bandwidth for this audio card is 96,000 bytes/s (96 KB/s). For 10ms, it is then 96,000 / 100 ≈ 960 bytes, approximately 1 KB.
+2. 96,000 / 10 ≈ 9,600 bytes, approximately 10 KB.
+3. If we use a larger buffer, then CPU usage is reduced because the CPU needs to send new data less frequently (10 times a second for a 100ms buffer compared to 100 times a second for a 10ms buffer). The total copied size is the same every second, but the overhead around copying (more context switches...) is higher. However, latency is increased because the system might need to wait up to 100ms for new sound data to be sent to the sound card.
+4. Without double buffering, we would need to wait for the end of the 100ms or 10ms period to send the new buffer to the sound card, causing a break in continuity of audio playback. Double buffering allows one buffer to be played while the other is being filled, maintaining continuous playback.
+5. DMA improves efficiency by allowing the audio data to be transferred directly from memory to the audio controller without involving the CPU, freeing up CPU resources for other tasks and reducing the overhead associated with data transfer.
