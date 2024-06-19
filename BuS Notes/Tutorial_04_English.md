@@ -6,6 +6,11 @@ In the lecture we discussed that the operation of I/O devices can be controlled 
 
 *Solution 1*
 
+Polling can be more efficient than using interrupts in situations where I/O requests occur frequently and only have a short duration. If the request behavior is predictable, we can set a polling loop accordingly and avoid the overhead of interrupt handling
+
+For instance, polling is ideal for a network bound program that frequently receives packets. In such cases, it’s predictable that checking for new packets will usually result in work to process. The advantage is avoiding the synchronization and context switch overhead associated with interrupts. Moreover, the application can fetch data as needed, without being interrupted during ongoing operations.
+
+Furthermore, polling could be useful if a device does not support interrupts or there are no more free interrupts available (and those already assigned cannot be shared).
 
 *Question 2*
 
