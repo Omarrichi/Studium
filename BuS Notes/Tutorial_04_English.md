@@ -50,4 +50,25 @@ Assuming that it takes 2 nsec to copy a byte, how much time does it take to comp
 
 Disk requests come in to the disk driver for cylinders 10, 22, 20, 2, 40, 6 and 38, in that order. A seek takes 6 msec per cylinder. How much seek time is needed for 
 
-1. First-Come, First-
+1. First-Come, First-Served (FCFS).
+2. Shortest Seek First (SSF).
+3. Elevator algorithm (SCAN, initially moving upward).
+
+In all cases, the arm is initally at cylinder 20. There are 40 cylinders in total.
+
+
+*Task 2*
+
+Assume a Network Interface Controller (NIC) has 5 different buffers. The indes of the buffer currently in use is located in the controller register `nic_buffer_position_reg`.
+
+Consider the following Interrupt Service Routine (ISR) code:
+
+```c
+1 index = *nic_buffer_position_reg;
+2 // buffer is a local array
+3 copy_buffer_from_driver(&kbuf[index], &buffer);
+4 schedule_upper_half(&buffer);
+5 *nic_buffer_position_reg++;
+6 ack_interrupt();
+7 return_from_interrupt();
+```
