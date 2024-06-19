@@ -25,11 +25,23 @@ Decide for each device whether polling or interrupts are more suitable for I/O c
 
 *Solution 2*
 
+- For the mouse, interrupt-driven I/O is most suitable, as mouse movements occur irregularly, but then need to be handled urgently. It also makes sense to use a buffer to hold its movement while higher priority operations take place.
+- For the hard disk, interrupt-based I/O control is also most suitable, as it is impossible to predict exactly when the data will be read or written. For efficient polling, we would need to know where the disk arm is at the moment, or how long the delay is when accessing the corresponding sector. Buffering is necessary to buffer data on the way from or to the disk (or even to buffer a block and calculate a checksum before passing it on to the operating system).
+- A phone’s light sensor could use polling by fetching the data every second. This is not active polling, because the CPU is not reading the data as soon as possible. Rather, the OS will periodically read the sensor, interrupts would make no sense because we don’t require low latency for the brightness of the phone screen to update to the light environment.
+
 *Question 3*
 
 Suppose a computer can read and write a memory word in 5 nanoseconds (nsec) Also suppose that when an interrupt occurs, all 32 CPU registers, plus the program counter (PC) and stack pointer (SP) are pushed onto the stack. What is the maximum number of interrupts per second this machine can process?
 
 *Solution 3*
+
+We need (32 + 2) x 5 ns for storing the registers. 
+
+We need an additional (32 + 2) x 5 ns for getting the registers back at the end of the ISR.
+
+The time for storing and restoring the register is 340 ns.
+
+The maximum number of interrupts we can execute, if we neglect the ISR execution time, is 1 / 340e-9 ≈ 2,941,176, approximately 3 million interrupts a second.
 
 
 *Question 4*
@@ -43,6 +55,10 @@ In which of the four I/O software layers is each of the following done.
 
 *Solution 4*
 
+1. Device drivers or disk controller: This operation involves translating a logical block address into a physical location on the disk. Some disk controller are responsible for it it because the internal disk layout can be hidden to the OS, and if not, the device driver is responsible for that, because it understands the specifics of the hardware it is controlling.
+2. Device drivers: Writing commands to the device registers is a low-level operation that involves direct interaction with the hardware. This is typically managed by the device driver.
+3. Generic I/O layer: Access control and permission checking are higher-level functions that are not specific to any one device. This is managed by the operating system’s kernel, which ensures that the user has the necessary permissions before allowing access to the device.
+4. Device drivers: Converting data from the computer’s internal binary format to a human-readable ASCII format is a typical function of this layer, as it standardizes data presentation regardless of the specific device involved.
 
 *Question 5*
 
@@ -50,6 +66,9 @@ The clock interrupt handler on a certain computer requires 2 msec (including pro
 
 *Solution 5*
 
+60 x 2 = 120 ms
+120 / 1000 = 0.12
+Therefore, 12% of the CPU time is devoted to the clock
 
 *Question 6*
 
@@ -60,6 +79,17 @@ A computer uses a programmable clock in square-wave mode. If a 500 MHz crystal i
 
 *Solution 6*
 
+500 MHz represents a period of 2 nanoseconds (2 ns or 2e-9s)
+
+For a millisecond (a clock tick once every millisecond):
+1ms = 10e-3s
+10e-3 / 2e-9 = 500000
+
+For 100 microseconds:
+100 μs = 100e-6
+100e-6 / 2e-9 = 50000
+
+In the first case, the register would need to be reset to 500000 after each interrupt, and 50000 for the second case.
 
 *Question 7*
 
