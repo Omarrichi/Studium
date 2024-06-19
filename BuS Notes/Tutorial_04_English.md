@@ -37,7 +37,7 @@ Mechanism:
 | Advantages                                               | disadvantages          |
 | -------------------------------------------------------- | ---------------------- |
 | simple to implement                                      | inefficient use of CPU |
-| No need for interrupt hardware or complex ISR management | slower response to            |
+| No need for interrupt hardware or complex ISR management | slower response time   | 
 
 
 ### Introduction
