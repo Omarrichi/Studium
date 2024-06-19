@@ -98,6 +98,15 @@ Assuming that it takes 2 nsec to copy a byte, how much time does it take to comp
 
 *Solution 7*
 
+1920 x 1080 x 3 ≈ 6220800 bytes or 6 MiB frame buffer
+With 2 ns per byte, it takes ~ 12 ms per copy, which means we can do ~80 copies per second.
+
+To avoid screen tearing, we can use a second buffer:
+- one buffer holds the frame that is currently being displayed
+- at the same time, one buffer is being filled
+- we swap the two buffers when the copy is done and while the screen is not refreshing
+
+
 ### Tasks
 
 
@@ -111,6 +120,37 @@ Disk requests come in to the disk driver for cylinders 10, 22, 20, 2, 40, 6 and 
 
 In all cases, the arm is initally at cylinder 20. There are 40 cylinders in total.
 
+
+*Solution 1*
+1. The requests are scheduled as they come. Total distance is calculated as follows:
+
+- 20 -> 10 = 10
+- 10 -> 22 = 12
+- 22 -> 20 = 2
+- 20 -> 2 = 18
+- 2 -> 40 = 38
+- 40 -> 6 = 34
+- 6 -> 38 = 32
+
+The total seek time is then multiplied by 6 and equals (10 + 12 + 2 + 18 + 38 + 34 + 32) x 6 = 876ms.
+
+
+2. The requests are now scheduled as follows:
+
+20 -> 20 -> 22 -> 10 -> 6 -> 2 -> 38 -> 40
+The total distance is (0 + 2 + 12 + 4 + 4 + 36 + 2) = 60
+The total seek time equals 360ms.
+
+
+3. The requests are executed as follows:
+
+20 -> 20 -> 22 -> 38 -> 40 -> 10 -> 6 -> 2
+The total distance is (0 + 2 + 16 + 2 + 30 + 4 + 4) = 58
+The total seek time equals 348ms.
+
+
+
+**Conclusion**: FCFS’s seek time is 876ms, SSF’s seek time is 360ms and SCAN’s seek time is 348ms.
 
 *Task 2*
 
@@ -131,6 +171,8 @@ Consider the following Interrupt Service Routine (ISR) code:
 What I/O software design goal this interruption service routine violates? Think of a solution to fix it.
 
 
+*Solution 2*
+
 *Task 3*
 
 You are using a small computer board, such as a Raspberry Pi, to fetch the weather forecast and display it on a small LCD screen.
@@ -144,6 +186,8 @@ Now, suppose you add a sensor to your computer. This sensor can read the room te
 3. How would you approach change if the board were battery-üpwered instead of being plugged into a constant power source?
 
 
+*Solution 3*
+
 *Task 4*
 
 A typical sound card is working at 48 kHz with each sample being stored on 16 bits. The sound card controller is using two buffers. While the first buffer is used for playing sounds on the sound card, the other one is being filled by the driver. The drivers is using DMA to copy audio date from the kernel to the audio controller
@@ -156,3 +200,6 @@ A typical sound card is working at 48 kHz with each sample being stored on 16 bi
 3. what is the difference in latency and CPU usage between 10ms and 100ms?
 4. What is the advantage of using a double buffering technique?
 5. How does Direct Memory Access (DMA) improve the efficiency of audio data transfer compared to CPU-driven data transfer?
+
+
+*Solution 4*
