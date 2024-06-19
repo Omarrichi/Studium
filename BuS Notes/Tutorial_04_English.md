@@ -1,6 +1,21 @@
 14.06.2024 - Omar Richi (omar.richi@rwth-aachen.de)
 
-**Grundlagen:**
+**Basics:**
+Interrupts vs Polling
+
+Following Basics are from me, you can find the official definition and co. in the lecture slides.
+
+*Interrupts:*
+
+```ad-def
+A signal that temporarily halts the CPU's current activities to excute a predefined function, known as an interrupts service routine (ISR).
+```
+
+Mechanism:
+- The CPU stops it's current task.
+- The interrupt is process, and the ISR is executed.
+- The CPU resumes the interrupted task after the ISR completes
+
 
 ### Introduction
 
