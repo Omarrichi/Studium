@@ -1,0 +1,1 @@
+Es ist offensichtlich, dass $\exists x \varphi$  eine schwächere Aussage ist als $\forall x \varphi$. Die Existenz einer solchen $x$, für die $\varphi$ wahr ist, impliziert nicht, dass, $\varphi$ für alle $x$ wahr ist.
