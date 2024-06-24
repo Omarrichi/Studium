@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "BuS Notes/Tutorial_04_English.md",
+                "file": "Untitled.md",
                 "mode": "source",
                 "source": true
               }
@@ -43,14 +43,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "BuS Notes/Tutorial_04_English.md",
+                "file": "6. Semester/Mathematische Logik/VL 06 Di, 30.04.2024.md",
+                "mode": "preview",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "6362024b0af13522",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Untitled.md",
                 "mode": "preview",
                 "source": true
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -116,7 +128,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "BuS Notes/Tutorial_04_English.md",
+                "file": "Untitled.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +145,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "BuS Notes/Tutorial_04_English.md",
+                "file": "Untitled.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -156,7 +168,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "BuS Notes/Tutorial_04_English.md"
+                "file": "Untitled.md"
               }
             }
           },
@@ -196,12 +208,13 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "ab9ed2bee121e9d4",
+  "active": "836d4a7a96a33710",
   "lastOpenFiles": [
-    "BuS Notes/Tutorial_03_English.md",
     "BuS Notes/Tutorial_04_English.md",
-    "BuS Notizen/Tutorial_04_Deutsch.md",
+    "Untitled.md",
     "6. Semester/Mathematische Logik/VL 06 Di, 30.04.2024.md",
+    "BuS Notes/Tutorial_03_English.md",
+    "BuS Notizen/Tutorial_04_Deutsch.md",
     "6. Semester/Mathematische Logik/VL 04 Do, 18.04.2024.md",
     "6. Semester/Mathematische Logik/VL 05 Do, 25.04.2024.md",
     "6. Semester/Mathematische Logik/VL 03 Di, 16.04.2024.md",
@@ -237,7 +250,6 @@
     "5. Semester/Datenkommunikation/4. Network Layer.md",
     "5. Semester/Datenkommunikation/1. Dienste und Protokolle.md",
     "5. Semester/Datenkommunikation/2. Physical Layer.md",
-    "Einbürgerung.md",
     "5. Semester/IT-Sicherheit",
     "5. Semester/Introduction to Artificial Intelligence",
     "5. Semester/Erfüllbarkeitsüberprüfung",
