@@ -345,9 +345,9 @@ void arrivalStudent(int wish) {
 
 
 **Functions:**
-- **`fillKlassiker`**: Adds `n` meals to `klassiker`. Uses a mutex to ensure only one thread can update the `klassiker` variable at a time.
-- **`fillVegetarian`**: Adds `n` meals to `vegetarian`. Uses a mutex to ensure only one thread can update the `vegetarian` variable at a time.
-- **`arrivalStudent`**:
+- `fillKlassiker`: Adds `n` meals to `klassiker`. Uses a mutex to ensure only one thread can update the `klassiker` variable at a time.
+- `fillVegetarian`: Adds `n` meals to `vegetarian`. Uses a mutex to ensure only one thread can update the `vegetarian` variable at a time.
+- `arrivalStudent`:
 	- Locks the `counterLock` mutex to ensure only one student is processed at a time.
 	- Depending on the student's meal choice (`wish`), it locks the corresponding meal mutex (`klassikerLock` or `vegetarianLock`).
 	- The student waits if no meals of their choice are available.
@@ -469,9 +469,43 @@ Deadlock can occur if all three processes execute their first wait.
 - Process C is waiting on printer
 
 
-- One solution is to define an order to take the locks. The order should be respected by all processes. For
+One solution is to define an order to take the locks. The order should be respected by all processes. For instance, hardDrive -> printer -> cardReader.
 
+**Process A:**
 
+```c 
+while (condition) {
+    sem_wait(hardDrive);
+    sem_wait(cardReader);
+    useDevices();
+    sem_post(hardDrive);
+    sem_post(cardReader);
+}
+```
+
+**Process B:**
+
+```c
+while (condition) {
+    sem_wait(hardDrive);
+    sem_wait(printer);
+    useDevices();
+    sem_post(hardDrive);
+    sem_post(printer);
+}
+```
+
+**Process C:**
+
+```c
+while (condition) {
+    sem_wait(printer);
+    sem_wait(cardReader);
+    useDevices();
+    sem_post(printer);
+    sem_post(cardReader);
+}
+```
 
 ## Task 4:
 
@@ -492,3 +526,25 @@ You need to implement the routines for both the barber and the customers, using 
 3. Specify the number of mutexes required.
 
 Your implementation should ensure proper synchronization between the barber and the customers, adhering to the constraints mentioned above.
+
+
+*Solution:*
+
+**Constants:**
+
+```c
+struct barbershop {
+    int chairs = 20; // Total number of chairs in the barbershop
+    int waiting;     // Number of people currently waiting
+    sem_t customers; // Semaphore for customers, initialized to 0
+    sem_t barbers;   // Semaphore for barbers, initialized to 0
+    sem_t mutex;     // Mutex semaphore, initialized to 1
+};
+```
+
+*Details:*
+- `chairs`: This variable represents the total number of chairs available in the barbershop waiting area. In this case, there are 20 chairs.
+- `waiting`: This variable keeps track of the number of customers currently waiting in the barbershop.
+- `sem_t customers`: This semaphore is used to control access to the customers waiting in the barbershop. It is initialized to 0, indicating initially there are no customers.
+- `sem_t barbers`: This semaphore controls access to the barbers available in the shop. Like `customers`, it is also initialized to 0, indicating initially there are no barbers available.
+- `sem_t mutex`: This semaphore (`mutex`) serves as a mutual exclusion lock that ensures only one thread can access the critical sections of the `barbershop` structure at any given time. It is initialized to 1, allowing one thread to enter the critical section initially.
