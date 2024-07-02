@@ -1,6 +1,6 @@
 28.07.2024 - Omar Richi (omar.richi@rwth-aachen.de)
 
-### Task 1: Semaphore
+## Task 1: Semaphore
 
 Using semaphore, implement the following synchronization mechanisms.
 
@@ -97,8 +97,40 @@ void mutex_unlock(struct Mutex *mutex) {
 2. Barrier:
 
 ```c
+struct Barrier {
+    int count;
+    int n_threads;
+    sem_t mutex;
+    sem_t barrier;
+};
 
-code
+// initialize the barrier for later use
+void barrier_init(struct Barrier *barrier, int n_threads) {
+    barrier->count = 0;
+    barrier->n_threads = n_threads;
+    sem_init(&barrier->mutex, 0, 1); // Mutex semaphore initially unlocked
+    sem_init(&barrier->barrier, 0, 0); // Initially locked
+}
+
+// Barrier to ensure all threads wait here before being released
+void barrier_wait(struct Barrier *barrier) {
+    sem_wait(&barrier->mutex); // Take the mutex
+    barrier->count++; // Only 1 thread can increase the shared variable at a time
+
+    if (barrier->count == barrier->n_threads) {
+        // The last thread calling "wait" will enter this if-condition, unlocking
+        // another thread, which will in its turn unlock another thread,
+        // until all are unlocked
+        sem_post(&barrier->mutex);
+        sem_post(&barrier->barrier);
+        return;
+    }
+
+    sem_post(&barrier->mutex);
+
+    sem_wait(&barrier->barrier);
+    sem_post(&barrier->barrier);
+}
 ```
 
 *Details:*
@@ -134,18 +166,47 @@ void barrier_init(struct Barrier *barrier, int n_threads) {
 - The `barrier_init` function initializes the barrier.
 - `barrier->count = 0`: Initializes the count of threads that have reached the barrier to 0.
 - `barrier->n_threads = n_threads`: Sets the number of threads that need to reach the barrier.
+- `sem_init(&barrier->mutex, 0, 1)`: Initializes the `mutex` semaphore to 1, meaning it is initially unlocked.
+- `sem_init(&barrier->barrier, 0, 0)`: Initializes the `barrier` semaphore to 0, meaning it is initially locked.
+
+3. **Wait Function:**
+```c
+void barrier_wait(struct Barrier *barrier) {
+    sem_wait(&barrier->mutex); // Take the mutex
+    barrier->count++; // Only 1 thread can increase the shared variable at a time
+
+    if (barrier->count == barrier->n_threads) {
+        // The last thread calling "wait" will enter this if-condition, unlock
+        // one another thread, which will in its turn unlock another thread...
+        // until all are unlocked
+        sem_post(&barrier->mutex);
+        sem_post(&barrier->barrier);
+        return;
+    }
+
+    sem_post(&barrier->mutex);
+
+    sem_wait(&barrier->barrier);
+    sem_post(&barrier->barrier);
+}
+```
+
+- The `barrier_wait` function is called by each thread when it reaches the barrier.
+- `sem_wait(&barrier->mutex)`: Locks the `mutex` semaphore, ensuring exclusive access to the `count` variable.
+- `barrier->count++`: Increments the `count` of threads that have reached the barrier.
+- `if (barrier->count == barrier->n_threads)`: Checks if all threads have reached the barrier.
+	- If true:
+		- `sem_post(&barrier->mutex)`: Unlocks the `mutex` semaphore.
+		- `sem_post(&barrier->barrier)`: Unlocks the `barrier` semaphore, allowing threads to proceed.
+		- `return`: Exits the function.
+	- If false:
+		- `sem_post(&barrier->mutex)`: Unlocks the `mutex` semaphore.
+		- `sem_wait(&barrier->barrier)`: Blocks the thread on the `barrier` semaphore until it is unlocked by the last thread.
+		-  `sem_post(&barrier->barrier)`: Ensures that the next thread can proceed.
 
 
 
-
-
-
-
-
-
-
-
-### Task 2: Mensa Ahornstraße
+## Task 2: Mensa Ahornstraße
 
 #### a)
 
@@ -201,7 +262,15 @@ Synchronize the solution using mutex. Justify the placement of the critical sect
 Instead of a mutex, synchronize the solution using semaphore. Justify the placement of the critical sections. You may need additional variables for correct synchronization.
 
 
-### Task 3: Deadlock
+*Solution:*
+
+#### a)
+Busy waiting occurs when a process continuously checks a condition without performing productive work. This results in high CPU usage without accomplishing any useful task.
+
+Two examples from the pseudocode:
+
+
+## Task 3: Deadlock
 
 Given three resources: hard drive, card reader, and printer. Each process always needs exactly two of these resources exclusively. The following sequences for processes have been defined. All semaphores (hardDrive, cardReader, printer) are mutexes, initialized to 1. Does this solution work? If you find an error or problem, describe how to fix it.
 
@@ -241,7 +310,7 @@ while (condition) {
 }
 ```
 
-### Task 4:
+## Task 4:
 
 In this problem, we have a single barber working in a barbershop. The barbershop has a waiting room that can hold up to 20 customers. Only one customer at a time can be in the barber’s chair for a haircut. If there are no customers in the shop, the barber, who often gets tired from working too much, will go to sleep. However, if a customer enters the barbershop and finds the barber sleeping, the customer will wake up the barber.
 
