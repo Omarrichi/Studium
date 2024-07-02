@@ -268,6 +268,117 @@ Instead of a mutex, synchronize the solution using semaphore. Justify the placem
 Busy waiting occurs when a process continuously checks a condition without performing productive work. This results in high CPU usage without accomplishing any useful task.
 
 Two examples from the pseudocode:
+1. `while (studentsAtCounter > 0);` : The process repeatedly checks the condition until no other student is at the counter.
+2. `while (klassiker == 0);` or `while (vegetarian == 0);` : The process repeatedly checks the condition until the desired dish is available.
+
+
+#### b)
+
+```c
+#include <semaphore.h>
+
+// Constants
+#define KLASSIKER 0
+#define VEGETARIAN 1
+
+// Shared variables
+int studentsAtCounter = 0;
+int klassiker = 0;
+int vegetarian = 0;
+
+// Mutexes
+struct Mutex counterLock;
+struct Mutex klassikerLock;
+struct Mutex vegetarianLock;
+
+void fillKlassiker(int n) {
+    mutex_lock(&klassikerLock);
+    klassiker += n;
+    mutex_unlock(&klassikerLock);
+}
+
+void fillVegetarian(int n) {
+    mutex_lock(&vegetarianLock);
+    vegetarian += n;
+    mutex_unlock(&vegetarianLock);
+}
+
+void arrivalStudent(int wish) {
+    // Ensure only 1 student at a time
+    mutex_lock(&counterLock);
+    studentsAtCounter++;
+
+    if (wish == KLASSIKER) {
+        while (1) {
+            mutex_lock(&klassikerLock);
+            if (klassiker > 0) {
+                klassiker--;
+                mutex_unlock(&klassikerLock);
+                break;
+            }
+            mutex_unlock(&klassikerLock);
+        }
+    } else if (wish == VEGETARIAN) {
+        while (1) {
+            mutex_lock(&vegetarianLock);
+            if (vegetarian > 0) {
+                vegetarian--;
+                mutex_unlock(&vegetarianLock);
+                break;
+            }
+            mutex_unlock(&vegetarianLock);
+        }
+    }
+
+    studentsAtCounter--;
+    mutex_unlock(&counterLock);
+}
+
+```
+
+*Details:*
+
+- **Constants**: Defines `KLASSIKER` and `VEGETARIAN` with values `0` and `1`, respectively.
+- **Shared Variables**:
+	- `studentsAtCounter`: Tracks the number of students at the counter.
+	- `klassiker` and `vegetarian`: Track the number of meals available for each type.
+- **Mutexes**: Defines three mutexes for controlling access to shared variables.
+
+
+**Functions:**
+- **`fillKlassiker`**: Adds `n` meals to `klassiker`. Uses a mutex to ensure only one thread can update the `klassiker` variable at a time.
+- **`fillVegetarian`**: Adds `n` meals to `vegetarian`. Uses a mutex to ensure only one thread can update the `vegetarian` variable at a time.
+- **`arrivalStudent`**:
+	- Locks the `counterLock` mutex to ensure only one student is processed at a time.
+	- Depending on the student's meal choice (`wish`), it locks the corresponding meal mutex (`klassikerLock` or `vegetarianLock`).
+	- The student waits if no meals of their choice are available.
+	- Decrements the meal count when a meal is taken.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Task 3: Deadlock
