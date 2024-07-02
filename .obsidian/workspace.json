@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Untitled.md",
+                "file": "BuS Notes/Tutorial_05_English.md",
                 "mode": "source",
                 "source": true
               }
@@ -55,7 +55,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Untitled.md",
+                "file": "BuS Notes/Tutorial_05_English.md",
                 "mode": "preview",
                 "source": true
               }
@@ -128,7 +128,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Untitled.md",
+                "file": "BuS Notes/Tutorial_05_English.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -145,7 +145,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Untitled.md",
+                "file": "BuS Notes/Tutorial_05_English.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -168,7 +168,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Untitled.md"
+                "file": "BuS Notes/Tutorial_05_English.md"
               }
             }
           },
@@ -210,8 +210,9 @@
   },
   "active": "836d4a7a96a33710",
   "lastOpenFiles": [
-    "BuS Notes/Tutorial_04_English.md",
     "Untitled.md",
+    "BuS Notes/Tutorial_05_English.md",
+    "BuS Notes/Tutorial_04_English.md",
     "6. Semester/Mathematische Logik/VL 06 Di, 30.04.2024.md",
     "BuS Notes/Tutorial_03_English.md",
     "BuS Notizen/Tutorial_04_Deutsch.md",
@@ -249,7 +250,6 @@
     "5. Semester/Einführung in Webtechnologien/Grundlagen zu HTTP, HTML und CSS.md",
     "5. Semester/Datenkommunikation/4. Network Layer.md",
     "5. Semester/Datenkommunikation/1. Dienste und Protokolle.md",
-    "5. Semester/Datenkommunikation/2. Physical Layer.md",
     "5. Semester/IT-Sicherheit",
     "5. Semester/Introduction to Artificial Intelligence",
     "5. Semester/Erfüllbarkeitsüberprüfung",
