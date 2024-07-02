@@ -39,9 +39,55 @@ In this task, we simulate the functionality of the Mensa Ahornstraße. We assume
 Here is the current solution. The `arrivalStudent` function is started by different processes, `fillKlassiker` and `fillVegetarian` are called by only one process.
 
 
-```c
-#define KLASSIKER 0
-#definde VEGETARIAN 1
+``` c
+#define KLASSIKER 01
+#define VEGETARIAN 12
 
-int 
+int studentsAtCounter = 0;
+int klassiker = 0;
+int vegetarian = 0; // shared variables
+
+void fillKlassiker(int n) {
+    klassiker += n;
+}
+
+void fillVegetarian(int n) {
+    vegetarian += n;
+}
+
+void arrivalStudent(int wish) {
+    while (studentsAtCounter > 0);
+    studentsAtCounter++;
+    if (wish == KLASSIKER) {
+        while (klassiker == 0) {
+            // wait
+        }
+        klassiker--;
+    }
+    else if (wish == VEGETARIAN) {
+        while (vegetarian == 0) {
+            // wait
+        }
+        vegetarian--;
+    }
+    studentsAtCounter--;
+}
+
 ```
+
+Explain the term busy waiting in the context of this task and give two examples from the pseudocode.
+
+#### b)
+
+Synchronize the solution using mutex. Justify the placement of the critical sections.
+
+#### c)
+
+Instead of a mutex, synchronize the solution using semaphore. Justify the placement of the critical sections. You may need additional variables for correct synchronization.
+
+
+### Task 3: Deadlock
+
+Given three resources: hard drive, card reader, and printer. Each process always needs exactly two of these resources exclusively. The following sequences for processes have been defined. All semaphores (hardDrive, cardReader, printer) are mutexes, initialized to 1. Does this solution work? If you find an error or problem, describe how to fix it.
+
+**Process A**
