@@ -49,6 +49,40 @@ void mutex_unlock(struct Mutex *mutex) {
 }
 
 ```
+*Details:*
+1. **Struct Definition:**
+
+```c
+struct Mutex {
+    sem_t mutex;
+};
+```
+- The `Mutex` struct contains a single member, `sem_t mutex`, which is a semaphore
+
+2. **Initialization Function:**
+
+```c
+void mutex_init(struct Mutex *mutex) {
+    sem_init(&mutex->mutex, 0, 1); // Initially unlocked
+}
+```
+-  The `mutex_init` function initializes the semaphore.
+- `sem_init(&mutex->mutex, 0, 1)` initializes the semaphore `mutex->mutex` with an initial value of 1, meaning it is initially unlocked (available).
+- The second parameter `0` indicates that the semaphore is shared between threads of the same process.
+
+
+3. **Lock Function:**
+
+```c
+void mutex_lock(struct Mutex *mutex) {
+    sem_wait(&mutex->mutex);
+}
+```
+
+- The `mutex_lock` function locks the mutex.
+-  `sem_wait(&mutex->mutex)` decrements the semaphore value. If the semaphore value is greater than zero, the function returns immediately. If the semaphore value is zero, the calling thread is blocked until the semaphore value becomes greater than zero.
+
+
 
 ### Task 2: Mensa Ahornstraße
 
