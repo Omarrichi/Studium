@@ -552,8 +552,28 @@ struct barbershop {
 **Barber Routine:**
 
 ```c
+void barber_routine(struct barbershop *bs) {
+    while (true) { // Infinite loop to continuously serve customers
+        sem_wait(&bs->customers); // Wait until a customer is available (block if no customer)
 
+        sem_wait(&bs->mutex); // Acquire the mutex to enter critical section
+        bs->waiting--; // Decrease the count of customers waiting
+        sem_post(&bs->mutex); // Release the mutex to allow other threads
+
+        sem_post(&bs->barbers); // Signal that the barber is available for the customer
+        cut_hair(bs); // Perform the haircut operation on the customer
+    }
+}
 ```
+
+*Details:*
+- `while (true)`: This creates an infinite loop that keeps the barber routine running continuously.
+- `sem_wait(&bs->customers)`: Waits until there is at least one customer available (`customers` semaphore is greater than zero). If no customer is available, this call will block the thread until a customer arrives.
+- `sem_wait(&bs->mutex)`: Acquires the mutex semaphore (`mutex`) to enter the critical section where the shared `barbershop` structure is accessed.
+- `bs->waiting--`: Decrements the `waiting` variable to indicate that one customer is now being served.
+- `sem_post(&bs->mutex)`: Releases the mutex to allow other threads to enter the critical section.
+- `sem_post(&bs->barbers)`: Signals that the barber is now available to serve another customer by incrementing the `barbers` semaphore.
+- `cut_hair(bs)`: Executes the function `cut_hair()` to perform the haircut operation on the customer. This function call represents the actual barber task of cutting the customer's hair.
 
 **Customer routine:**
 
