@@ -90,4 +90,58 @@ Instead of a mutex, synchronize the solution using semaphore. Justify the placem
 
 Given three resources: hard drive, card reader, and printer. Each process always needs exactly two of these resources exclusively. The following sequences for processes have been defined. All semaphores (hardDrive, cardReader, printer) are mutexes, initialized to 1. Does this solution work? If you find an error or problem, describe how to fix it.
 
-**Process A**
+**Process A:**
+
+```c 
+while (condition) {
+    sem_wait(hardDrive);
+    sem_wait(cardReader);
+    useDevices();
+    sem_post(hardDrive);
+    sem_post(cardReader);
+}
+```
+
+**Process B:**
+
+```c
+while (condition) {
+    sem_wait(printer);
+    sem_wait(hardDrive);
+    useDevices();
+    sem_post(printer);
+    sem_post(hardDrive);
+}
+```
+
+**Process C:**
+
+```c
+while (condition) {
+    sem_wait(cardReader);
+    sem_wait(printer);
+    useDevices();
+    sem_post(cardReader);
+    sem_post(printer);
+}
+```
+
+### Task 4:
+
+In this problem, we have a single barber working in a barbershop. The barbershop has a waiting room that can hold up to 20 customers. Only one customer at a time can be in the barber’s chair for a haircut. If there are no customers in the shop, the barber, who often gets tired from working too much, will go to sleep. However, if a customer enters the barbershop and finds the barber sleeping, the customer will wake up the barber.
+
+You need to implement the routines for both the barber and the customers, using proper synchronization mechanisms to ensure the requirements are met.
+
+**Requirements:**
+1. The barber should go to sleep if there are no customers waiting.
+2. A customer should wake up the barber if they find him sleeping.
+3. Only one customer should be in the barber’s chair at a time.
+4. The waiting room should not hold more than 20 customers at a time.
+
+
+**Questions:**
+1. Identify the constants that need to be declared.
+2. Determine the number of semaphores required and their initial values.
+3. Specify the number of mutexes required.
+
+Your implementation should ensure proper synchronization between the barber and the customers, adhering to the constraints mentioned above.
