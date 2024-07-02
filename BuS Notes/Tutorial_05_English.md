@@ -548,3 +548,38 @@ struct barbershop {
 - `sem_t customers`: This semaphore is used to control access to the customers waiting in the barbershop. It is initialized to 0, indicating initially there are no customers.
 - `sem_t barbers`: This semaphore controls access to the barbers available in the shop. Like `customers`, it is also initialized to 0, indicating initially there are no barbers available.
 - `sem_t mutex`: This semaphore (`mutex`) serves as a mutual exclusion lock that ensures only one thread can access the critical sections of the `barbershop` structure at any given time. It is initialized to 1, allowing one thread to enter the critical section initially.
+
+**Barber Routine:**
+
+```c
+
+```
+
+**Customer routine:**
+
+```c
+void customer_routine(struct barbershop *bs) {
+    sem_wait(&bs->mutex); // Acquire the mutex to enter critical section
+
+    if (bs->waiting < bs->chairs) { // Check if there's an available chair
+        bs->waiting++; // Increment the number of customers waiting
+        sem_post(&bs->customers); // Signal that a customer is waiting
+
+        sem_post(&bs->mutex); // Release the mutex to allow other threads
+        sem_wait(&bs->barbers); // Wait until a barber is available
+        get_haircut(bs); // Perform the haircut operation
+    } else {
+        sem_post(&bs->mutex); // Release the mutex if no chair is available
+    }
+}
+```
+
+*Details:*
+- `sem_wait(&bs->mutex)`: Acquires the mutex semaphore (`mutex`) to enter the critical section where the shared `barbershop` structure is accessed.
+- `if (bs->waiting < bs->chairs)`: Checks if there are available chairs in the barbershop (`chairs` represents the total number of chairs).
+- `bs->waiting++`: Increments the `waiting` variable to indicate that a new customer is now waiting in the barbershop.
+- `sem_post(&bs->customers)`: Signals that there is a customer waiting by incrementing the `customers` semaphore.
+- `sem_post(&bs->mutex)`: Releases the mutex to allow other threads to enter the critical section.
+- `sem_wait(&bs->barbers)`: Waits until the barber becomes available. The `barbers` semaphore controls access to the available barbers.
+- `get_haircut(bs)`: Executes the function `get_haircut()` to perform the haircut operation for the customer.
+- `else`: If there are no available chairs (`bs->waiting >= bs->chairs`), the customer releases the mutex and exits the routine without getting a haircut.
