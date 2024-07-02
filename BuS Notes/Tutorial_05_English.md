@@ -398,26 +398,24 @@ void arrivalStudent(int wish) {
 }
 ```
 
+*Details:*
+- **Constants**: Defines `KLASSIKER` and `VEGETARIAN` with values `0` and `1`, respectively.
+- **Semaphores**:
+	- `klassikerSem`: Semaphore initialized to `0` indicating no `klassiker` meals available initially.
+	- `vegetarianSem`: Semaphore initialized to `0` indicating no `vegetarian` meals available initially.
+	- `counter`: Semaphore initialized to `1` indicating one place available at the counter.
 
+**Functions:**
+- `fillKlassiker(int n)`:
+	- Increases the `klassikerSem` semaphore by `n`. This function is used to add `n` Klassiker meals to the available pool.
+- `fillVegetarian(int n)`:
+	- Increases the `vegetarianSem` semaphore by `n`. This function is used to add `n` vegetarian meals to the available pool.
+- `arrivalStudent(int wish)`:
+	- Ensures mutual exclusion among students accessing the counter using the `counter` semaphore.
+	- Depending on the student's meal choice (`wish`), it waits on the corresponding semaphore (`klassikerSem` or `vegetarianSem`) to ensure a meal of the desired type is available.
+	- After acquiring a meal, it releases the `counter` semaphore to allow other students to access the counter.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+This code manages meal availability using semaphores to synchronize access among multiple threads or processes, ensuring that students wait when their desired meal type is unavailable and allowing only one student at a time to access the counter.
 
 
 ## Task 3: Deadlock
@@ -459,6 +457,21 @@ while (condition) {
     sem_post(printer);
 }
 ```
+
+*Solution:*
+Deadlock can occur if all three processes execute their first wait.
+
+- Process A takes hardDrive
+- Process B takes printer
+- Process C takes cardReader
+- Process A is waiting on cardReader
+- Process B is waiting on hardDrive
+- Process C is waiting on printer
+
+
+- One solution is to define an order to take the locks. The order should be respected by all processes. For
+
+
 
 ## Task 4:
 
