@@ -29,6 +29,26 @@ Define a structure `struct Barrier` and implement the following functions:
 5 void mutex_wait(struct Mutex *mutex); 
 ```
 
+*Solution:*
+
+```c
+struct Mutex {
+    sem_t mutex;
+};
+
+void mutex_init(struct Mutex *mutex) {
+    sem_init(&mutex->mutex, 0, 1); // Initially unlocked
+}
+
+void mutex_lock(struct Mutex *mutex) {
+    sem_wait(&mutex->mutex);
+}
+
+void mutex_unlock(struct Mutex *mutex) {
+    sem_post(&mutex->mutex);
+}
+
+```
 
 ### Task 2: Mensa Ahornstraße
 
