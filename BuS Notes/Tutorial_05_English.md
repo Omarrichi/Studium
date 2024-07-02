@@ -287,9 +287,9 @@ int klassiker = 0;
 int vegetarian = 0;
 
 // Mutexes
-struct Mutex counterLock;
-struct Mutex klassikerLock;
-struct Mutex vegetarianLock;
+Mutex counterLock;
+Mutex klassikerLock;
+Mutex vegetarianLock;
 
 void fillKlassiker(int n) {
     mutex_lock(&klassikerLock);
@@ -333,7 +333,6 @@ void arrivalStudent(int wish) {
     studentsAtCounter--;
     mutex_unlock(&counterLock);
 }
-
 ```
 
 *Details:*
@@ -353,11 +352,51 @@ void arrivalStudent(int wish) {
 	- Depending on the student's meal choice (`wish`), it locks the corresponding meal mutex (`klassikerLock` or `vegetarianLock`).
 	- The student waits if no meals of their choice are available.
 	- Decrements the meal count when a meal is taken.
+	- Unlocks the corresponding mutex and then the `counterLock` mutex once the student is processed.
 
+This code ensures that meal counts are accurately managed and that only one student can take a meal or be at the counter at a time, preventing race conditions.
 
+Notice that this solution still relies on busy waiting, but no more race condition is possible thanks to mutexes.
 
+#### c)
 
+```c
+#include <semaphore.h>
 
+// Constants
+#define KLASSIKER 0
+#define VEGETARIAN 1
+
+// Semaphores
+Semaphore klassikerSem(0); // initialize semaphore to 0: no klassiker available at start
+Semaphore vegetarianSem(0); // initialize semaphore to 0: no vegetarian available at start
+Semaphore counter(1); // initialize semaphore to 1: one place available at the counter
+
+void fillKlassiker(int n) {
+    for (int i = 0; i < n; i++) {
+        sem_post(&klassikerSem);
+    }
+}
+
+void fillVegetarian(int n) {
+    for (int i = 0; i < n; i++) {
+        sem_post(&vegetarianSem);
+    }
+}
+
+void arrivalStudent(int wish) {
+    // Ensure only 1 student at a time at the counter
+    sem_wait(&counter);
+    
+    if (wish == KLASSIKER) {
+        sem_wait(&klassikerSem);
+    } else if (wish == VEGETARIAN) {
+        sem_wait(&vegetarianSem);
+    }
+    
+    sem_post(&counter);
+}
+```
 
 
 

@@ -20,49 +20,6 @@
             }
           }
         ]
-      },
-      {
-        "id": "c7ee7f2ca800867b",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "3786f2b9cf3a0d1e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "BuS Notizen/Tutorial_03_Deutsch.md",
-                "mode": "source",
-                "source": true
-              }
-            }
-          },
-          {
-            "id": "ab9ed2bee121e9d4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "6. Semester/Mathematische Logik/VL 06 Di, 30.04.2024.md",
-                "mode": "preview",
-                "source": true
-              }
-            }
-          },
-          {
-            "id": "6362024b0af13522",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "BuS Notes/Tutorial_05_English.md",
-                "mode": "preview",
-                "source": true
-              }
-            }
-          }
-        ],
-        "currentTab": 2
       }
     ],
     "direction": "vertical"
