@@ -17,7 +17,7 @@ Define a structure  `struct Mutex` and implement the following functions:
 6 void mutex_unlock(struct Mutex *mutex);
 ```
 
-1. Barrier
+2. Barrier
 
 Define a structure `struct Barrier` and implement the following functions:
 
@@ -30,6 +30,8 @@ Define a structure `struct Barrier` and implement the following functions:
 ```
 
 *Solution:*
+
+1. Mutex: 
 
 ```c
 struct Mutex {
@@ -81,6 +83,65 @@ void mutex_lock(struct Mutex *mutex) {
 
 - The `mutex_lock` function locks the mutex.
 -  `sem_wait(&mutex->mutex)` decrements the semaphore value. If the semaphore value is greater than zero, the function returns immediately. If the semaphore value is zero, the calling thread is blocked until the semaphore value becomes greater than zero.
+
+4. **Unlock Function:**
+
+```c
+void mutex_unlock(struct Mutex *mutex) {
+    sem_post(&mutex->mutex);
+}
+```
+- The `mutex_unlock` function unlocks the mutex.
+-  `sem_post(&mutex->mutex)` increments the semaphore value. If there are any threads blocked on the semaphore, one of them will be unblocked.
+
+2. Barrier:
+
+```c
+
+code
+```
+
+*Details:*
+
+1. **Struct Definition:**
+
+```c
+struct Barrier {
+    int count;
+    int n_threads;
+    sem_t mutex;
+    sem_t barrier;
+};
+```
+
+- The `Barrier` struct contains:
+	- `count`: Keeps track of how many threads have reached the barrier.
+	- `n_threads`: The total number of threads that must reach the barrier before any can proceed.
+	- `mutex`: A semaphore used to protect access to the `count` variable.
+	-  `barrier`: A semaphore used to block threads at the barrier.
+
+2. **Initialization Function:**
+
+```c
+void barrier_init(struct Barrier *barrier, int n_threads) {
+    barrier->count = 0;
+    barrier->n_threads = n_threads;
+    sem_init(&barrier->mutex, 0, 1); // Mutex semaphore initially unlocked
+    sem_init(&barrier->barrier, 0, 0); // Initially locked
+}
+```
+
+- The `barrier_init` function initializes the barrier.
+- `barrier->count = 0`: Initializes the count of threads that have reached the barrier to 0.
+- `barrier->n_threads = n_threads`: Sets the number of threads that need to reach the barrier.
+
+
+
+
+
+
+
+
 
 
 
