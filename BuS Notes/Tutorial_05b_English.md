@@ -234,9 +234,39 @@ int main() {
     - `mutex`: Semaphore for mutual exclusion to protect critical sections.
     - `stack`: Pointer to the stack array.
 
+
+### Stack Initialization
+
 - **mmap**: Allocates shared memory for the stack structure and the stack array using `mmap`. The memory is accessible to all processes.
 - **sem_init**: Initializes semaphores:
     - `sem_free` is initialized to the stack size, indicating the number of free slots.
     - `sem_used` is initialized to 0, indicating no slots are used initially.
     - `mutex` is initialized to 1, allowing only one process to access critical sections at a time.
 - **Return**: Returns a pointer to the initialized stack.
+
+### Pop Operation
+
+- **sem_wait**: Waits for the `sem_used` semaphore, ensuring there are items to pop.
+- **Critical Section**:
+    - **sem_wait(&stack->mutex)**: Locks the critical section.
+    - **Pop Operation**: Decreases the index and retrieves the value from the stack.
+    - **sem_post(&stack->mutex)**: Unlocks the critical section.
+- **sem_post(&stack->sem_free)**: Signals that a slot is now free.
+- **Return**: Returns the popped value.
+
+### Push Operation
+
+- **sem_wait**: Waits for the `sem_free` semaphore, ensuring there is space to push.
+- **Critical Section**:
+    - **sem_wait(&stack->mutex)**: Locks the critical section.
+    - **Push Operation**: Inserts the value into the stack and increases the index.
+    - **sem_post(&stack->mutex)**: Unlocks the critical section.
+- **sem_post(&stack->sem_used)**: Signals that a slot is now used.
+
+### Main Function
+- **srand(time(NULL))**: Seeds the random number generator with the current time.
+- **init_stack(200)**: Initializes the stack with a size of 200.
+- **Forking**:
+    - Creates 10 child processes that continuously push random values (0-19) onto the stack.
+    - Creates 10 child processes that continuously pop values from the stack.
+- **wait(NULL)**: Waits for all child processes to finish. However, since the child processes run infinite loops, this program will never exit normally.
