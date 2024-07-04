@@ -2,7 +2,7 @@
 
 ## Introduction Questions
 
-**TASK 2 Code**
+**TASK 1 Code**
 
 receiver.c
 
@@ -132,3 +132,111 @@ int main() {
     - **Closing the Pipe**:
         - Finally, `close(fd_send)` closes the file descriptor associated with the named pipe.
         - If `close` fails, an error message is printed and the program exits.
+
+
+**TASK 2 Code**
+
+```c
+
+#include <semaphore.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/mman.h>
+#include <sys/wait.h>
+#include <time.h>
+#include <unistd.h>
+
+struct Stack {
+  int idx;
+  int size;
+  sem_t sem_free;
+  sem_t sem_used;
+  sem_t mutex;
+  int *stack;
+};
+
+struct Stack *init_stack(int size) {
+  struct Stack *stack = mmap(NULL, sizeof(struct Stack), PROT_READ | PROT_WRITE,
+                             MAP_SHARED | MAP_ANONYMOUS, -1, 0);
+  int *stack_t = mmap(NULL, sizeof(int) * size, PROT_READ | PROT_WRITE,
+                      MAP_SHARED | MAP_ANONYMOUS, -1, 0);
+
+  if (!stack || !stack_t) {
+    perror("mmap");
+    exit(1);
+  }
+
+  stack->idx = 0;
+  stack->size = size;
+  sem_init(&stack->sem_free, 1, size);
+  sem_init(&stack->sem_used, 1, 0);
+  sem_init(&stack->mutex, 1, 1);
+
+  stack->stack = stack_t;
+  return stack;
+}
+
+int shared_pop(struct Stack *stack) {
+  sem_wait(&stack->sem_used);
+
+  sem_wait(&stack->mutex);
+  int ret = stack->stack[--stack->idx];
+  sem_post(&stack->mutex);
+
+  sem_post(&stack->sem_free);
+  return ret;
+}
+
+void shared_push(struct Stack *stack, int value) {
+  sem_wait(&stack->sem_free);
+
+  sem_wait(&stack->mutex);
+  stack->stack[stack->idx++] = value;
+  sem_post(&stack->mutex);
+
+  sem_post(&stack->sem_used);
+}
+
+int main() {
+  srand(time(NULL));
+
+  struct Stack *stk = init_stack(200);
+
+  for (int i = 0; i < 10; i++) {
+    if (fork() == 0) {
+      while (1) {
+        shared_push(stk, rand() % 20);
+      }
+    }
+  }
+
+  for (int i = 0; i < 10; i++) {
+    if (fork() == 0) {
+      while (1) {
+        shared_pop(stk);
+      }
+    }
+  }
+
+  wait(NULL);
+}
+
+```
+
+### Explanation
+
+- **Includes**: The program includes several standard libraries for semaphore operations, memory management, process control, and random number generation.
+- **Struct Stack**: This structure represents the stack with the following fields:
+    - `idx`: Current index or top of the stack.
+    - `size`: Maximum size of the stack.
+    - `sem_free`: Semaphore to track the number of free slots in the stack.
+    - `sem_used`: Semaphore to track the number of used slots in the stack.
+    - `mutex`: Semaphore for mutual exclusion to protect critical sections.
+    - `stack`: Pointer to the stack array.
+
+- **mmap**: Allocates shared memory for the stack structure and the stack array using `mmap`. The memory is accessible to all processes.
+- **sem_init**: Initializes semaphores:
+    - `sem_free` is initialized to the stack size, indicating the number of free slots.
+    - `sem_used` is initialized to 0, indicating no slots are used initially.
+    - `mutex` is initialized to 1, allowing only one process to access critical sections at a time.
+- **Return**: Returns a pointer to the initialized stack.
