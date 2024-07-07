@@ -19,7 +19,10 @@ Usage:
 $\Rightarrow$ easy to use but slower (kernel, System call)
 
 Shared memory: 
-- 
+- Allows multiple processes to access the same memory Segment
+Usage:
+- fast communication (direct access to the memory space)
+- High Performance , complex data sharing
 
 
 ## Introduction Questions
