@@ -27,7 +27,29 @@ Usage:
 
 ## Introduction Questions
 
-Question 1:
+*Question 1*
+Pipes and Shared Memory are two concepts for exchanging information between processes. Compare the advantages and disadvantages of these two concepts.
+
+
+*Question 2*
+In the lecture, it was mentioned that named pipes are very similar to files. What are the main differences between files and named pipes?
+
+*Question 3*
+- Scenario: Web Server Configuration
+
+Web servers typically read a configuration file and apply rules based on it while running. To avoid restarting the server every time the configuration changes, we aim to implement a feature that allows us to update the configuration and trigger a reload without restarting.
+
+Discuss the advantages and disadvantages of using different methods of inter-process communication to achieve this:
+
+
+
+
+
+
+
+
+
+
 
 
 **TASK 1 Code**
