@@ -1,5 +1,17 @@
 05.07.2024 - Omar Richi (omar.richi@rwth-aachen.de)
 
+# Inter-process-communication
+
+**Basics for Pipes and Shared memory**
+
+Pipes:
+-  Allow data transfer from one process to another
+- unidirectional
+- Anonymous pipes: mainly between parent and child process
+- Named pipes:
+	- 
+
+
 ## Introduction Questions
 
 **TASK 1 Code**
