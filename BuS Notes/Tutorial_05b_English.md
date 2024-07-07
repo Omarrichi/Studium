@@ -6,10 +6,14 @@
 
 Pipes:
 -  Allow data transfer from one process to another
-- unidirectional
+- bidirectional
 - Anonymous pipes: mainly between parent and child process
 - Named pipes:
-	- 
+	- Communication between unrelated process and support bidirectional communcation
+Usage: 
+- Simple data transfer between processes
+- act like data stream
+	- one process
 
 
 ## Introduction Questions
