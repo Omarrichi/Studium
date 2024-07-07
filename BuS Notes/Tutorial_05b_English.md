@@ -77,13 +77,20 @@ Discuss the advantages and disadvantages of using each method of IPC to achieve 
 *Solution 4*
 
 - Signals
-	- Signals are lightweight and efficient for notifications or triggers. They are easy to implement and can be used for notifications between subsystems about events. However, they are limited and don’t allow
+	- Signals are lightweight and efficient for notifications or triggers. They are easy to implement and can be used for notifications between subsystems about events. However, they are limited and don’t allow complex data exchange. This can be problematic in your system that requires detailed data sharing. Also, the latency of signals can be high, as there are no guarantee when the signal will be sent to the process by the operating system.
 - Shared memory
+	- Shared memory lets processes access data directly, minimizing delays and supporting high data throughput critical for real-time exchanges in autonomous vehicles. It needs careful synchronization to prevent data mix-ups or system freezes. Although managing shared memory can be tricky, it offers big performance gains for handling large data loads.
 - Pipes
+	- Pipes are simple for one-way communication between processes. They work well for passing data step by step but add extra work for handling big chunks of data. While pipes are easy to set up, they only allow one-way talk and don’t do so well with the big data needs of self-driving cars.
 - Sockets
+	- Sockets help with local and networked talking, giving you flexibility in how your setup works. They’re reliable and can scale up as you grow. However, they do take longer to send messages because they have to go through the network and take time to get set up again.
 
 
-**TASK 1 Code**
+## TASK 1 Named Pipes
+
+In the lecture, you learned about named pipes as a mechanism for IPC. Write two programs, `sender.c` and `receiver.c` , that communicate with each other through a named pipe. The `sender.c` program should continuously accept user input and then send it to `receiver.c` , which should continuously wait for transmissions and then print them out. Both programs should terminate when *exit* is transmitted.
+
+*Solution:*
 
 receiver.c
 
@@ -215,7 +222,25 @@ int main() {
         - If `close` fails, an error message is printed and the program exits.
 
 
-**TASK 2 Code**
+## Task 2: Shared and Synchronized Blocked Stack
+
+Write in C a shared stack supporting the pop and push operations.
+
+Pop is used to remove the element on the top of the stack. If no element is available, wait until one becomes available.
+
+Push is used to add an element on the top of the stack. If the stack is full, `push` should wait until an element can be inserted.
+
+Multiple processes can push and pop at the same time. Your implementation should be safe meaning that multiple processes/threads can execute the code at the same time without race conditions.
+
+```c
+struct Stack {
+	int top; // the index of the element above the top of the stack
+	int size;
+	int *stack;
+}
+```
+
+*Solution*
 
 ```c
 
