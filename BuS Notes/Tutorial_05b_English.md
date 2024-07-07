@@ -9,11 +9,14 @@ Pipes:
 - bidirectional
 - Anonymous pipes: mainly between parent and child process
 - Named pipes:
-	- Communication between unrelated process and support bidirectional communcation
+	- Communication between unrelated process and support bidirectional communication
 Usage: 
 - Simple data transfer between processes
 - act like data stream
-	- one process
+	- one process writes into pipe
+	- second process reads from pipe
+
+$\Rightarrow$ easy to use but slower (kernel, System call)
 
 
 ## Introduction Questions
