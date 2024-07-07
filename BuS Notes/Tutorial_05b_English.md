@@ -30,9 +30,15 @@ Usage:
 *Question 1*
 Pipes and Shared Memory are two concepts for exchanging information between processes. Compare the advantages and disadvantages of these two concepts.
 
+*Solution 1*
+- **Pipes:** Defined access via `read()` and `write()` . With “proper” usage (unidirectional, each end closing one side of the pipe), no special synchronization is required. Disadvantages include overhead in communication:  `read()` and `write()` are both syscalls, causing context switches, and there’s memory content copying.
+- **Shared Memory:** : Significantly higher performance due to no memory copying during data exchange, as both processes use the same physical memory area. Disadvantage is the need for synchronization by the programmer to avoid race conditions or inconsistencies.
 
 *Question 2*
 In the lecture, it was mentioned that named pipes are very similar to files. What are the main differences between files and named pipes?
+
+*Solution 2*
+
 
 *Question 3*
 - Scenario: Web Server Configuration
@@ -41,14 +47,27 @@ Web servers typically read a configuration file and apply rules based on it whil
 
 Discuss the advantages and disadvantages of using different methods of inter-process communication to achieve this:
 
+- Signals
+- Shared memory
+- Pipes
+- Sockets
+
+*Solution 3*
 
 
+*Question 4*
+- Scenario: Autonomous Vehicle Control System
 
+In an autonomous vehicle control system, various subsystems must exchange real-time data such as sensor readings, decision outputs, and control commands. The system requires low latency for rapid response to dynamic road conditions, high bandwidth to handle continuous sensor inputs, and effective synchronization to ensure timely decision-making and execution of control commands.
 
+Discuss the advantages and disadvantages of using each method of IPC to achieve efficient data exchange and synchronization between subsystems in an autonomous vehicle control system.
 
+- Signals
+- Shared memory
+- Pipes
+- Sockets
 
-
-
+*Solution 4*
 
 
 
