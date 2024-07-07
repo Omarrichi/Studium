@@ -237,8 +237,39 @@ struct Stack {
 	int top; // the index of the element above the top of the stack
 	int size;
 	int *stack;
+	// complete here with synchronization mechanisms
+};
+
+struct Stack *init_stack(int size){
+	// allocate and initialize the stack
+}
+
+int pop(struct Stack *stack) {
+	// pop the top element of the stack and return it
+}
+
+void push(struct Stack *stack, int value) {
+	// push a new element on the top of the stack
 }
 ```
+
+```ad-def
+title: mmap-flags
+The shared memory can also be used with the `MAP_SHARED` and `MAP_ANONYMOUS` flags of mmap, instead of using `shm_open`: the API is easier but it won’t work across different processes, only for parents and children.
+
+- `MAP_SHARED` defines a memory area that can be shared between processes after fork.
+- `MAP_ANONYMOUS` is used for memory allocations (like malloc).
+
+
+**difference between malloc and mmap**
+- malloc is using mmap under the hood
+- malloc is optimized so only one big mmap is made, and other malloc manage the memory allocations in user space
+
+**`MAP_ANONYMOUS`**
+- mmap means “memory map”, literally creating a new virtual address mapping of memory between either the main memory (page frames) or a file mmap can be used to map a file to the virtual memory of a process, by providing a file descriptor and without the flag `MAP_ANONYMOUS`
+
+```
+
 
 *Solution*
 
