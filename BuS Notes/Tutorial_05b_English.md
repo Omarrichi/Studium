@@ -18,6 +18,9 @@ Usage:
 
 $\Rightarrow$ easy to use but slower (kernel, System call)
 
+Shared memory: 
+- 
+
 
 ## Introduction Questions
 
