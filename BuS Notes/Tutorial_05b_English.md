@@ -38,7 +38,7 @@ Pipes and Shared Memory are two concepts for exchanging information between proc
 In the lecture, it was mentioned that named pipes are very similar to files. What are the main differences between files and named pipes?
 
 *Solution 2*
-
+Named pipes do not store data in a file on a file system. Once data is read, it cannot be read again and essentially “disappears”. Named pipes do not support searching like files; data access is serial. Hence, the use of the term FIFO (first in, first out) for named pipes, as seen in commands like `mkfifo`.
 
 *Question 3*
 - Scenario: Web Server Configuration
@@ -53,7 +53,14 @@ Discuss the advantages and disadvantages of using different methods of inter-pro
 - Sockets
 
 *Solution 3*
-
+- Signals: 
+	- Signals are a very good choice in this context. They are very easy to implement and to use, we don’t even need to write new code for this, we can just use the `kill` command to send a signal to our main program. The only code to write is the signal handler.
+- Shared memory
+	- Shared Memory is overkill in this context. We need to write a full new program with shared memory, we need the main program to wait on a semaphore to check if the configuration reload is needed. In addition, we don’t need to transmit a lot of data, so the use of shared memory is not justified in this context.
+- Pipes
+	- We need to create a named pipe to communicate with the main program. The advantages over shared memory is that we don’t need synchronization anymore, and it’s easier to write. But this solution is still expensive and there is the overhead of checking for the content of the pipe regularly.
+- Sockets
+	- Socket are only useful if we want communication over the network. On the same machine, sockets are unnecessarily complex compared to pipes or shared memory.
 
 *Question 4*
 - Scenario: Autonomous Vehicle Control System
@@ -69,6 +76,11 @@ Discuss the advantages and disadvantages of using each method of IPC to achieve 
 
 *Solution 4*
 
+- Signals
+	- Signals are lightweight and efficient for notifications or triggers. They are easy to implement and can be used for notifications between subsystems about events. However, they are limited and don’t allow
+- Shared memory
+- Pipes
+- Sockets
 
 
 **TASK 1 Code**
