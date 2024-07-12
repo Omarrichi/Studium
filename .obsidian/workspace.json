@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "BuS Notes/Tutorial_03_English.md",
+                "file": "BuS Notes/Tutorial_05b_English.md",
                 "mode": "preview",
                 "source": true
               }
@@ -69,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "005a87686d04f700",
@@ -86,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "BuS Notes/Tutorial_03_English.md",
+                "file": "BuS Notes/Tutorial_05b_English.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "BuS Notes/Tutorial_03_English.md",
+                "file": "BuS Notes/Tutorial_05b_English.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "BuS Notes/Tutorial_03_English.md"
+                "file": "BuS Notes/Tutorial_05b_English.md"
               }
             }
           },
@@ -168,22 +167,23 @@
   },
   "active": "836d4a7a96a33710",
   "lastOpenFiles": [
+    "BuS Notizen/Tutorial_02_Bonus_Deutsch.md",
+    "BuS Notizen/Tutorial 00.md",
+    "6. Semester/Mathematische Logik/VL 02 Do, 11.04.2024.md",
+    "BuS Notes/Tutorial_03_English.md",
     "BuS Notes/Tutorial_04_English.md",
     "BuS Notes/Tutorial_05_English.md",
     "BuS Notes/Tutorial_05b_English.md",
     "Untitled.md",
     "6. Semester/Mathematische Logik/VL 06 Di, 30.04.2024.md",
-    "BuS Notes/Tutorial_03_English.md",
     "BuS Notizen/Tutorial_04_Deutsch.md",
     "6. Semester/Mathematische Logik/VL 04 Do, 18.04.2024.md",
     "6. Semester/Mathematische Logik/VL 05 Do, 25.04.2024.md",
     "6. Semester/Mathematische Logik/VL 03 Di, 16.04.2024.md",
-    "6. Semester/Mathematische Logik/VL 02 Do, 11.04.2024.md",
     "6. Semester/Mathematische Logik/VL 01 Di, 09.04.2024.md",
     "6. Semester/Mathematische Logik",
     "6. Semester",
     "BuS Notizen/Tutorial_03_Deutsch.md",
-    "BuS Notizen/Tutorial_02_Bonus_Deutsch.md",
     "Pasted image 20240531230318.png",
     "Pasted image 20240531230104.png",
     "Pasted image 20240530222635.png",
@@ -200,7 +200,6 @@
     "BuS Notes/Tutorial 00.md",
     "Pasted image 20240526172231.png",
     "BuS Notizen/Tutorial 01.md",
-    "BuS Notizen/Tutorial 00.md",
     "BuS Notes",
     "5. Semester/Datenkommunikation/3. Data Link Layer.md",
     "BuS Notizen",
