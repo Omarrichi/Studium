@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "BuS Notes/Tutorial_05b_English.md",
+                "file": "BuS Notes/Tutorial_03_English.md",
                 "mode": "preview",
                 "source": true
               }
@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "005a87686d04f700",
@@ -85,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "BuS Notes/Tutorial_05b_English.md",
+                "file": "BuS Notes/Tutorial_03_English.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "BuS Notes/Tutorial_05b_English.md",
+                "file": "BuS Notes/Tutorial_03_English.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "BuS Notes/Tutorial_05b_English.md"
+                "file": "BuS Notes/Tutorial_03_English.md"
               }
             }
           },
@@ -167,10 +168,10 @@
   },
   "active": "836d4a7a96a33710",
   "lastOpenFiles": [
+    "BuS Notes/Tutorial_04_English.md",
     "BuS Notes/Tutorial_05_English.md",
     "BuS Notes/Tutorial_05b_English.md",
     "Untitled.md",
-    "BuS Notes/Tutorial_04_English.md",
     "6. Semester/Mathematische Logik/VL 06 Di, 30.04.2024.md",
     "BuS Notes/Tutorial_03_English.md",
     "BuS Notizen/Tutorial_04_Deutsch.md",
