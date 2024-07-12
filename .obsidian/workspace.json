@@ -26,7 +26,7 @@
               "type": "markdown",
               "state": {
                 "file": "asd.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": true
               }
             }
@@ -181,6 +181,7 @@
   },
   "active": "2a8ffc57b7c1f39e",
   "lastOpenFiles": [
+    "Pasted image 20240712180916.png",
     "BuS Notes/Tutorial 02.md",
     "asd.md",
     "BuS Notes/Tutorial_02_Bonus_English.md",
@@ -220,7 +221,6 @@
     "BuS Notizen",
     "Reluplex.md",
     "5. Semester/Einführung in Webtechnologien/Organisation und Geschichte.md",
-    "5. Semester/Einführung in Webtechnologien/Grundlagen zu HTTP, HTML und CSS.md",
     "5. Semester/IT-Sicherheit",
     "5. Semester/Introduction to Artificial Intelligence",
     "5. Semester/Erfüllbarkeitsüberprüfung",
