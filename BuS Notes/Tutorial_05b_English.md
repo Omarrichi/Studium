@@ -266,7 +266,8 @@ The shared memory can also be used with the `MAP_SHARED` and `MAP_ANONYMOUS` fla
 - malloc is optimized so only one big mmap is made, and other malloc manage the memory allocations in user space
 
 **`MAP_ANONYMOUS`**
-- mmap means “memory map”, literally creating a new virtual address mapping of memory between either the main memory (page frames) or a file mmap can be used to map a file to the virtual memory of a process, by providing a file descriptor and without the flag `MAP_ANONYMOUS`
+- mmap means “memory map”, literally creating a new virtual address mapping of memory between either the main memory (page frames) or a file 
+- mmap can be used to map a file to the virtual memory of a process, by providing a file descriptor and without the flag `MAP_ANONYMOUS`
 
 ```
 
