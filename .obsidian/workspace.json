@@ -13,26 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "BuS Notes/Tutorial 02.md",
-                "mode": "preview",
-                "source": true
-              }
-            }
-          },
-          {
-            "id": "2a8ffc57b7c1f39e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "asd.md",
+                "file": "6. Semester/Mathematische Logik/VL 06 Di, 30.04.2024.md",
                 "mode": "preview",
                 "source": true
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -82,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "005a87686d04f700",
@@ -99,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "asd.md",
+                "file": "6. Semester/Mathematische Logik/VL 06 Di, 30.04.2024.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "asd.md",
+                "file": "6. Semester/Mathematische Logik/VL 06 Di, 30.04.2024.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "asd.md"
+                "file": "6. Semester/Mathematische Logik/VL 06 Di, 30.04.2024.md"
               }
             }
           },
@@ -179,11 +165,15 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "2a8ffc57b7c1f39e",
+  "active": "836d4a7a96a33710",
   "lastOpenFiles": [
-    "Pasted image 20240712180916.png",
+    "6. Semester/Mathematische Logik/VL 03 Di, 16.04.2024.md",
+    "6. Semester/Mathematische Logik/VL 04 Do, 18.04.2024.md",
+    "6. Semester/Mathematische Logik/VL 05 Do, 25.04.2024.md",
+    "6. Semester/Mathematische Logik/VL 06 Di, 30.04.2024.md",
     "BuS Notes/Tutorial 02.md",
     "asd.md",
+    "Pasted image 20240712180916.png",
     "BuS Notes/Tutorial_02_Bonus_English.md",
     "BuS Notes/Tutorial_03_English.md",
     "BuS Notes/Tutorial_04_English.md",
@@ -193,11 +183,7 @@
     "BuS Notizen/Tutorial 00.md",
     "6. Semester/Mathematische Logik/VL 02 Do, 11.04.2024.md",
     "Untitled.md",
-    "6. Semester/Mathematische Logik/VL 06 Di, 30.04.2024.md",
     "BuS Notizen/Tutorial_04_Deutsch.md",
-    "6. Semester/Mathematische Logik/VL 04 Do, 18.04.2024.md",
-    "6. Semester/Mathematische Logik/VL 05 Do, 25.04.2024.md",
-    "6. Semester/Mathematische Logik/VL 03 Di, 16.04.2024.md",
     "6. Semester/Mathematische Logik/VL 01 Di, 09.04.2024.md",
     "6. Semester/Mathematische Logik",
     "6. Semester",
@@ -214,7 +200,6 @@
     "BuS Notizen/Tutorial 02.md",
     "BuS Notes/Tutorial 01.md",
     "BuS Notes/Tutorial 00.md",
-    "Pasted image 20240526172231.png",
     "BuS Notizen/Tutorial 01.md",
     "BuS Notes",
     "5. Semester/Datenkommunikation/3. Data Link Layer.md",
