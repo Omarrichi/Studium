@@ -18,8 +18,19 @@
                 "source": true
               }
             }
+          },
+          {
+            "id": "ae0a18eea90aac14",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.6.7"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -165,7 +176,7 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "836d4a7a96a33710",
+  "active": "ae0a18eea90aac14",
   "lastOpenFiles": [
     "6. Semester/Mathematische Logik/VL 03 Di, 16.04.2024.md",
     "6. Semester/Mathematische Logik/VL 04 Do, 18.04.2024.md",
