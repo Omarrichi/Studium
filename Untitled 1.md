@@ -14,7 +14,13 @@ $$A[i,j] := \begin{cases} 1 \text{ wenn } \{i,j\} \in E \\ 0 \text{ wenn } \{i,j
 
 Die Zerkelbedinung ist nun folgendermaßen formuliert:
 
-$A[i_{1},i_{2}] = A[i_{2},i_{3}] = \dots = A[i_{k},i_{1}]$
+$A[i_{1},i_{2}] = A[i_{2},i_{3}] = \dots = A[i_{k},i_{1}] = 1$ wobei $k \geq 3$ ist
+
+Also in einer Sequenz von Knoten, die bei $i_1$ und $i_2,i_2,\dots,i_{k}$ durchläuft muss es bei $i_{1}$ enden, damit ein Kreis entsteht
+
+Für unseren zerkelfreien Graphen gilt nun:
+$\forall i_{1},i_{2},\dots,i_{k}, k$
+
 
 $L_{KS} \subseteq \{0,1,\# \}$
 $L_{KS} $
