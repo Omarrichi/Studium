@@ -19,8 +19,8 @@ $A[i_{1},i_{2}] = A[i_{2},i_{3}] = \dots = A[i_{k},i_{1}] = 1$ wobei $k \geq 3$ 
 Also in einer Sequenz von Knoten, die bei $i_1$ und $i_2,i_2,\dots,i_{k}$ durchläuft muss es bei $i_{1}$ enden, damit ein Kreis entsteht
 
 Für unseren zerkelfreien Graphen gilt nun:
-$\forall i_{1},i_{2},\dots,i_{k}, k$
+$\forall i_{1},i_{2},\dots,i_{k}, k \geq 3:A[i_{1},i_{2}] = A[i_{2},i_{3}] = \dots \ A[i_{k},i_{1}] \neq 1$
 
-
+Sei $A = (a_{i,j} \in \{0,1\}^n\times n)$
 $L_{KS} \subseteq \{0,1,\# \}$
-$L_{KS} $
+$L_{KS} = \{a_{i}\}$
