@@ -1,0 +1,6 @@
+1.2
+
+a)
+
+$L_{VP} \subseteq \{0,1,\# \}$
+$L_{VP} = \left\{ bin(W)\#\#bin(k)\#\#bin(w_{1})\#\dots \# bin(w_{n}) | \Sigma_{i=1}^{k} W_{i} \leq \Sigma^{n}_{j=1} w_{j}  \right\}$
