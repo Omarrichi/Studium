@@ -8,11 +8,11 @@ Zu zeigen: $M'$ akzeptiert $w$
 
 Beweis:
 
-$M := \{Q, \Sigma , \Gamma ,B, q_0, \bar{q}, \sigma \}$
+$M := \{Q, \Sigma , \Gamma ,B, q_0, \bar{q}, \delta \}$
 
 Wir erstellen eine links beschränkte TM $M'$.
 
-$M' := \{Q', \Sigma' , \Gamma' ,B', q_0', \bar{q}, \sigma' \}$
+$M' := \{Q', \Sigma' , \Gamma' ,B', q_0', \bar{q}, \delta' \}$
 
 $\Sigma'$ bildet sich aus $\Sigma \cup \{\alpha\}$ 
 
@@ -31,7 +31,8 @@ Diese sorgen dafür, dass w um einen Slot nach rechts verschoben wird. Dadurch w
 
 Daraus folgt, dass wenn $M$ ein $w$ akzeptiert, $M'$ auch $w$ akzeptiert, allerdings nur wenn unser $M'$ nie nach links muss.
 
-Damit wir auch den Fall betrachten, dass der Kopf auch auf Positionen $p < 0$ gehen muss, benötigen wir eine zweite Spur, die praktisch, die linke Seite des Bandes simuliert, da sie aber auch links beschränkt ist und nur rechts unendlich ist, muss das Wort gespiegelt da geschrieben werden damit die Konsistenz der Seiten Erhalten bleibt. Außerdem müssen wir die Übergangsfunktion anpassen, dafür spiegeln wir unsere initiale Übergangsfunktion $\sigma$ zur $\sigma''$
+Damit wir auch den Fall betrachten, dass der Kopf auch auf Positionen $p < 0$ gehen muss, benötigen wir eine zweite Spur, die praktisch, die linke Seite des Bandes simuliert, da sie aber auch links beschränkt ist und nur rechts unendlich ist, muss das Wort gespiegelt da geschrieben werden damit die Konsistenz der Seiten Erhalten bleibt. Außerdem müssen wir die Übergangsfunktion anpassen, dafür spiegeln wir unsere initiale Übergangsfunktion $\delta$ zur $\delta''$ und erweitern unsere Übergangsfunktion in $M'$ um diese Funktion also:
+$Q'''$ = $Q' \cup Q''$
 
 Die Laufzeit ist $t(n)$. Das Band wird aber $2n + 1$ mal durchlaufen.
 Die $+ 1$ ergibt sich durch das Blank ganz rechts.
