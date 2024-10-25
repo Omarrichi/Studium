@@ -28,11 +28,12 @@ Diese sorgen dafür, dass w um einen Slot nach rechts verschoben wird. Dadurch w
 
  Wenn wir auf Positionen $p > 0$ sind, dann übernimmt $Q$  die Funktionalität von $Q'$, also wird ab diesem Punkt das Verhalten von $M$ von $M'$ simuliert, wobei die Zustände von $M$ auf $\alpha$ angepasst werden, sprich die Zustände, die ganz links ein Blank lesen, müssen ein $\alpha$ lesen. (Angepasst ist hier nur Zeichenänderung gemeint, das Verhalten bleibt natürlich gleich außer der Kopf muss nach links bewegt werden).
 
-Nun ist das Problem, falls wir 
 
-Daraus folgt, dass wenn $M$ ein $w$ akzeptiert, $M'$ auch $w$ akzeptiert.
+Daraus folgt, dass wenn $M$ ein $w$ akzeptiert, $M'$ auch $w$ akzeptiert, allerdings nur wenn unser $M'$ nie nach links muss.
+
+Damit wir auch den Fall betrachten, dass der Kopf auch auf Positionen $p < 0$ gehen muss, benötigen wir eine zweite Spur, die praktisch, die linke Seite des Bandes simuliert, da sie aber auch links beschränkt ist und nur rechts unendlich ist, muss das Wort gespiegelt da geschrieben werden damit die Konsistenz der Seiten Erhalten bleibt. Außerdem müssen wir die Übergangsfunktion anpassen, dafür spiegeln wir unsere initiale Übergangsfunktion $\sigma$ zur $\sigma''$
 
 Die Laufzeit ist $t(n)$. Das Band wird aber $2n + 1$ mal durchlaufen.
 Die $+ 1$ ergibt sich durch das Blank ganz rechts.
-\\
+
 Daraus folgt: $t(n+2n+1)$ also $O(n)$.
