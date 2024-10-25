@@ -1,20 +1,25 @@
-1.2
+Annahme:
+$M$ ist eine TM 
+$M$ akzeptiert $w$
+Zu zeigen: $M'$ akzeptiert $w$
 
-a)
+Beweis:
+Damit wir uns links beschränken brauchen wir zunächst einen Stoppsymbol, der uns besagt, dass der Band links Zuende ist dafür nehmen wir ein beliebis
+ 
+$\alpha$ ist hierbei beliebig, solange gilt: $\alpha \notin \Sigma$
 
-$L_{VP} \subseteq \{0,1,\# \}$
-$L_{VP} = \left\{ bin(W)\#\#bin(k)\#\#bin(w_{1})\#\dots \# bin(w_{n}) | W,k \in \mathbb{N}, w_{1},\dots,w_{i} \in \mathbb{N}: \Sigma_{i=1}^{k} W_{i} \leq \Sigma^{n}_{j=1} w_{j}  \right\}$
+$Q' := \{q_0',q_1,q_2,q_3\} \cup Q$
 
-b)
+Hier werden drei neue Zustände hinzugefügt
 
-Sei G ein ungerichteter Graph
-Sei A eine $n\times n$- Adjanzenzmatrix des Graphen G, wobei für alle $i,j \in V$ gilt: 
-$$A[i,j] := \begin{cases} 1 \text{ wenn } \{i,j\} \in E \\ 0 \text{ wenn } \{i,j\} \notin E \end{cases}$$
-Die Zirkelbedingung ist nun folgendermaßen formuliert:
-$A[i_{1},i_{2}] = A[i_{2},i_{3}] = \dots = A[i_{k},i_{1}] = 1$ wobei $k \geq 3$ ist
-Also in einer Sequenz von Knoten, die bei $i_1$ und $i_2,i_3,\dots,i_{k}$ durchläuft muss es bei $i_{1}$ enden, damit ein Kreis entsteht.
-Für unseren zirkelfreien Graphen gilt nun:
-$\forall i_{1},i_{2},\dots,i_{k}, k \geq 3:A[i_{1},i_{2}] = A[i_{2},i_{3}] = \dots = \ A[i_{k},i_{1}] \neq 1$
-Sei $A = (a_{i,j}) \in \{0,1\}^{n\times n}$ die Adjazenzmatrix zu G, d.h. $a_{i,j} = 1$ genau dann, wenn ${i,j} \in E$ für $0 \leq i,j< n$. Wir kodieren G als Aneinanderreihung der Zeilen von A.
-$L_{KS} \subseteq \{0,1,\# \}$
-$L_{KS} = \{a_{1,1}\dots a_{n,n} |n \in \mathbb{N}: \forall i_{1},i_{2},\dots,i_{k}, k \geq 3,a_{i_{1},i_{2}} = a_{i_{2},i_{3}} = \dots = \ a_{i_{k},i_{1}} \neq 1$
+Diese sorgen dafür, dass w um einen Slot nach rechts verschoben wird. Dadurch wird ein leerer Slot erzeugt, welcher dann mit $\alpha$ überschrieben wird. 
+Sobald ein Blank gelesen wird, ist $w$ zu Ende. Danach wird zurückgegangen, bis man zu dem $\alpha$ kommt. Dort wird in $q_4$ gewechselt, wobei $M'$ weiter läuft.
+
+$Q$ übernimmt die Funktionalität von $Q'$, also wird ab diesem Punkt das Verhalten von $M$ von $M'$ simuliert, wobei die Zustände von $M$ auf $\alpha$ angepasst werden, sprich die Zustände, die ganz links ein Blank lesen, müssen ein $\alpha$ lesen.
+
+Daraus folgt, dass wenn $M$ ein $w$ akzeptiert, $M'$ auch $w$ akzeptiert.
+
+Die Laufzeit ist $t(n)$. Das Band wird aber $2n + 1$ mal durchlaufen.
+Die $+ 1$ ergibt sich durch das Blank ganz rechts.
+\\
+Daraus folgt: $t(n+2n+1)$ also $O(n)$.
