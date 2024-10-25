@@ -31,8 +31,14 @@ Diese sorgen dafür, dass w um einen Slot nach rechts verschoben wird. Dadurch w
 
 Daraus folgt, dass wenn $M$ ein $w$ akzeptiert, $M'$ auch $w$ akzeptiert, allerdings nur wenn unser $M'$ nie nach links muss.
 
-Damit wir auch den Fall betrachten, dass der Kopf auch auf Positionen $p < 0$ gehen muss, benötigen wir eine zweite Spur, die praktisch, die linke Seite des Bandes simuliert, da sie aber auch links beschränkt ist und nur rechts unendlich ist, muss das Wort gespiegelt da geschrieben werden damit die Konsistenz der Seiten Erhalten bleibt. Außerdem müssen wir die Übergangsfunktion anpassen, dafür spiegeln wir unsere initiale Übergangsfunktion $\delta$ zur $\delta''$ und erweitern unsere Übergangsfunktion in $M'$ um diese Funktion also:
-$Q'''$ = $Q' \cup Q''$
+Damit wir auch den Fall betrachten, dass der Kopf auch auf Positionen $p < 0$ gehen muss, benötigen wir eine zweite Spur, die praktisch, die linke Seite des Bandes simuliert, da sie aber auch links beschränkt ist und nur rechts unendlich ist, muss das Wort gespiegelt da geschrieben werden damit die Konsistenz der Seiten Erhalten bleibt. Außerdem müssen wir die Übergangsfunktion anpassen, dafür spiegeln wir unsere initiale Übergangsfunktion $\delta$ zur $\delta'$ und erweitern unsere Übergangsfunktion in $M'$ um diese Funktion also:
+$\delta''$ = $\delta \cup \delta'$
+
+Folglich haben wir folgende TM:
+
+$M'' := \{Q', \Sigma' , \Gamma' ,B', q_0', \bar{q}, \delta'' \}$
+
+Zusammengefasst falls wir Schritte $p > 0$ machen, dann verhält unsere M
 
 Die Laufzeit ist $t(n)$. Das Band wird aber $2n + 1$ mal durchlaufen.
 Die $+ 1$ ergibt sich durch das Blank ganz rechts.
