@@ -1,11 +1,21 @@
 Annahme:
+
 $M$ ist eine TM 
+
 $M$ akzeptiert $w$
+
 Zu zeigen: $M'$ akzeptiert $w$
 
 Beweis:
-Damit wir uns links beschränken brauchen wir zunächst einen Stoppsymbol, der uns besagt, dass der Band links Zuende ist dafür nehmen wir ein beliebis
- 
+
+$M := \{Q, \Sigma , \Gamma ,B, q_0, \bar{q}, \sigma \}$
+
+Wir erstellen eine links beschränkte TM $M'$.
+
+$M' := \{Q', \Sigma' , \Gamma' ,B', q_0', \Bar{q}, \sigma' \}$
+
+$\Sigma'$ bildet sich aus $\Sigma \cup \{\alpha\}$ 
+
 $\alpha$ ist hierbei beliebig, solange gilt: $\alpha \notin \Sigma$
 
 $Q' := \{q_0',q_1,q_2,q_3\} \cup Q$
@@ -13,7 +23,8 @@ $Q' := \{q_0',q_1,q_2,q_3\} \cup Q$
 Hier werden drei neue Zustände hinzugefügt
 
 Diese sorgen dafür, dass w um einen Slot nach rechts verschoben wird. Dadurch wird ein leerer Slot erzeugt, welcher dann mit $\alpha$ überschrieben wird. 
-Sobald ein Blank gelesen wird, ist $w$ zu Ende. Danach wird zurückgegangen, bis man zu dem $\alpha$ kommt. Dort wird in $q_4$ gewechselt, wobei $M'$ weiter läuft.
+
+ Sobald ein Blank gelesen wird, ist $w$ zu Ende. Danach wird zurückgegangen, bis man zu dem $\alpha$ kommt. Dort wird in $q_4$ gewechselt, wobei $M'$ weiter läuft.
 
 $Q$ übernimmt die Funktionalität von $Q'$, also wird ab diesem Punkt das Verhalten von $M$ von $M'$ simuliert, wobei die Zustände von $M$ auf $\alpha$ angepasst werden, sprich die Zustände, die ganz links ein Blank lesen, müssen ein $\alpha$ lesen.
 
