@@ -35,3 +35,23 @@ Nun konstruieren wir eine TM M für $X \setminus Y$
 Zuerst verwenden wir $M_{X}$, um zu überprüfen, ob $w \in X$. 
 - Falls $M_{X}$ verwirft, dann ablehnen.
 - Falls $M_{X}$ akzeptiert, gilt $w \in X$ und wir machen weiter.
+
+c)
+
+Annahme: $X \setminus Y$ ist semi-entscheidbar.
+Es existiert $M_X$,  die X semi-entscheidet und $M_Y$ die Y entscheidet. 
+Zusätzlich wird eine 4-Spur TM $M_{X \setminus Y}$ konstruiert mit Eingabe $w = a_1 \dots a_n$ auf Spur 1. 
+
+- Kopiere $w = a_1 \dots a_n$ auf Spur 2
+- Simuliere $M_Y$ auf Spur 2
+	- Akzeptiert: Verwerfen
+	- Verwirft: Weiter
+
+- Kopiere $w = a_1 \dots a_n$ auf Spur 3
+- Simuliere $M_X$ auf Spur 3 
+	- Akzeptiert: $M_{X \setminus Y}$ akzeptiert.
+	- Verwirft: Weiter
+
+$\Rightarrow$ $w \in X \setminus Y$
+$\Leftrightarrow w$ mit $w_X \notin X$ und $w_Y \in Y$
+$\Leftrightarrow$ $M_{X \setminus Y}$ akzeptiert w
