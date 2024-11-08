@@ -26,15 +26,11 @@ $\Leftrightarrow$ $M_{XY}$ akzeptiert w
 b)
 Wenn X entscheidbar ist und Y semi-entscheidbar ist, dann ist $X \setminus Y$ semi-entscheidbar.
 
-Wir behaupten zunächst $X \setminus Y$ ist semi-entscheidbar.
-Nun konstruieren wir eine TM M für $X \setminus Y$
+Die Aussage gilt in diesem Fall nicht, im folgendem ein Gegenbeispiel:
 
-1. Da X entscheidbar ist, gibt es eine TM $M_{X}$, die für jedes Wort w anhält und entscheidet ob $w \in X$ gilt oder nicht.
-2. Da Y entscheidbar ist, gibt es eine TM $M_{Y}$, die für jedes Wort $w \in Y$ anhält und akzeptiert, aber für $w \notin Y$ möglicherweise nicht anhält.
+Wir wählen zunächst $Y$ als eine semi-entscheidbare Sprache. Dafür benutzen wir das Halteproblem H, also gilt Y = Halt.
+Aus der Vorlesung ist bekannt in diesem Fall, dass Y semi-entscheidbar aber nicht entscheidbar ist.
 
-Zuerst verwenden wir $M_{X}$, um zu überprüfen, ob $w \in X$. 
-- Falls $M_{X}$ verwirft, dann ablehnen.
-- Falls $M_{X}$ akzeptiert, gilt $w \in X$ und wir machen weiter.
 
 c)
 
