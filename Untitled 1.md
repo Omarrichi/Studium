@@ -28,8 +28,15 @@ Wenn X entscheidbar ist und Y semi-entscheidbar ist, dann ist $X \setminus Y$ se
 
 Die Aussage gilt in diesem Fall nicht, im folgendem ein Gegenbeispiel:
 
-Wir wählen zunächst $Y$ als eine semi-entscheidbare Sprache. Dafür benutzen wir das Halteproblem H, also gilt Y = Halt.
-Aus der Vorlesung ist bekannt in diesem Fall, dass Y semi-entscheidbar aber nicht entscheidbar ist.
+Wir wählen zunächst $Y$ als eine semi-entscheidbare Sprache. Dafür benutzen wir das Halteproblem $H$, also gilt $Y = Halt$.
+Aus der Vorlesung ist bekannt in diesem Fall, dass $Y$ semi-entscheidbar aber nicht entscheidbar ist.
+
+Als nächstes wählen wir $X$: sei $X = \Sigma^*$, also die Menge aller Wörter über dem Alphabet $\{0,1\}$. $X$ ist somit auch entscheidbar.
+
+Nun haben wir: $X \setminus Y = \Sigma^{*}\setminus Halt$
+Diese Sprache $X \setminus Y$ ist die Menge aller Wörter $w$, für die die Turingmaschine mit Index $w$ nicht anhält. Das ist genau das Komplement des Halteproblems.
+
+Das Komplement des Halteproblems ist nicht semi-entscheidbar. Es gibt also keine TM 
 
 
 c)
