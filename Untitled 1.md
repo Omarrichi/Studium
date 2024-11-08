@@ -24,5 +24,12 @@ $\Leftrightarrow w = w_1 w_2$ mit $w_1 \in X$ und $w_2 \in Y$
 $\Leftrightarrow$ $M_{XY}$ akzeptiert w
 
 b)
-
 Wenn X entscheidbar ist und Y semi-entscheidbar ist, dann ist $X \setminus Y$ semi-entscheidbar.
+
+Wir behaupten zunächst $X \setminus Y$ ist semi-entscheidbar.
+Nun konstruieren wir eine TM M für $X \setminus Y$
+
+1. Da X entscheidbar ist, gibt es eine TM $M_{X}$, die für jedes Wort w anhält und entscheidet ob $w \in X$ gilt oder nicht.
+2. Da Y entscheidbar ist, gibt es eine TM $M_{Y}$, die für jedes Wort $w \in Y$ anhält und akzeptiert, aber für $w \notin Y$ möglicherweise nicht anhält.
+
+Zuerst verwenden
