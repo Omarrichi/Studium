@@ -37,3 +37,14 @@ $$s = \frac{10000}{1*10^{-6}} = 10^{7}Baud = 10Mbaud$$
 Die Schrittgeschwindigkeit $s$ muss $10Mbaud$ betragen, damit die Latenz $t_{L}$ identisch zur Sendedauer $t_{s}$ eines $1000Bytes$ großen Datenpakets ist.
 
 Aufgabe 2.4
+
+a)
+
+Kanal 1: 
+Bandbreite $B =9000-4000 =5000 Hz$
+Signal-Rausch-Abstand: $50dB$
+Umrechnung SNR: $50 dB=100000$
+Datenrate:
+$$C =5000*\log_{2}(1+100000)$$
+$$\log_{2}(1+100000) \approx 16,61$$
+$$$$
