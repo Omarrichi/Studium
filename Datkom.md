@@ -25,4 +25,11 @@ Schritt 2: Sendedauer $t_{s}$
 $$\frac{4}{5} * 8000 = 10000 Bits$$
 $$t_{s} = \frac{10000}{s}$$
 
-Schritt 3: 
+Schritt 3: Gleichsetzen von $t_{L}$ und $t_{S}$
+$$t_{L} =t_{S}$$
+$$1 \mu s = \frac{10000}{s}$$
+
+umstellen nach s:
+$$s = \frac{10000}{1*10^{-6}} = 10^{7}Baud = 10Mbaud$$
+
+Die Schrittgeschwindigkeit $s$ muss $10Mbaud$ betragen, damit die Latenz $t_{L}$ identisch zur Sendedauer $t_{s}$ eines $1000Bytes$ großen Datenpakets ist
