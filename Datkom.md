@@ -14,9 +14,15 @@ Aufgabe 2.3
 
 Gegeben:
 - Länge des Kabels $d = 200 m$
-- Ausbereitungsgeschwindigkeit $v = 2 \times 10^{8}m/s$
+- Ausbereitungsgeschwindigkeit $v = 2 * 10^{8}m/s$
 - Datenpaketgröße $P = 1000 Bytes = 8000Bits$
 
 Schritt 1: Latenz $t_{L}$
 
-$$t_{L} =\frac{d}{v} = \frac{200m}{2\times \frac{10^{8}m}{s} =1\times 10^$$
+$$t_{L} =\frac{d}{v} = \frac{200m}{2* 10^{8}m/s}=1* 10^{-6}s = 1 \mu s$$
+
+Schritt 2: Sendedauer $t_{s}$
+$$\frac{4}{5} * 8000 = 10000 Bits$$
+$$t_{s} = \frac{10000}{s}$$
+
+Schritt 3: 
