@@ -47,4 +47,13 @@ Umrechnung SNR: $50 dB=100000$
 Datenrate:
 $$C =5000*\log_{2}(1+100000)$$
 $$\log_{2}(1+100000) \approx 16,61$$
-$$$$
+$$C \approx 5000*16,61 =83050 bps = 83,05 kbps$$
+
+Kanal 2: 
+Bandbreite $B =29900-20000 =9900 Hz$
+Signal-Rausch-Abstand: $30dB$
+Umrechnung SNR: $30 dB=1000$
+Datenrate:
+$$C =9900*\log_{2}(1+1000)$$
+$$\log_{2}(1+1000) \approx 9,97$$
+$$C \approx 9900*9,97 =98703 bps = 98,7 kbps$$
