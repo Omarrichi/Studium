@@ -29,7 +29,11 @@ Schritt 3: Gleichsetzen von $t_{L}$ und $t_{S}$
 $$t_{L} =t_{S}$$
 $$1 \mu s = \frac{10000}{s}$$
 
+(Anzahl der Schritte pro Sekunde *Baud*)
+
 umstellen nach s:
 $$s = \frac{10000}{1*10^{-6}} = 10^{7}Baud = 10Mbaud$$
 
-Die Schrittgeschwindigkeit $s$ muss $10Mbaud$ betragen, damit die Latenz $t_{L}$ identisch zur Sendedauer $t_{s}$ eines $1000Bytes$ großen Datenpakets ist
+Die Schrittgeschwindigkeit $s$ muss $10Mbaud$ betragen, damit die Latenz $t_{L}$ identisch zur Sendedauer $t_{s}$ eines $1000Bytes$ großen Datenpakets ist.
+
+Aufgabe 2.4
