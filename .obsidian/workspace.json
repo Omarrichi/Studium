@@ -46,21 +46,9 @@
               "icon": "lucide-file",
               "title": "Untitled 1"
             }
-          },
-          {
-            "id": "8a74ccafdb14eac5",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.7.5"
-              },
-              "icon": "lucide-file",
-              "title": "Release Notes 1.7.5"
-            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -224,7 +212,7 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "8a74ccafdb14eac5",
+  "active": "f5a369ff73c2c8f2",
   "lastOpenFiles": [
     "Untitled 1.md",
     "6. Semester/Mathematische Logik/VL 03 Di, 16.04.2024.md",
