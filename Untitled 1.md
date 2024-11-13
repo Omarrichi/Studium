@@ -1,5 +1,5 @@
 Hausaufgabe 4.3
-Seien X und Y Sprachen über dem Alphabet $\{0,1\}. Sei weiterhin$
+Seien X und Y Sprachen über dem Alphabet $\{0,1\}$. Sei weiterhin
 $$X \circ Y = \{w_{1}w_{2} | w_{1} \in X, w_{2} \in Y\}$$
 
 Beweisen oder widerlegen Sie:
@@ -36,8 +36,9 @@ Als nächstes wählen wir $X$: sei $X = \Sigma^*$, also die Menge aller Wörter 
 Nun haben wir: $X \setminus Y = \Sigma^{*}\setminus Halt$
 Diese Sprache $X \setminus Y$ ist die Menge aller Wörter $w$, für die die Turingmaschine mit Index $w$ nicht anhält. Das ist genau das Komplement des Halteproblems.
 
-Das Komplement des Halteproblems ist nicht semi-entscheidbar. Es gibt also keine TM 
+Das Komplement des Halteproblems ist nicht semi-entscheidbar. Es gibt also keine TM die genau dann akzeptiert wenn ein wort in $X\setminus Y$ ist, sonst wäre $X\setminus Y$ semi-entscheidbar, und somit wäre Das Halteproblem auch entscheidbar, was ein Widerspruch zur Unentscheidbarkeit des Halteproblems steht.
 
+Die Aussage ist also falsch
 
 c)
 
