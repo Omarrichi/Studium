@@ -40,11 +40,23 @@
               "type": "markdown",
               "state": {
                 "file": "Datkom.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
               "title": "Datkom"
+            }
+          },
+          {
+            "id": "c22a367ffbe85133",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.7.6"
+              },
+              "icon": "lucide-file",
+              "title": "Release Notes 1.7.6"
             }
           }
         ],
