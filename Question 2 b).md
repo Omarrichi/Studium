@@ -1,3 +1,4 @@
+Question 2.b)
 No, it would not make sense to use the binary cross-entropy error function if you replace the sigmoid activation function with a ReLU activation function in a logistic regression model.
 
 The binary cross-entropy (BCE) loss is defined as 
@@ -12,4 +13,8 @@ The key assumption here is that $\hat{y}_{i} \in [0,1]$, so:
 Rectified linear unit activation function (ReLU) is defined as:
 $$\text{ReLU}(x)=max(0,x)$$
 
-The binary cross-entropy loss relies on a probabilistic interpretation of $$
+The binary cross-entropy loss relies on a probabilistic interpretation of $\hat{y}_{i}$ as a valid probability in $[0,1]$. ReLU does not satisfy this condition because:
+- Its outputs are unbounded and can exceed 1, breaking the domain of the BCE formula.
+- Logarithms in BCE can become undefined or invalid for ReLU outputs
+
+Thus, BCE is incompatible with ReLU activation functions.
