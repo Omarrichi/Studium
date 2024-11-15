@@ -12,10 +12,16 @@ The key assumption here is that $\hat{y}_{i} \in [0,1]$, so:
 
 Rectified linear unit activation function (ReLU) is defined as:
 $$\text{ReLU}(x)=max(0,x)$$
-
 $\hat{y}_i = \text{ReLU}(z_{i}) =\begin{cases} 0, & \text{if } z_i < 0, \\ z_i, & \text{if } z_i \geq 0. \end{cases}$
+This implies that the output of ReLU is not constrained to $[0, 1]$ but instead lies in $[0, \infty)$.
 
-This implies that the output of ReLU is not constrained to $[0, 1]$ but instead lies in $([0, \infty)\).
+This several issues:
+- Undefined Logarithms:
+	- When $\hat{y}_i = 0$, the term $\log(\hat{y}_i)$ in BCE becomes undefined, as $\log(0) \to -\infty$.
+	- When $\hat{y}_i \geq 1$, the term $\log(1 - \hat{y}_i)$ becomes undefined, since $1 - \hat{y}_i < 0$.
+- Violation of Probability Assumptions
+	- The BCE loss assumes $\hat{y}_i \in [0, 1]$ so that it represents a valid probability. However, ReLU outputs $\hat{y}_i \in [0, \infty)$, which violates this assumption.
+
 
 The binary cross-entropy loss relies on a probabilistic interpretation of $\hat{y}_{i}$ as a valid probability in $[0,1]$. ReLU does not satisfy this condition because:
 - Its outputs are unbounded and can exceed 1, breaking the domain of the BCE formula.
