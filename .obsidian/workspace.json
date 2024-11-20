@@ -8,59 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "836d4a7a96a33710",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "6. Semester/Mathematische Logik/VL 06 Di, 30.04.2024.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "VL 06 Di, 30.04.2024"
-            }
-          },
-          {
-            "id": "ae0a18eea90aac14",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.6.7"
-              },
-              "icon": "lucide-file",
-              "title": "Release Notes 1.6.7"
-            }
-          },
-          {
             "id": "f5a369ff73c2c8f2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "Question 2 b).md",
-                "mode": "preview",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
               "title": "Question 2 b)"
             }
-          },
-          {
-            "id": "c22a367ffbe85133",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.7.6"
-              },
-              "icon": "lucide-file",
-              "title": "Release Notes 1.7.6"
-            }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
