@@ -14,4 +14,13 @@ $p_{bit}$ ist die Bitfehlerrate und $L_{bit}$ ist die Länge in Bits.
 Wir verwenden die Gegenwahrscheinlichkeit, sodass ein Paket mindestens einen Fehler hat
 $P' =1- (1-p_{bit})^{L_{bits}}$
 1. Paketlänge 40 Byte
-Einsetze nd
+Einsetzen der Werte:
+$PER= 1-(1-10^{5})^{320}$
+$\approx 1- 0,9968=0,0032$
+Die PER beträgt also $0,32\%$
+
+2. Paketlänge 1500 Byte
+Einsetzen der Werte:
+$PER= 1-(1-10^{5})^{12000}$
+$\approx 1- 0,8869=0,1131$
+Die PER beträgt also $11,31\%$
