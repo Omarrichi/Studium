@@ -33,4 +33,9 @@ Generatorpolynom: $x^4+x^2+x+1$
 		- Oder wenn es das Fehlerpolynom nicht teilt.
 
 1. Fehlermuster 101
-	1. Polynom
+	1. Fehlerpolynom: $x^2+1$
+- Wir prüfen ob das Generatorpolynom das Fehlerpolynom teilt
+- Fehlerpolynom hat ungerade Hemming Gewicht. Also Generatorpolynom erkennt den Fehler
+
+2. Fehlermuster 1001011
+	2. Fehlerpolynom: $x^{6}+x^{3}+x+1$
