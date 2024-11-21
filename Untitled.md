@@ -29,4 +29,8 @@ Aufgabe 3.5:
 b)
 Generatorpolynom: $x^4+x^2+x+1$
 - Für das Polynom gilt:
-	- Es kann Fehler erkennen, bei denen eine ungerade Anzahl an fehlerhaften Bits auftritt
+	- Es kann Fehler erkennen, bei denen eine ungerade Anzahl an fehlerhaften Bits auftritt (da es Hemming Gewicht von 4 hat)
+		- Oder wenn es das Fehlerpolynom nicht teilt.
+
+1. Fehlermuster 101
+	1. Polynom
