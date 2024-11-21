@@ -24,3 +24,7 @@ Einsetzen der Werte:
 $PER= 1-(1-10^{5})^{12000}$
 $\approx 1- 0,8869=0,1131$
 Die PER beträgt also $11,31\%$
+
+Aufgabe 3.5:
+b)
+Generatorpolynom: $x^4+x^2+x+1$
