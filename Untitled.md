@@ -49,4 +49,8 @@ Generatorpolynom: $x^4+x^2+x+1$
 	- $x+1$ Was nicht gleich 0 ist . Also dieser Fehler wird erkannt.
 
 c) 
-- Erkennbare Fehler: Alle Fehler 
+- Erkennbare Fehler: Alle Fehler mit einer ungeraden Anzahl an veränderten Bits (Also das Hemming Gewicht des Fehlerpolynom ist ungerade)
+- Nicht erkennbare Fehler: Alle Fehler mit einer geraden Anzahl an veränderten Bits.
+
+Ein einfaches Generatorpolynom ist: $x+1$
+Es hat gerade Hemming-Gewicht, und kann Fehler erkennen, da alle Fehlerpolynome mit ungeradem Hemming-Gewicht nicht durch es teilbar sind, und somit immer einen Rest haben werden. 
