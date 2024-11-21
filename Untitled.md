@@ -28,3 +28,5 @@ Die PER beträgt also $11,31\%$
 Aufgabe 3.5:
 b)
 Generatorpolynom: $x^4+x^2+x+1$
+- Für das Polynom gilt:
+	- Es kann Fehler erkennen, bei denen
