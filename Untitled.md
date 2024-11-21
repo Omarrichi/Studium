@@ -1,2 +1,4 @@
-Die Regel ist in bestimmten Situationen ableitbar:
+Aufgabe 3.3: Bitfehlerraten:
+
+
 
