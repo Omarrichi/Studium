@@ -34,8 +34,19 @@ Generatorpolynom: $x^4+x^2+x+1$
 
 1. Fehlermuster 101
 	1. Fehlerpolynom: $x^2+1$
-- Wir prüfen ob das Generatorpolynom das Fehlerpolynom teilt
 - Fehlerpolynom hat ungerade Hemming Gewicht. Also Generatorpolynom erkennt den Fehler
 
 2. Fehlermuster 1001011
 	2. Fehlerpolynom: $x^{6}+x^{3}+x+1$
+- Wir prüfen ob das Generatorpolynom das Fehlerpolynom teilt
+- Polynomdivision ergibt den rest: 
+	- $2x+2$ Was dann gleich 0 ist wegen mod 2 in binär. Also dieser Fehler wird nicht erkannt.
+
+3. Fehlermuster 1001111
+	3. Fehlerpolynom: $x^{6}+x^{4}+x^{3}+x^{2}+x+1$
+- Wir prüfen ob das Generatorpolynom das Fehlerpolynom teilt
+- Polynomdivision ergibt den rest: 
+	- $x+1$ Was nicht gleich 0 ist . Also dieser Fehler wird erkannt.
+
+c) 
+- Erkennbare Fehler: Alle Fehler 
