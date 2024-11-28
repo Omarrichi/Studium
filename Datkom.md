@@ -46,3 +46,6 @@ $$1,131*0,0502464 \approx 0,0568$$
 
 Mittlere Nutzdatenraten: analog zur A
 $$\frac{12000}{0,0568} \approx 211,27 kbit/s$$
+
+c) 
+**Selective Repeat**: weil es eine bessere Fehlerbehandlung bietet und die Netzwerkressourcen effizienter nutzt, insbesondere in einem fehlerbehafteten Kanal. Es minimiert unnötige Wiederholungen und maximiert den Durchsatz.
