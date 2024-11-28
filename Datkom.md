@@ -10,5 +10,16 @@ a)
 - Annahme: Keine Bitfehler also keine Wiederholungen.
 
 Gesamtgröße des Rahmens ist $12000+160=12160Bit$
-Übertragungszeit: $\frac{Rahmengröße}{Datenrate}$
+Übertragungszeit für ein Rahmen: $\frac{Rahmengröße}{Datenrate}$
 $$t_{R}=\frac{12160}{50*10^{6}}=0,0002432s$$
+
+Übertragungszeit für ACK:
+$$t_{ACK}=\frac{160}{50*10^{6}}=0,0000032s$$
+
+Round-Trip-Zeit:
+$$2 * Latenz = 2* 25ms=0,5s$$
+
+Gesamtezeit pro Rahmen:
+$t_{gesamt}=0,0002432+0,0000032+0,5=0,0502464$
+
+$$Nutzdatenrate= \frac{Nutzdaten}{Gesamtzeit}=\frac{12000}{0,0502464}\appro 238,882$$
