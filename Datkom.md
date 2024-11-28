@@ -19,7 +19,7 @@ Round-Trip-Zeit:
 $$2 * Latenz = 2* 25ms=0,5s$$
 Gesamtezeit pro Rahmen:
 $t_{gesamt}=0,0002432+0,0000032+0,5=0,0502464$
-$$Nutzdatenrate= \frac{Nutzdaten}{Gesamtzeit}=\frac{12000}{0,0502464}\approx 238,88 Bit/s$$
+$$Nutzdatenrate= \frac{Nutzdaten}{Gesamtzeit}=\frac{12000}{0,0502464}\approx 238,88 kbit/s$$
 
 b) 
 Zusätzliche Werte:
@@ -42,4 +42,7 @@ Durchschnittliche Anzahl der Versuche pro erfolgreicher Übertragung:
 $$\frac{1}{0,8839}\approx 1,131$$
 
 Da wir bei fehlerhaften Rahmen erneut versuchen müssen, verlängert sich unsere Gesamtzeit entsprechend: (Zeit aus Teil a))
-$$$$
+$$1,131*0,0502464 \approx 0,0568$$
+
+Mittlere Nutzdatenraten: analog zur A
+$$\frac{12000}{0,0568} \approx 211,27 kbit/s$$
