@@ -1,4 +1,4 @@
-#### Aufgabe 4.2: Datenrate bei Stop-and-Wait
+## Aufgabe 4.2: Datenrate bei Stop-and-Wait
 
 a)
 
@@ -50,10 +50,18 @@ $$\frac{12000}{0,0568} \approx 211,27 kbit/s$$
 c) 
 **Selective Repeat**: weil es eine bessere Fehlerbehandlung bietet und die Netzwerkressourcen effizienter nutzt, insbesondere in einem fehlerbehafteten Kanal. Es minimiert unnötige Wiederholungen und maximiert den Durchsatz.
 
-Aufgabe 4.4: Flusskontrolle bei HDCL:
+## Aufgabe 4.4: Flusskontrolle bei HDCL:
 
 Werte:
 - Es gibt 4 Bits für die Seqeunznummern (0 bis 15)
 - Maximale Fenstergröße: $\frac{2^{4}}{2}=8$ (Halber Wertebereich)
 
-Wegen Fenstergröße darf der Sender nur 8 unbestätigte Rahmen im Umlauf haben. Der Start des Fensters ist durch das letzte bestätigte 
+a)
+
+Wegen Fenstergröße darf der Sender nur 8 unbestätigte Rahmen im Umlauf haben. Der Start des Fensters ist durch das letzte bestätigte Quittungsnummer definiert
+- Der Sender hat $N(S)=8,9,10$ gesendet. der letzte bestätigte Rahmen ist dann wahrscheinlich $N(R)=7$
+- Der Sender darf also 5 weitere Rahmen ohne Quittung schicken, da diese innerhalb des Fensters liegen.
+- Sender darf also Rahmen $N(S)=11,12,13,14,15$ verschicken.
+
+b)
+Neuer Quittung mit $N(R)=10$ bedeutet, dass der Empfänger alle Rahmen bis
