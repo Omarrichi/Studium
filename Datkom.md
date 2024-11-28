@@ -64,4 +64,8 @@ Wegen Fenstergröße darf der Sender nur 8 unbestätigte Rahmen im Umlauf haben.
 - Sender darf also Rahmen $N(S)=11,12,13,14,15$ verschicken.
 
 b)
-Neuer Quittung mit $N(R)=10$ bedeutet, dass der Empfänger alle Rahmen bis
+Neuer Quittung mit $N(R)=10$ bedeutet, dass der Empfänger alle Rahmen erfolgreich bekommen hat. Das Sendefenster verschiebt sich also auf die neue Quittung.
+- Wegen $N(R)=10$ darf der Sender nun Rahmen $N(S)= 11,12,13,14,15,16,0,1,2$ senden
+
+c) 
+Eine neue Quittung $N(R)=9 (Reject)$ sagt, dass alle Rahmen bis $N(S)=8$ erfolgreich empfangen wurden. Allerdings, alle geschickte Rahmen nach 8 werden ignoriert und erneut geschickt, da bei $N(S)=9$ ein Fehler aufgetreten ist.
