@@ -69,3 +69,5 @@ Neuer Quittung mit $N(R)=10$ bedeutet, dass der Empfänger alle Rahmen erfolgrei
 
 c) 
 Eine neue Quittung $N(R)=9 (Reject)$ sagt, dass alle Rahmen bis $N(S)=8$ erfolgreich empfangen wurden. Allerdings, alle geschickte Rahmen nach 8 werden ignoriert und erneut geschickt, da bei $N(S)=9$ ein Fehler aufgetreten ist.
+Der Sender schickt jetzt ab Rahmen 9, 8 Rahmen um die Fenstergröße auszunutzen.
+- Also Sender schickt $N(S)=9,10,11,12,13,14,15,0,1$
