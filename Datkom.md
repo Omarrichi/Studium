@@ -27,4 +27,12 @@ Zusätzliche Werte:
 - NAK-Größe: $20Byte =20*8 Bit =160Bit$
 
 Die Wahrscheinlichkeit, dass kein Bit verfälscht wird ist:
-$$P_{Fehlerfrei}= ()1-10^{-5})$$
+$$P_{Fehlerfrei}= (1-10^{-5})^{12160} \approx 0,8854$$
+Die Gegenwahrscheinlich, dass ein Rahmen fehlerhaft ist $1- 0,8854= 0,1146$
+
+Wahrscheinlichkeit für ACK und NAK
+$$(1-10^{-5})^{160} \approx 0,9984$$
+$1- 0,9984 = 0,0016$ Dass ein Fehler bei ACK oder NAK auftritt
+
+Gesamte Wahrscheinlichkeit dass ein Rahmen und sein ACK/NAK erfolgreich übertragen werden:
+$$P_{erfolgreich}=0,8854*0,9984 \approx 0,8839$$
