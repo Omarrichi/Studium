@@ -36,3 +36,10 @@ $1- 0,9984 = 0,0016$ Dass ein Fehler bei ACK oder NAK auftritt
 
 Gesamte Wahrscheinlichkeit dass ein Rahmen und sein ACK/NAK erfolgreich übertragen werden:
 $$P_{erfolgreich}=0,8854*0,9984 \approx 0,8839$$
+
+Durchschnittliche Anzahl der Versuche pro erfolgreicher Übertragung:
+
+$$\frac{1}{0,8839}\approx 1,131$$
+
+Da wir bei fehlerhaften Rahmen erneut versuchen müssen, verlängert sich unsere Gesamtzeit entsprechend: (Zeit aus Teil a))
+$$$$
