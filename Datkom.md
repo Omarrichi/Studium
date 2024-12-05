@@ -19,8 +19,15 @@ Gegeben:
 - $L =2450Byte$
 - $H=24 Byte$
 - $n=12$
-
+- Da $R$ nicht gegeben ist nehmen wir an $R = 1Mbyte/s$
 Wir müssen $P$, so auswählen sodass $T$ minimal wird.
 
 $N =\frac{L}{P} =\frac{2450}{82}=29$ Pakete
-- hier 82 gewählt nach unterschiedliche werte 
+- hier 82 gewählt nach probieren unterschiedlicher Werte.
+
+Paketgröße = $P +H =82+24 =106 Byte$
+Die Übertragung für ein Paket $t_{paket}$ bei der Datenrate $R$ ist:
+$t_{paket}= \frac{(Paketgröße)*8}{R}=\frac{106*8}{1000000}= 0,000848s$
+Gesamtdauer:
+$$T= t_{paket} * (n+N-1)$$
+$$T=0,000848*(12+29+1)$$
