@@ -30,4 +30,4 @@ Die Übertragung für ein Paket $t_{paket}$ bei der Datenrate $R$ ist:
 $t_{paket}= \frac{(Paketgröße)*8}{R}=\frac{106*8}{1000000}= 0,000848s$
 Gesamtdauer:
 $$T= t_{paket} * (n+N-1)$$
-$$T=0,000848*(12+29+1)$$
+$$T=0,000848*(12+29-1)=0,000848*40= 0,03392s$$
