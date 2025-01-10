@@ -59,3 +59,26 @@ For $k$-anonymity, the size of the smallest equivalence class determines $k$. He
 
 Question 3:
 a)
+The **IGS** quantifies the reduction in uncertainty about the sensitive feature (BMI) after the split:
+$$IGS=H(BMI)−H(BMI∣Split)$$
+
+- $H(BMI)$: Entropy of BMI for the entire dataset.
+- $H(BMI∣Split)$: Weighted entropy of BMI after the split.
+
+Entropy Formula:
+$$H= - \Sigma^{n}_{i=1}p_{i}*\log_{2}(p_{i})$$
+
+Compute $H(BMI)$
+BMI has 3 values: High, Low, Average:
+- High: 2 instances
+- Low: 2 instances
+- Average: 1 instance
+- Total: 5 instances
+
+Proportions:
+
+- $p(High)=\frac{2}{5}=0,4$
+- $p(Low)=\frac{2}{5}=0,4$
+- $p(Average)=\frac{1}{5}=0,2$
+Entropy:
+$H(BMI)=−(0.4⋅log2​(0.4)+0.4⋅log2​(0.4)+0.2⋅log2​(0.2))$
