@@ -81,4 +81,41 @@ Proportions:
 - $p(Low)=\frac{2}{5}=0,4$
 - $p(Average)=\frac{1}{5}=0,2$
 Entropy:
-$H(BMI)=−(0.4⋅log2​(0.4)+0.4⋅log2​(0.4)+0.2⋅log2​(0.2))$
+$H(BMI)=−(0.4⋅log_2​(0.4)+0.4*log_2​(0.4)+0.2*log_2​(0.2))$
+- $log_2​(0.4)=−1.322$
+- $log⁡_2(0.2)=−2.322$
+$H(BMI)=−(0.4*−1.322+0.4*−1.322+0.2*−2.322)$
+$H(BMI)=1.442$
+
+Compute $H(BMI| Split)$
+
+Split by Oral Performance:
+
+- Good 2 instances (High, Average)
+- Average 2 instances (Low, Low)
+- Bad 1 instance (High)
+
+Compute Entropy for Each Group
+
+1. Good
+    
+    - Proportions:$p(High)=\frac{1}{2},p(Average)=\frac{1}{2})​$
+    - Entropy:
+    
+    $H = - (0,5 * \log_{2}(0,5)+0,5*\log_{2}(0,5))=1$
+2. **Average**:
+    
+    - Proportions: p(Low)=1p(\text{Low}) = 1p(Low)=1
+    - Entropy:
+    
+    H=0H = 0H=0
+3. **Bad**:
+    
+    - Proportions: p(High)=1p(\text{High}) = 1p(High)=1
+    - Entropy:
+    
+    H=0H = 0H=0
+
+**Weighted Entropy**:
+
+H(BMI∣Split)=25⋅1+25⋅0+15⋅0=0.4H(BMI | Split) = \frac{2}{5} \cdot 1 + \frac{2}{5} \cdot 0 + \frac{1}{5} \cdot 0 = 0.4H(BMI∣Split)=52​⋅1+52​⋅0+51​⋅0=0.4
