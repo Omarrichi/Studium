@@ -101,21 +101,23 @@ Compute Entropy for Each Group
     
     - Proportions:$p(High)=\frac{1}{2},p(Average)=\frac{1}{2})​$
     - Entropy:
-    
     $H = - (0,5 * \log_{2}(0,5)+0,5*\log_{2}(0,5))=1$
-2. **Average**:
+1. Average
     
-    - Proportions: p(Low)=1p(\text{Low}) = 1p(Low)=1
+    - Proportions: $p(Low)=1$
     - Entropy:
+    $H = 0$
+1. **Bad**:
     
-    H=0H = 0H=0
-3. **Bad**:
-    
-    - Proportions: p(High)=1p(\text{High}) = 1p(High)=1
-    - Entropy:
-    
-    H=0H = 0H=0
+    - Proportions: $p(High)=1$
+     - Entropy:
+    $H = 0$
 
 **Weighted Entropy**:
 
-H(BMI∣Split)=25⋅1+25⋅0+15⋅0=0.4H(BMI | Split) = \frac{2}{5} \cdot 1 + \frac{2}{5} \cdot 0 + \frac{1}{5} \cdot 0 = 0.4H(BMI∣Split)=52​⋅1+52​⋅0+51​⋅0=0.4
+$H(BMI∣Split)=\frac{2}{5}*1+\frac{2}{5}*0+\frac{1}{5}*0=0,4$
+
+Compute IGS:
+$$IGS=H(BMI)−H(BMI∣Split)$$
+$$IGS=1,442−0,4 = 1,042$$
+$IGS = 1,042$
