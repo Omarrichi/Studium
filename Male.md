@@ -107,13 +107,13 @@ Compute Entropy for Each Group
     - Proportions: $p(Low)=1$
     - Entropy:
     $H = 0$
-1. **Bad**:
+1. Bad
     
     - Proportions: $p(High)=1$
      - Entropy:
     $H = 0$
 
-**Weighted Entropy**:
+Weighted Entropy
 
 $H(BMI∣Split)=\frac{2}{5}*1+\frac{2}{5}*0+\frac{1}{5}*0=0,4$
 
