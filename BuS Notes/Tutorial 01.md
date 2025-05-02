@@ -1,4 +1,4 @@
-10.05.2024 - Omar Richi (omar.richi@rwth-aachen.de)
+5.20252. - Omar Richi (omar.richi@rwth-aachen.de)
 
 ```ad-note
 title: General Informations
@@ -7,7 +7,7 @@ The notes will be similar to the tutorial, with basics followed by the exercises
 I will try to make two versions for each tutorial sheet, in German and in English.
 
 I have also decided to create a Discord server. Joining is, of course, voluntary; it is just an offer, as you can reach me there a bit faster than by email.
-https://discord.gg/97jDeFcXxZ
+https://discord.gg/Wty8am7bXs
 ```
 
 ### Question 1: 
@@ -312,8 +312,8 @@ Begin by defining C structs that can manipulate abstract programs. Consider the 
 Some schedulers are preemptive, what additional event would be needed?
 
 *Questions:*
-1. Define a ```struct``` for representing a program ( ```task``` ). What fields should this ```struct``` include to manage program execution and scheduling? Provide a detailed list of essential fields and their purposes.
-2. Describe subsequent data structures that an operating system would use to handle scheduling. How would this structure maintain and manage the list of ready processes efficiently? Discuss possible implementations.
+53. Define a ```struct``` for representing a program ( ```task``` ). What fields should this ```struct``` include to manage program execution and scheduling? Provide a detailed list of essential fields and their purposes.
+54. Describe subsequent data structures that an operating system would use to handle scheduling. How would this structure maintain and manage the list of ready processes efficiently? Discuss possible implementations.
 
 
 ```c

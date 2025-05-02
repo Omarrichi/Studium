@@ -1,4 +1,4 @@
-10.07.2024 - Omar Richi (omar.richi@rwth-aachen.de)
+2.05.2025 - Omar Richi (omar.richi@rwth-aachen.de)
 
 ```ad-note
 title: Allgemeines
@@ -7,7 +7,7 @@ Die Notizen werden ähnlich zum Tutorium sein, mit Grundlagen gefolgt von den Au
 Ich werde versuchen, für jedes Tutorium-Blatt zwei Versionen zu machen, auf Deutsch und auf Englisch. 
 
 Ich habe mich auch entscheiden einen Discord Server zu erstellen. Das Beitreten ist natürlich freiwillig, es ist nur ein Angebot, denn dort erreicht ihr mich etwas schneller als per Mail.
-https://discord.gg/97jDeFcXxZ
+https://discord.gg/Wty8am7bXs
 ```
 
 ### Question 1: 
@@ -166,11 +166,11 @@ pid_t pid;
 }
 ```
 
-1. Loop: 1 Prozess wird erzeugt: Gesamt = 2
-2. Loop: 2 Prozess wird erzeugt: Gesamt = 4
-3. Loop: 4 Prozess wird erzeugt: Gesamt = 8
-4. Loop: 8 Prozess wird erzeugt: Gesamt = 16
-5. Loop: 16 Prozess wird erzeugt: Gesamt = 32
+3. Loop: 1 Prozess wird erzeugt: Gesamt = 2
+4. Loop: 2 Prozess wird erzeugt: Gesamt = 4
+5. Loop: 4 Prozess wird erzeugt: Gesamt = 8
+6. Loop: 8 Prozess wird erzeugt: Gesamt = 16
+7. Loop: 16 Prozess wird erzeugt: Gesamt = 32
 
 - Insgesamt gibt's 32 Prozesse, 31 davon sind neu erzeugt
 - Falls die Schleife weitergeht, dann erreicht man die maximale Anzahl an Prozesse in dem System, diese wird als Fork-Bomb bezeichnet, und das System stürzt ab. 
@@ -311,8 +311,8 @@ Begin by defining C structs that can manipulate abstract programs. Consider the 
 Some schedulers are preemptive, what additional event would be needed?
 
 *Questions:*
-1. Define a ```struct``` for representing a program ( ```task``` ). What fields should this ```struct``` include to manage program execution and scheduling? Provide a detailed list of essential fields and their purposes.
-2. Describe subsequent data structures that an operating system would use to handle scheduling. How would this structure maintain and manage the list of ready processes efficiently? Discuss possible implementations.
+8. Define a ```struct``` for representing a program ( ```task``` ). What fields should this ```struct``` include to manage program execution and scheduling? Provide a detailed list of essential fields and their purposes.
+9. Describe subsequent data structures that an operating system would use to handle scheduling. How would this structure maintain and manage the list of ready processes efficiently? Discuss possible implementations.
 
 
 ```c
