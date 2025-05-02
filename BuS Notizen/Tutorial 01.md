@@ -142,28 +142,36 @@ write a simple C program following these specifications:
 *Lösung:*
 
 ```c
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
+#include <stdio.h>  
+#include <stdlib.h>  
+#include <unistd.h>  
 
-int global_variable = 0;
+int global_variable = 0;  // Global variable shared across parent and child processes (but copied on fork)
 
 int main() {
-pid_t pid;
+    pid_t pid;
 
-	while (global_variable++ < 5) {
-	
-	pid = fork();
-	if (pid == -1) {
-		perror("fork");
-		exit(EXIT_FAILURE);
-	} else if (pid == 0)
-		printf("Child: Global variable = %d, PID = %d\n", global_variable, getpid());
-	else  
-		printf("Parent: Global variable = %d, PID = %d\n", global_variable, getpid());  
-	}  
-	return 0;  
+    // Loop runs while global_variable is less than 5
+    while (global_variable++ < 5) {
+        
+        pid = fork();  // Create a new process
+
+        if (pid == -1) {
+            // If fork() returns -1, it failed to create a process
+            perror("fork");
+            exit(EXIT_FAILURE);
+        } else if (pid == 0) {
+            // Child process
+            printf("Child: Global variable = %d, PID = %d\n", global_variable, getpid());
+        } else {
+            // Parent process
+            printf("Parent: Global variable = %d, PID = %d\n", global_variable, getpid());
+        }
+    }
+
+    return 0;
 }
+
 ```
 
 3. Loop: 1 Prozess wird erzeugt: Gesamt = 2
@@ -184,33 +192,40 @@ Modify the program from Task 2.1 to use threads instead of fork(). Use the pthre
 *Lösung:*
 
 ```c
-#include <pthread.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include <pthread.h> 
+#include <stdio.h>   
+#include <stdlib.h>  
 
-int global_variable = 0;
+int global_variable = 0;  // Shared global variable across all threads
+
+// Thread routine that spawns new threads recursively
 void *thread_routine(void *args) {
-  pthread_t current = (pthread_t)args;
-  /* maximum number of threads that a thread can create, in this specific case
-   */
-  pthread_t thread_id[5];
-  /* we keep track of the number of threads created within this thread */
-  int nb_childs = 0;
+  pthread_t current = (pthread_t)args;  // Current thread's "ID" passed as argument
+
+  pthread_t thread_id[5];  // Limit to max 5 threads created per thread
+  int nb_childs = 0;       // Count how many child threads this thread has created
+
+  // Create new threads while global_variable < 5
   while (global_variable < 5) {
-    global_variable++;
+    global_variable++;  // Increment global (shared) counter
     printf("Thread %lu, Global variable %d\n", current, global_variable);
-    pthread_create(&thread_id[nb_childs], NULL, thread_routine,
-                   &thread_id[nb_childs]);
+
+    // Create a new thread and pass its pointer as an argument
+    pthread_create(&thread_id[nb_childs], NULL, thread_routine, &thread_id[nb_childs]);
     nb_childs++;
   }
+
+  // Wait (join) for all child threads created by this thread to finish
   for (int id = 0; id < nb_childs; id++) {
     pthread_join(thread_id[id], NULL);
   }
+
   return NULL;
 }
+
 int main() {
-  long main_thread_id = 0;
-  thread_routine(&main_thread_id);
+  long main_thread_id = 0;  // Simulated "ID" for the main thread
+  thread_routine(&main_thread_id);  // Start the first thread routine directly from main
   return 0;
 }
 
