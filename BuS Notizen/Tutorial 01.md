@@ -255,24 +255,45 @@ int ret = execl("/bin/ls","ls", "/", NULL);
 *Lösung:*
 
 ```c
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/wait.h>
-#include <unistd.h>
+#include <stdio.h>      
+#include <stdlib.h>     
+#include <unistd.h>     
+#include <sys/wait.h>  
 
 int main() {
-  pid_t pid = fork();
+  pid_t pid = fork();  // Create a new process (child). Returns:
+                       // - child’s PID in parent process
+                       // - 0 in child process
+                       // - -1 on error
 
   if (pid == 0) {
-    if (!execl("/bin/ls", "ls", "/", NULL)) {
-      perror("execve\n");
+    // ---- Child Process ----
+    
+    // Replace the current child process image with /bin/ls
+    // Arguments passed: "ls /" (lists contents of root directory)
+    if (execl("/bin/ls", "ls", "/", NULL) == -1) {
+      // If execl fails (e.g., file not found), print an error and exit
+      perror("execl");
+      exit(EXIT_FAILURE);
     }
-  } else if (pid == -1) {
-  	perror("fork");
-  }
-  wait(&pid);
 
-  printf("\nChild exited!\n");
+    // Note: If execl succeeds, this code is never reached because
+    // the current process is replaced with the "ls" program.
+  } else if (pid == -1) {
+    // ---- Fork Failed ----
+    // Print error and exit
+    perror("fork");
+    exit(EXIT_FAILURE);
+  }
+
+  // ---- Parent Process ----
+
+  int status;
+  wait(&status);  // Wait for the child process to terminate
+                  // The child’s exit status is stored in 'status'
+
+  printf("\nChild exited!\n");  // Inform that child has finished
+  return 0;                     // Exit normally
 }
 
 ```
