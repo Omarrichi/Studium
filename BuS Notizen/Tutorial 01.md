@@ -304,47 +304,33 @@ Write a second C program that has the same behavior, except that it will create 
 
 ```c
 #include <stdio.h>      
-#include <pthread.h>
-#include <stdlib.h>
-#include <unistd.h>
-  
-// 'environ' is a special global variable that holds the environment variables
-extern char **environ;
+#include <pthread.h>   
+#include <stdlib.h>    
+#include <unistd.h>    
 
 /**
- * Thread routine that attempts to execute the 'ls /' command
+ * Thread routine that executes 'ls /' using execl()
  */
 void *routine(void *arg) {
-  // Cast the generic void* argument to a proper char* array for execve
-  char **args = (char **)arg;
-
-  // Attempt to replace the entire process image with /bin/ls using current environment
-  if (execve("/bin/ls", args, environ) == -1) {
-    // If execve fails, print an error message
-    perror("execve");
+  // execl takes the path to the binary and the argument list (as separate arguments)
+  if (execl("/bin/ls", "ls", "/", NULL) == -1) {
+    perror("execl");
   }
 
-  // This return is only reached if execve fails (since a successful execve never returns)
+  // Only reached if execl fails
   return NULL;
 }
 
 int main() {
-  pthread_t tid;  // Declare a variable to hold the thread ID
+  pthread_t tid;
 
-  // Prepare arguments for execve:
-  // args[0] = program name ("ls")
-  // args[1] = argument ("/")
-  // args[2] = NULL to terminate the array
-  char *args[] = {"ls", "/", NULL};
+  // Create a new thread that will run the ls command
+  pthread_create(&tid, NULL, routine, NULL);
 
-  // Create a new thread to run the routine function, passing the args array
-  pthread_create(&tid, NULL, routine, args);
-
-  // Wait for the thread to finish executing
-  // Note: This call will only return if execve failed (since successful execve replaces the whole process)
+  // Wait for the thread to finish
   pthread_join(tid, NULL);
 
-  // Only printed if execve failed and the thread returned
+  // Only printed if execl failed
   printf("\nchild exited\n");
 
   return 0;
