@@ -257,31 +257,45 @@ int ret = execl("/bin/ls","ls", "/", NULL);
 *Solution:*
 
 ```c
-#include <stdio.h>     
-#include <stdlib.h>    
-#include <sys/wait.h>  
+#include <stdio.h>      
+#include <stdlib.h>     
 #include <unistd.h>    
+#include <sys/wait.h>  
 
 int main() {
-  pid_t pid = fork();  // Create a child process
+  pid_t pid = fork();  // Create a new process (child). Returns:
+                       // - child’s PID in parent process
+                       // - 0 in child process
+                       // - -1 on error
 
   if (pid == 0) {
-    // Child process
-    // Replace the current process image with "/bin/ls", listing the root directory
-    if (!execl("/bin/ls", "ls", "/", NULL)) {
-      // If execl fails, print an error
-      perror("execve\n");
+    // ---- Child Process ----
+    
+    // Replace the current child process image with /bin/ls
+    // Arguments passed: "ls /" (lists contents of root directory)
+    if (execl("/bin/ls", "ls", "/", NULL) == -1) {
+      // If execl fails (e.g., file not found), print an error and exit
+      perror("execl");
+      exit(EXIT_FAILURE);
     }
+
+    // Note: If execl succeeds, this code is never reached because
+    // the current process is replaced with the "ls" program.
   } else if (pid == -1) {
-    // If fork failed
+    // ---- Fork Failed ----
+    // Print error and exit
     perror("fork");
+    exit(EXIT_FAILURE);
   }
 
-  // Parent process waits for the child to finish
-  wait(&pid);
+  // ---- Parent Process ----
 
-  // Once child has exited
-  printf("\nChild exited!\n");
+  int status;
+  wait(&status);  // Wait for the child process to terminate
+                  // The child’s exit status is stored in 'status'
+
+  printf("\nChild exited!\n");  // Inform that child has finished
+  return 0;                     // Exit normally
 }
 
 ```
@@ -291,26 +305,37 @@ Write a second C program that has the same behavior, except that it will create 
 *Solution:*
 
 ```c
-#include <stdio.h>
-#include <pthread.h>
-#include <stdlib.h>
-#include <unistd.h>
+#include <stdio.h>      
+#include <pthread.h>   
+#include <stdlib.h>    
+#include <unistd.h>    
 
+/**
+ * Thread routine that executes 'ls /' using execl()
+ */
 void *routine(void *arg) {
-  if (!execve("/bin/ls", arg, NULL)) {
-	  perror("execve");
+  // execl takes the path to the binary and the argument list (as separate arguments)
+  if (execl("/bin/ls", "ls", "/", NULL) == -1) {
+    perror("execl");
   }
+
+  // Only reached if execl fails
   return NULL;
 }
 
 int main() {
   pthread_t tid;
 
-  char *args[] = {"ls", "/", NULL};
-  pthread_create(&tid, NULL, routine, args);
+  // Create a new thread that will run the ls command
+  pthread_create(&tid, NULL, routine, NULL);
+
+  // Wait for the thread to finish
   pthread_join(tid, NULL);
 
+  // Only printed if execl failed
   printf("\nchild exited\n");
+
+  return 0;
 }
 
 ```

@@ -303,26 +303,51 @@ Write a second C program that has the same behavior, except that it will create 
 *Lösung:*
 
 ```c
-#include <stdio.h>
+#include <stdio.h>      
 #include <pthread.h>
 #include <stdlib.h>
 #include <unistd.h>
+  
+// 'environ' is a special global variable that holds the environment variables
+extern char **environ;
 
+/**
+ * Thread routine that attempts to execute the 'ls /' command
+ */
 void *routine(void *arg) {
-  if (!execve("/bin/ls", arg, NULL)) {
-	  perror("execve");
+  // Cast the generic void* argument to a proper char* array for execve
+  char **args = (char **)arg;
+
+  // Attempt to replace the entire process image with /bin/ls using current environment
+  if (execve("/bin/ls", args, environ) == -1) {
+    // If execve fails, print an error message
+    perror("execve");
   }
+
+  // This return is only reached if execve fails (since a successful execve never returns)
   return NULL;
 }
 
 int main() {
-  pthread_t tid;
+  pthread_t tid;  // Declare a variable to hold the thread ID
 
+  // Prepare arguments for execve:
+  // args[0] = program name ("ls")
+  // args[1] = argument ("/")
+  // args[2] = NULL to terminate the array
   char *args[] = {"ls", "/", NULL};
+
+  // Create a new thread to run the routine function, passing the args array
   pthread_create(&tid, NULL, routine, args);
+
+  // Wait for the thread to finish executing
+  // Note: This call will only return if execve failed (since successful execve replaces the whole process)
   pthread_join(tid, NULL);
 
+  // Only printed if execve failed and the thread returned
   printf("\nchild exited\n");
+
+  return 0;
 }
 
 ```
