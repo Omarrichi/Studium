@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "BuS Notizen/Tutorial_01_Deutsch.md",
+                "file": "BuS Notes/Tutorial_02_English.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Tutorial_01_Deutsch"
+              "title": "Tutorial_02_English"
             }
           }
         ],
@@ -203,9 +203,12 @@
   },
   "active": "867c446411d05c24",
   "lastOpenFiles": [
-    "BuS Notes/Tutorial_01_English.md",
+    "BuS Notizen/Tutorial_02_Deutsch.md",
+    "BuS Notizen/Tutorial_02_Bonus_Deutsch.md",
+    "BuS Notes/Tutorial_02_English.md",
+    "BuS Notes/Tutorial_02_Bonus_English.md",
     "BuS Notizen/Tutorial_01_Deutsch.md",
-    "BuS Notes/Tutorial 02.md",
+    "BuS Notes/Tutorial_01_English.md",
     "BuS Notes/Tutorial 00.md",
     "Question 2 b).md",
     "Male.md",
@@ -219,12 +222,10 @@
     "6. Semester/Mathematische Logik/VL 06 Di, 30.04.2024.md",
     "asd.md",
     "Pasted image 20240712180916.png",
-    "BuS Notes/Tutorial_02_Bonus_English.md",
     "BuS Notes/Tutorial_03_English.md",
     "BuS Notes/Tutorial_04_English.md",
     "BuS Notes/Tutorial_05_English.md",
     "BuS Notes/Tutorial_05b_English.md",
-    "BuS Notizen/Tutorial_02_Bonus_Deutsch.md",
     "BuS Notizen/Tutorial 00.md",
     "6. Semester/Mathematische Logik/VL 02 Do, 11.04.2024.md",
     "BuS Notizen/Tutorial_04_Deutsch.md",
@@ -237,7 +238,6 @@
     "Pasted image 20240530222635.png",
     "Pasted image 20240530221236.png",
     "Pasted image 20240530221149.png",
-    "BuS Notizen/Tutorial 02.md",
     "BuS Notes",
     "5. Semester/Datenkommunikation/3. Data Link Layer.md",
     "BuS Notizen",
