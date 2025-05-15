@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "BuS Notes/Tutorial_02_English.md",
+                "file": "BuS Notizen/Tutorial_02_Deutsch.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Tutorial_02_English"
+              "title": "Tutorial_02_Deutsch"
             }
           }
         ],
@@ -203,10 +203,10 @@
   },
   "active": "867c446411d05c24",
   "lastOpenFiles": [
-    "BuS Notizen/Tutorial_02_Deutsch.md",
     "BuS Notizen/Tutorial_02_Bonus_Deutsch.md",
-    "BuS Notes/Tutorial_02_English.md",
     "BuS Notes/Tutorial_02_Bonus_English.md",
+    "BuS Notes/Tutorial_02_English.md",
+    "BuS Notizen/Tutorial_02_Deutsch.md",
     "BuS Notizen/Tutorial_01_Deutsch.md",
     "BuS Notes/Tutorial_01_English.md",
     "BuS Notes/Tutorial 00.md",
