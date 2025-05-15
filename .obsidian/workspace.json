@@ -34,9 +34,23 @@
               "icon": "lucide-file",
               "title": "Tutorial_02_Deutsch"
             }
+          },
+          {
+            "id": "13772e16b0074bef",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Termin01 16.05.2025.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "Termin01 16.05.2025"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -201,12 +215,14 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "867c446411d05c24",
+  "active": "13772e16b0074bef",
   "lastOpenFiles": [
+    "BuS Notizen/Tutorial_02_Deutsch.md",
+    "Termin01 16.05.2025.md",
+    "Nachhilfe",
     "BuS Notizen/Tutorial_02_Bonus_Deutsch.md",
     "BuS Notes/Tutorial_02_Bonus_English.md",
     "BuS Notes/Tutorial_02_English.md",
-    "BuS Notizen/Tutorial_02_Deutsch.md",
     "BuS Notizen/Tutorial_01_Deutsch.md",
     "BuS Notes/Tutorial_01_English.md",
     "BuS Notes/Tutorial 00.md",
@@ -246,7 +262,6 @@
     "5. Semester/Introduction to Artificial Intelligence",
     "5. Semester/Erfüllbarkeitsüberprüfung",
     "5. Semester/Einführung in Webtechnologien",
-    "5. Semester/Berechenbarkeit und Komplexität",
-    "5. Semester/Machine Learning"
+    "5. Semester/Berechenbarkeit und Komplexität"
   ]
 }
