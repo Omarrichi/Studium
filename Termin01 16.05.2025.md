@@ -1,24 +1,17 @@
 
-##  Ablaufübersicht
-
-
-## 🧠 Zielklärung
-
-
 - Was fällt dir momentan schwer?
 - Wie lernst du aktuell? Mit Gruppe? Alleine?
 - Was ist dein Ziel mit der Nachhilfe?
 
-📝 **Optional zum Mitschreiben:**  
+
 > aktueller Stand – Noten/Erfolg – offene Fragen?
 
 ---
 
-## 📘 2. Beweise & Logik
+##  1. Beweise & Logik
 
-### 🧩 Thema: Beweistechniken
+###  Thema: Beweistechniken
 
-**Erklären lassen / nachfragen:**
 - Direkter Beweis
 - Widerspruchsbeweis
 - Vollständige Induktion
@@ -38,9 +31,9 @@ _„Beweise: 1 + 2 + ... + n = n(n+1)/2“_
 
 ---
 
-## 📐 3. Mathematik – Diskret & Grundlagen
+##  2. Mathematik – Diskret & Grundlagen
 
-### 🧮 Themenübersicht:
+###  Themenübersicht:
 - Mengen, Mengenoperationen (∪, ∩, ⊆, \)
 - Relationen & Funktionen
 - Graphentheorie (einfach)
@@ -49,12 +42,6 @@ _„Beweise: 1 + 2 + ... + n = n(n+1)/2“_
 
 ### 📚 Beispielaufgaben:
 
-**1. Mengen & Relationen**  
-Gegeben:  
-A = {1, 2, 3}, B = {2, 3, 4}  
-- A ∪ B = ?  
-- A ∩ B = ?  
-- A \ B = ?
 
 **2. Funktion oder nicht?**  
 Ist f: ℝ → ℝ mit f(x) = ±√x eine Funktion? Warum / Warum nicht?
@@ -75,9 +62,8 @@ Was ist schneller: Bubble Sort oder Mergesort? Warum?
 
 ---
 
-## 💻 4. Programmierkenntnisse (30–45 min)
-
-### 🧰 Grundlagen-Check (Sprache-unabhängig):
+##  4. Programmierkenntnisse
+###  Grundlagen-Check (Sprache-unabhängig):
 
 - Kontrollstrukturen (`if`, `while`, `for`)
 - Schleifen-Nesting
@@ -86,18 +72,18 @@ Was ist schneller: Bubble Sort oder Mergesort? Warum?
 - Rekursion vs. Iteration
 - Fehlerbehandlung
 
-### 🧪 Live-Aufgaben (Pseudo- oder Pythoncode):
+### Live-Aufgaben (Pseudo- oder Pythoncode):
 
 **1. Palindrom-Funktion**  
 Schreibe eine Funktion, die prüft, ob ein String ein Palindrom ist.
 
-**2. FizzBuzz (leicht, aber trickreich)**  
+**2. FizzBuzz**  
 Für i = 1 bis 100:  
 - Wenn i durch 3: „Fizz“  
 - Wenn i durch 5: „Buzz“  
 - Wenn beides: „FizzBuzz“
 
-**3. Fibonacci – Rekursiv & Memoisiert**  
+**3. Fibonacci**  
 - rekursiv lösen
 - dann Verbesserung durch Caching (Memoisierung)
 
