@@ -1,126 +1,145 @@
-# 🧑‍🏫 Erster Nachhilfetermin – Einschätzung Raster
+
+##  Ablaufübersicht
 
 
+## 🧠 Zielklärung
 
-## 🧠 1. Zielklärung
 
+- Was fällt dir momentan schwer?
+- Wie lernst du aktuell? Mit Gruppe? Alleine?
 - Was ist dein Ziel mit der Nachhilfe?
-- Gibt es konkrete Prüfungen oder Übungen, auf die du dich vorbereitest?
-- Wo hast du selbst das Gefühl, dass du hängst?
-- Hast du Altklausuren oder Übungsblätter dabei?
+
+📝 **Optional zum Mitschreiben:**  
+> aktueller Stand – Noten/Erfolg – offene Fragen?
 
 ---
 
 ## 📘 2. Beweise & Logik
 
-**Fragen & Modellantworten:**
+### 🧩 Thema: Beweistechniken
 
-- **Was ist ein direkter Beweis?**  
-  → Man zeigt direkt, dass aus der Voraussetzung die Aussage folgt.
+**Erklären lassen / nachfragen:**
+- Direkter Beweis
+- Widerspruchsbeweis
+- Vollständige Induktion
+- Kontraposition
 
-- **Was ist ein Widerspruchsbeweis?**  
-  → Man nimmt das Gegenteil an und leitet einen Widerspruch her.
+**Beispiel 1 – Direkter Beweis**  
+_„Zeige: Wenn n gerade ist, dann ist n² gerade.“_  
 
-- **Was ist vollständige Induktion?**  
-  → Zeigt die Aussage für n=1 (Basis) und dass sie für n+1 gilt (Schritt).
 
-- **Was ist eine Aussage mit Quantoren?**  
-  → Z. B. „Für alle x gilt…“ oder „Es existiert ein x, sodass…“
+**Beispiel 2 – Induktion**  
+_„Beweise: 1 + 2 + ... + n = n(n+1)/2“_  
 
-📝 **Beispielaufgabe:**  
-Beweise: ∑_{i=1}^n i = n(n+1)/2 (Induktion)
 
----
-
-## 📐 3. Mathematik
-
-**Fragen & Modellantworten:**
-
-- **Relation vs. Funktion?**  
-  → Funktion ordnet jedem x genau ein y zu.
-
-- **Was ist Big O?**  
-  → Beschreibt das Wachstum der Laufzeit (z. B. O(n²)).
-
-- **Was ist eine injektive Funktion?**  
-  → Verschiedene x ergeben verschiedene y.
-
-- **Vollständiger ungerichteter Graph (n Knoten)?**  
-  → Anzahl Kanten = n(n−1)/2
-
-📝 **Beispielaufgabe:**  
-Wie viele Kanten hat ein vollständiger Graph mit 6 Knoten?
+###  Verständnisfragen:
+- Was ist der Unterschied zwischen direktem Beweis und Widerspruch?
+- Wann würdest du eine Induktion verwenden?
 
 ---
 
-## 💻 4. Programmieren
+## 📐 3. Mathematik – Diskret & Grundlagen
 
-### 🔁 Kontrollstrukturen & Logik
+### 🧮 Themenübersicht:
+- Mengen, Mengenoperationen (∪, ∩, ⊆, \)
+- Relationen & Funktionen
+- Graphentheorie (einfach)
+- Aussagenlogik
+- Komplexitätsabschätzungen
 
-- **break vs. continue?**  
-  → break verlässt Schleife, continue springt zum nächsten Durchlauf.
+### 📚 Beispielaufgaben:
 
-- **Wie erkennt man eine Primzahl?**  
-  → Keine Zahl zwischen 2 und n−1 teilt sie.
+**1. Mengen & Relationen**  
+Gegeben:  
+A = {1, 2, 3}, B = {2, 3, 4}  
+- A ∪ B = ?  
+- A ∩ B = ?  
+- A \ B = ?
 
----
+**2. Funktion oder nicht?**  
+Ist f: ℝ → ℝ mit f(x) = ±√x eine Funktion? Warum / Warum nicht?
 
-### 🧮 Datenstrukturen
+**3. Graphentheorie**  
+Wie viele Kanten hat ein vollständiger Graph mit 5 Knoten?  
+→ n(n-1)/2 = 10
 
-- **Array vs. Liste?**  
-  → Array: feste Größe; Liste: dynamisch.
+**4. Aussagenlogik**  
+Gegeben:  
+p: „Es regnet“, q: „Ich nehme den Schirm mit“  
+Formuliere:  
+„Wenn es regnet, dann nehme ich den Schirm mit.“ → p → q
 
-- **Stack mit Liste?**  
-  → `.append()` für push, `.pop()` für pop.
-
----
-
-### 🔁 Rekursion
-
-- **Was ist Rekursion?**  
-  → Funktion ruft sich selbst mit kleinerem Problem auf.
-
-- **Memoisierung?**  
-  → Speichern von Ergebnissen zur Wiederverwendung.
-
-📝 Aufgabe: Fibonacci mit Memoisierung
-
----
-
-### 📦 Funktionen & Parameter
-
-- **Call-by-Value vs. Reference?**  
-  → Value = Kopie, Reference = Original wird verändert.
-
-- **Python: Liste als Parameter?**  
-  → Änderungen in der Funktion wirken sich auf das Original aus.
+**5. Laufzeit grob schätzen**  
+Was ist schneller: Bubble Sort oder Mergesort? Warum?  
+→ O(n²) vs. O(n log n)
 
 ---
 
-### 📚 Komplexität
+## 💻 4. Programmierkenntnisse (30–45 min)
 
-- **Bubble Sort worst case?**  
-  → O(n²)
+### 🧰 Grundlagen-Check (Sprache-unabhängig):
 
-- **Binärsuche schneller? Warum?**  
-  → Halbiert jedes Mal → O(log n), nur bei sortierten Daten.
+- Kontrollstrukturen (`if`, `while`, `for`)
+- Schleifen-Nesting
+- Listen/Arrays, Maps/Dictionaries
+- Funktionen, Parameterübergabe
+- Rekursion vs. Iteration
+- Fehlerbehandlung
+
+### 🧪 Live-Aufgaben (Pseudo- oder Pythoncode):
+
+**1. Palindrom-Funktion**  
+Schreibe eine Funktion, die prüft, ob ein String ein Palindrom ist.
+
+**2. FizzBuzz (leicht, aber trickreich)**  
+Für i = 1 bis 100:  
+- Wenn i durch 3: „Fizz“  
+- Wenn i durch 5: „Buzz“  
+- Wenn beides: „FizzBuzz“
+
+**3. Fibonacci – Rekursiv & Memoisiert**  
+- rekursiv lösen
+- dann Verbesserung durch Caching (Memoisierung)
+
+**4. Stack & Queue-Umsetzung**  
+- Implementiere Stack mit Liste  
+- Queue mit zwei Stacks (falls fortgeschrittener Stand)
+
+**5. Sortierproblem (Bubble vs. Merge)**  
+→ Was machen die Algorithmen?  
+→ Zeitkomplexität erklären lassen  
+→ Optional: Implementierung in Pseudocode
+
+**6. Fehler im Code finden (Debugging-Snippet)**  
+Gib ein kurzes fehlerhaftes Beispiel – z. B. Off-by-One in Schleife oder falsche Bedingung.
 
 ---
 
-### 👨‍💻 Mehrsprachiges Denken
+### 🧩 Diskussionsfragen:
 
-- **Java vs. C: Speicher?**  
-  → Java hat Garbage Collector, C manuell `malloc`/`free`.
-
-- **Wann C, wann Python?**  
-  → C für Effizienz, Python für schnelles Prototyping.
+- Was ist der Unterschied zwischen einer Liste in Python und einem Array in C?
+- Wie werden in Java Objekte im Speicher verwaltet?
+- Wann braucht man rekursive Lösungen? Welche Probleme gibt es dabei?
 
 ---
 
-## 🧾 5. Planung
+## 🔚 5. Reflexion & nächste Schritte (5–10 min)
 
-- Welche Themen sollen wir tiefer behandeln?  
-- Gibt es Material, das du mitbringen kannst (Übungen, Skripte)?  
-- Wollen wir regelmäßige Termine vereinbaren?
+- Welche Themen möchtest du als Nächstes vertiefen?
+- Was war heute neu für dich?
+- Wollen wir regelmäßig Termine machen?
+- Bringe zur nächsten Sitzung bitte:
+  - Konkrete Aufgaben oder Übungszettel
+  - Altklausuren (falls vorhanden)
+  - Fragen, die im Modul offen geblieben sind
+
+---
+
+## 📌 Notizen zum Termin (für dich)
+
+- **Stärken:**  
+- **Schwächen:**  
+- **Hilfsmittel benötigt:**  
+- **Empfohlene Themen für nächsten Termin:**  
 
 ---
