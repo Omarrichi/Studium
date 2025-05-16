@@ -40,7 +40,7 @@ _„Beweise: 1 + 2 + ... + n = n(n+1)/2“_
 - Aussagenlogik
 - Komplexitätsabschätzungen
 
-### 📚 Beispielaufgaben:
+###  Beispielaufgaben:
 
 
 **2. Funktion oder nicht?**  
@@ -62,7 +62,7 @@ Was ist schneller: Bubble Sort oder Mergesort? Warum?
 
 ---
 
-##  4. Programmierkenntnisse
+##  3. Programmierkenntnisse
 ###  Grundlagen-Check (Sprache-unabhängig):
 
 - Kontrollstrukturen (`if`, `while`, `for`)
@@ -93,15 +93,11 @@ Für i = 1 bis 100:
 
 **5. Sortierproblem (Bubble vs. Merge)**  
 → Was machen die Algorithmen?  
-→ Zeitkomplexität erklären lassen  
+→ Zeitkomplexität  
 → Optional: Implementierung in Pseudocode
 
-**6. Fehler im Code finden (Debugging-Snippet)**  
-Gib ein kurzes fehlerhaftes Beispiel – z. B. Off-by-One in Schleife oder falsche Bedingung.
 
----
-
-### 🧩 Diskussionsfragen:
+###  Diskussionsfragen:
 
 - Was ist der Unterschied zwischen einer Liste in Python und einem Array in C?
 - Wie werden in Java Objekte im Speicher verwaltet?
@@ -109,23 +105,10 @@ Gib ein kurzes fehlerhaftes Beispiel – z. B. Off-by-One in Schleife oder fal
 
 ---
 
-## 🔚 5. Reflexion & nächste Schritte (5–10 min)
 
 - Welche Themen möchtest du als Nächstes vertiefen?
-- Was war heute neu für dich?
-- Wollen wir regelmäßig Termine machen?
-- Bringe zur nächsten Sitzung bitte:
   - Konkrete Aufgaben oder Übungszettel
   - Altklausuren (falls vorhanden)
   - Fragen, die im Modul offen geblieben sind
-
----
-
-## 📌 Notizen zum Termin (für dich)
-
-- **Stärken:**  
-- **Schwächen:**  
-- **Hilfsmittel benötigt:**  
-- **Empfohlene Themen für nächsten Termin:**  
 
 ---
