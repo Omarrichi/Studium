@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Termin01 16.05.2025.md",
-                "mode": "source",
+                "file": "BuS Notes/Tutorial_03_English.md",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Termin01 16.05.2025"
+              "title": "Tutorial_03_English"
             }
           }
         ],
@@ -217,8 +217,8 @@
   },
   "active": "13772e16b0074bef",
   "lastOpenFiles": [
-    "BuS Notizen/Tutorial_02_Deutsch.md",
     "Termin01 16.05.2025.md",
+    "BuS Notizen/Tutorial_02_Deutsch.md",
     "Nachhilfe",
     "BuS Notizen/Tutorial_02_Bonus_Deutsch.md",
     "BuS Notes/Tutorial_02_Bonus_English.md",
